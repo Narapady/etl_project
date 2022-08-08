@@ -13,7 +13,7 @@ class FoodExpenditure:
         self.dirname = dirname 
         self.s3 = s3
     
-    def process_food_expenditure(self) -> None:
+    def process_food_expenditure(self):
         paths = [os.path.join(self.dirname, "constant_dollar_expenditures.xlsx"),
                  os.path.join(self.dirname, "nominal_expenditures.xlsx")]
         
@@ -41,7 +41,7 @@ class FoodExpenditure:
                     print(f"Successfully process {key} to S3")
                 start_pos = end_pos + 1
                 
-    def process_monthly_sale(self) -> None:
+    def process_monthly_sale(self):
         path = os.path.join(self.dirname, "monthly_sales.xlsx")
         df = self.s3.load_df(self.src_bucket, path, "xlsx")
         
@@ -64,5 +64,3 @@ class FoodExpenditure:
         if load_to_s3:
             print(f"Successfully process {constant_key} to S3")
         
-# rm -rf food-expenditure-clean fast-food-clean price-index-clean nutrient-intake-estimates-clean loss-adjusted-food-availability-clean food-consumption-estimates-clean
-

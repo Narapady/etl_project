@@ -7,7 +7,7 @@ import numpy as np
 from ingest.s3 import S3AWS
 
 
-def has_numbers(input_str: str) -> bool:
+def has_numbers(input_str: str):
     if input_str.startswith("19") or input_str.startswith("20"):
         return True
     return False
@@ -21,11 +21,11 @@ class FoodAvailablity:
         self.new_dir = self.dirname.lower().replace(" ", "-") + "-clean"
         self.s3 = s3
 
-    def process_data(self) -> None:
+    def process_data(self):
         self.process_calories()
         self.process_foodgroups()
         
-    def process_calories(self) -> None:
+    def process_calories(self):
         """
         Process and clean calories.xls. The resulting dataframes are:
             - totals.csv: average daily per capita total calories from U.S food availability after loss adjusted
@@ -55,7 +55,7 @@ class FoodAvailablity:
                 print(f"Successfully process {key} to S3")
                 
 
-    def process_foodgroups(self) -> None:
+    def process_foodgroups(self):
         """
         Process and clean food groups in Loss-Adjusted-Food-Availability.
         For each food group, the function process each sheet and create new
@@ -109,7 +109,7 @@ class FoodAvailablity:
                     print(f"Successfully process {key} to S3")
                     
     
-    def change_nan_cols(self, df: pd.DataFrame) -> list[str]:
+    def change_nan_cols(self, df: pd.DataFrame):
         """
         Helper function that handle nan columns.
         """
@@ -129,7 +129,7 @@ class FoodAvailablity:
             
         return cols
 
-    def change_col_names(self, df: pd.DataFrame) -> dict[str, str]:
+    def change_col_names(self, df: pd.DataFrame):
         """
         Helper function that rename columns name of food group availability
         """

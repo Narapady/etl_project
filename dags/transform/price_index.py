@@ -15,7 +15,7 @@ class PriceIndex:
         self.pi_type = pi_type 
         self.s3 = s3
     
-    def get_2022_pct_change(self,path: str) -> list[float]:
+    def get_2022_pct_change(self,path: str):
         df = self.s3.load_df(self.src_bucket, path, "xlsx") 
         if self.pi_type == "consumer":
             col = "Forecast range2 2022"
@@ -36,7 +36,7 @@ class PriceIndex:
 
         return result  
 
-    def get_path(self) -> str:
+    def get_path(self):
         if self.dirname == "consumer-price-index":
             filename = "historicalcpi.xlsx"
         elif self.dirname == "producer-price-index":
@@ -44,7 +44,7 @@ class PriceIndex:
             
         return os.path.join(self.dirname,filename)
 
-    def process_data(self) -> None:
+    def process_data(self):
 
         path = self.get_path()
         df = self.s3.load_df(self.src_bucket, path, "xlsx")

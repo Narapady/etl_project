@@ -19,7 +19,7 @@ class NutrientFoodEstimate:
         self.new_dir = self.dirname.lower().replace(" ", "-") + "-clean"
         self.s3 = s3
         
-    def change_name(self, input_str: str) -> str:
+    def change_name(self, input_str: str):
         input_str = input_str.strip()
         if input_str == "Total population1":
             return "Total population"
@@ -29,7 +29,7 @@ class NutrientFoodEstimate:
             return "Seniors age 65 and above"
         return input_str
 
-    def get_columns(self) -> list[str]:
+    def get_columns(self):
         col_names = [
         "total-2015-2016",
         "at-home-2015-2016",
@@ -62,7 +62,7 @@ class NutrientFoodEstimate:
             
         return os.path.join(self.dirname, filename)
         
-    def process_data(self) -> None:
+    def process_data(self):
             
         path = self.get_path()    
         df = self.s3.load_df(self.src_bucket, path, 'xlsx')
@@ -106,23 +106,3 @@ class NutrientFoodEstimate:
             if load_to_s3:
                 print(f"Successfully process {key2} to S3")
            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            

@@ -1,9 +1,9 @@
 import os
-from food_availability import FoodAvailablity
-from nutrient_food_estimates import NutrientFoodEstimate
-from fast_food import FastFood
-from price_index import PriceIndex
-from food_expenditure import FoodExpenditure
+from transform.food_availability import FoodAvailablity
+from transform.nutrient_food_estimates import NutrientFoodEstimate
+from transform.fast_food import FastFood
+from transform.price_index import PriceIndex
+from transform.food_expenditure import FoodExpenditure
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
 from ingest.s3 import S3AWS
@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 def run() -> None:
 
     # S3 instance
-    s3 = S3AWS(os.getenv("ACCESS_KEY_ID"),os.getenv("SECRET_ACCESS_KEY"))
+    s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     bucket = s3.create_bucket("s3-bucket-clean-usda")
     
     if bucket:
