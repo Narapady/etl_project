@@ -3,7 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 from ingest import ingestor
-# from clean import cleaner
+from transform import transformer
 # from stage import stager
 
 default_args = {
@@ -14,15 +14,19 @@ default_args = {
     
 with DAG(
     default_args=default_args,
-    dag_id="etl_dag_v3",
+    dag_id="etl_dag_v4",
     description="Extract Transform Load Operation Dag",
     start_date=datetime(2022, 8, 6),
     schedule_interval= '@weekly'
 
     ) as dag:
-        task1 = PythonOperator(
-            task_id="Ingest",
+        ingest = PythonOperator(
+            task_id="Ingestor",
             python_callable= ingestor.run
         )
-        task1
+        
+        clean = PythonOperator(
+            task_id = "Transformer",
+            python_callable=transformer.run
+        )
         
