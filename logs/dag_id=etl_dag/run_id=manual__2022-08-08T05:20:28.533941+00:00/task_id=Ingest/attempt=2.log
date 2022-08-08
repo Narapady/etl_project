@@ -1,0 +1,58 @@
+[2022-08-08 05:25:32,974] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: etl_dag.Ingest manual__2022-08-08T05:20:28.533941+00:00 [queued]>
+[2022-08-08 05:25:32,980] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: etl_dag.Ingest manual__2022-08-08T05:20:28.533941+00:00 [queued]>
+[2022-08-08 05:25:32,981] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 05:25:32,982] {taskinstance.py:1377} INFO - Starting attempt 2 of 6
+[2022-08-08 05:25:32,983] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 05:25:32,992] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest> on 2022-08-08 05:20:28.533941+00:00
+[2022-08-08 05:25:32,997] {standard_task_runner.py:52} INFO - Started process 2755 to run task
+[2022-08-08 05:25:32,999] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'Ingest', 'manual__2022-08-08T05:20:28.533941+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzvs8rgct', '--error-file', '/tmp/tmpzp6t4qum']
+[2022-08-08 05:25:33,002] {standard_task_runner.py:80} INFO - Job 72: Subtask Ingest
+[2022-08-08 05:25:33,053] {task_command.py:371} INFO - Running <TaskInstance: etl_dag.Ingest manual__2022-08-08T05:20:28.533941+00:00 [running]> on host 314d00d68411
+[2022-08-08 05:25:33,099] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=etl_dag
+AIRFLOW_CTX_TASK_ID=Ingest
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-08T05:20:28.533941+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-08T05:20:28.533941+00:00
+[2022-08-08 05:25:35,169] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 128, in main
+    kaggle = s3.create_bucket("s3-bucket-raw-kaggle")
+  File "/opt/airflow/dags/ingest/s3.py", line 27, in create_bucket
+    return self.client.create_bucket(Bucket=bucket_name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 395, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 712, in _make_api_call
+    operation_model, request_dict, request_context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 731, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 107, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 180, in _send_request
+    request = self.create_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 121, in create_request
+    operation_name=operation_model.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 357, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 228, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 211, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/signers.py", line 93, in handler
+    return self.sign(operation_name, request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/signers.py", line 165, in sign
+    auth.add_auth(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/auth.py", line 388, in add_auth
+    raise NoCredentialsError()
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
+[2022-08-08 05:25:35,183] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_dag, task_id=Ingest, execution_date=20220808T052028, start_date=20220808T052532, end_date=20220808T052535
+[2022-08-08 05:25:35,192] {standard_task_runner.py:97} ERROR - Failed to execute job 72 for task Ingest (Unable to locate credentials; 2755)
+[2022-08-08 05:25:35,216] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-08 05:25:35,236] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,87 @@
+[2022-08-08 06:08:21,367] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: etl_dag.Ingest manual__2022-08-08T05:20:28.533941+00:00 [queued]>
+[2022-08-08 06:08:21,375] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: etl_dag.Ingest manual__2022-08-08T05:20:28.533941+00:00 [queued]>
+[2022-08-08 06:08:21,376] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 06:08:21,377] {taskinstance.py:1377} INFO - Starting attempt 5 of 6
+[2022-08-08 06:08:21,378] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 06:08:21,387] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest> on 2022-08-08 05:20:28.533941+00:00
+[2022-08-08 06:08:21,392] {standard_task_runner.py:52} INFO - Started process 2796 to run task
+[2022-08-08 06:08:21,396] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'etl_dag', 'Ingest', 'manual__2022-08-08T05:20:28.533941+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpoqb03l7x', '--error-file', '/tmp/tmpne3f2050']
+[2022-08-08 06:08:21,401] {standard_task_runner.py:80} INFO - Job 81: Subtask Ingest
+[2022-08-08 06:08:21,467] {task_command.py:371} INFO - Running <TaskInstance: etl_dag.Ingest manual__2022-08-08T05:20:28.533941+00:00 [running]> on host 8d3924a1d70c
+[2022-08-08 06:08:21,522] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=etl_dag
+AIRFLOW_CTX_TASK_ID=Ingest
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-08T05:20:28.533941+00:00
+AIRFLOW_CTX_TRY_NUMBER=5
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-08T05:20:28.533941+00:00
+[2022-08-08 06:08:29,724] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_total.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:31,355] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_gender.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:33,110] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_income.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:34,587] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_education.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:36,300] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_race.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:37,958] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_total.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:39,619] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_gender.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:40,983] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_income.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:42,466] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_education.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:44,187] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table1.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:45,768] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table2.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:47,293] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table3.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:48,991] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table4.xls to s3-bucket-raw-usda
+[2022-08-08 06:08:52,509] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table5.xls to s3-bucket-raw-usda
+[2022-08-08 06:09:11,638] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/dyfluid.xls to s3-bucket-raw-usda
+[2022-08-08 06:09:21,995] {local_task_job.py:221} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2022-08-08 06:09:22,000] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 2796. PIDs of all processes in the group: [2796]
+[2022-08-08 06:09:22,002] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 2796
+[2022-08-08 06:09:22,005] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-08-08 06:09:22,018] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 136, in run
+    ingestor_usda.ingest()
+  File "/opt/airflow/dags/ingest/ingestor.py", line 118, in ingest
+    ingest_usda(self.s3, self.usda_sources, self.bucket_name)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 56, in ingest_usda
+    req = requests.get(link)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 745, in send
+    r.content
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 900, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 816, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/response.py", line 579, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/response.py", line 522, in read
+    data = self._fp.read(amt) if not fp_closed else b""
+  File "/usr/local/lib/python3.7/http/client.py", line 465, in read
+    n = self.readinto(b)
+  File "/usr/local/lib/python3.7/http/client.py", line 509, in readinto
+    n = self.fp.readinto(b)
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.7/ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.7/ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-08-08 06:09:22,026] {taskinstance.py:1420} INFO - Marking task as FAILED. dag_id=etl_dag, task_id=Ingest, execution_date=20220808T052028, start_date=20220808T060821, end_date=20220808T060922
+[2022-08-08 06:09:22,034] {standard_task_runner.py:97} ERROR - Failed to execute job 81 for task Ingest ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(etl_dag, Ingest, manual__2022-08-08T05:20:28.533941+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'Ingest', 'dag_id': 'etl_dag', 'run_id': 'manual__2022-08-08T05:20:28.533941+00:00', 'map_index': -1, 'start_date': datetime.datetime(2022, 8, 8, 6, 8, 21, 369150, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2022, 8, 8, 6, 9, 22, 26161, tzinfo=Timezone('UTC')), 'duration': 60}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 2796)
+[2022-08-08 06:09:22,060] {process_utils.py:75} INFO - Process psutil.Process(pid=2796, status='terminated', exitcode=1, started='06:08:21') (2796) terminated with exit code 1
