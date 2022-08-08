@@ -2,8 +2,7 @@ import os
 import requests
 import zipfile
 from bs4 import BeautifulSoup
-from ingest.s3 import S3AWS 
-from dotenv import load_dotenv
+from storage.s3 import S3AWS 
 from ingest.source import USDA_URL
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
@@ -36,7 +35,6 @@ def get_links(url: str):
                 continue
             link = item.find("a")
             if link:
-                # print(next(reversed(links.keys())) == list(links.keys())[-1])
                 links[list(links.keys())[-1]].append(base_url + link["href"])
  
     return links

@@ -1,8 +1,6 @@
 import pandas as pd 
-import os
 import numpy as np
-from dotenv import load_dotenv
-from ingest.s3 import S3AWS
+from storage.s3 import S3AWS
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
 def load_to_S3(s3: S3AWS, df: pd.DataFrame, des_bucket: str, src_dir: str):

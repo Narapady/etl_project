@@ -1,8 +1,5 @@
-import sys
-sys.path.append("..")
-
 import os
-from ingest.s3 import S3AWS
+from storage.s3 import S3AWS
 
 class FoodExpenditure:
     new_dir = "food-expenditure-clean"

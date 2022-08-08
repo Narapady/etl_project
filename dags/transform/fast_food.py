@@ -3,7 +3,7 @@ sys.path.append("..")
 
 import pandas as pd 
 import os
-from ingest.s3 import S3AWS
+from storage.s3 import S3AWS
 
 class FastFood:
     new_dir = "fast-food-clean"

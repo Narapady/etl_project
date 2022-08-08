@@ -1,9 +1,6 @@
-import sys
-sys.path.append("..")
-
 import numpy as np
 import os
-from ingest.s3 import S3AWS
+from storage.s3 import S3AWS
 
 class PriceIndex:
     new_dir = "price-index-clean"

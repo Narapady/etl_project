@@ -1,4 +1,3 @@
-import os
 from transform.food_availability import FoodAvailablity
 from transform.nutrient_food_estimates import NutrientFoodEstimate
 from transform.fast_food import FastFood
@@ -6,7 +5,7 @@ from transform.price_index import PriceIndex
 from transform.food_expenditure import FoodExpenditure
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
-from ingest.s3 import S3AWS
+from storage.s3 import S3AWS
 from dotenv import load_dotenv
 
 def run() -> None:
@@ -26,11 +25,11 @@ def run() -> None:
         # ppi = PriceIndex("producer-price-index", "producer", s3)
         # cpi.process_data()
         # ppi.process_data()
-        # 
-        # # Process Food Availability 
-        # # food = FoodAvailablity("loss-adjusted-food-availability", s3)
-        # # food.process_data()
-        #
+
+        # Process Food Availability 
+        # food = FoodAvailablity("loss-adjusted-food-availability", s3)
+        # food.process_data()
+
         # #Process nutrient intake and food consumption estimates
         # nutrient_estimate = NutrientFoodEstimate("nutrient-intake-estimates", s3)
         # food_estimate = NutrientFoodEstimate("food-consumption-estimates", s3)
@@ -40,6 +39,5 @@ def run() -> None:
         #  # Process fast food purchasers
         # dir_names = ["2014", "2015", "2016"]
         # for directiory in dir_names:
-        #     fastfood = FastFood(directiory, s3)
-        #     fastfood.process_data()
+        #     fastfood = FastFood(directiory, s3)storage   fastfood.process_data()
 

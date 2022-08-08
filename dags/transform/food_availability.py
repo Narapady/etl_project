@@ -4,7 +4,7 @@ sys.path.append("..")
 import pandas as pd
 import os
 import numpy as np
-from ingest.s3 import S3AWS
+from storage.s3 import S3AWS
 
 
 def has_numbers(input_str: str):
