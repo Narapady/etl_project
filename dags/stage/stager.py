@@ -1,14 +1,11 @@
-import sys
-sys.path.append("..")
-
 import pandas as pd 
 import os
 import numpy as np
 from dotenv import load_dotenv
-from typing import Callable
 from ingest.s3 import S3AWS
+from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
-def load_to_S3(s3: S3AWS, df: pd.DataFrame, des_bucket: str, src_dir: str) -> bool:
+def load_to_S3(s3: S3AWS, df: pd.DataFrame, des_bucket: str, src_dir: str):
     df = df.reset_index(drop=True)
     key = src_dir.split("clean")[0][:-1] + "-staged.csv"
     load_to_s3 = s3.df_to_s3(df, des_bucket, key)
@@ -19,7 +16,7 @@ def load_to_S3(s3: S3AWS, df: pd.DataFrame, des_bucket: str, src_dir: str) -> bo
     print(f"Failed to load {key} to {des_bucket}")
     return False
 
-def stage_fastfood(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged") -> bool:
+def stage_fastfood(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged"):
     filenames = s3.list_files(src_bucket, dirname)
     result_df = pd.DataFrame()
 
@@ -34,7 +31,7 @@ def stage_fastfood(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-u
     result_df = result_df.drop('Unnamed: 0', axis=1)
     return load_to_S3(s3, result_df, des_bucket, dirname)
 
-def stage_foodnutrient_estimates(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged") -> bool:
+def stage_foodnutrient_estimates(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged"):
     filenames = s3.list_files(src_bucket, dirname)
     result_df = pd.DataFrame()
     colnames = ["food/nutrient-group", "total-at-home", "total-afh", "restaurant", "fast-food", "school", "other", "demographic-group"]
@@ -49,7 +46,7 @@ def stage_foodnutrient_estimates(s3: S3AWS, dirname: str, src_bucket: str = "s3-
     return load_to_S3(s3, result_df, des_bucket, dirname)
 
     
-def stage_foodexpenditure(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged") -> bool:
+def stage_foodexpenditure(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged"):
     filenames = s3.list_files(src_bucket, dirname)
     monthly_df = pd.DataFrame()
     nominal_df = pd.DataFrame()
@@ -78,7 +75,7 @@ def stage_foodexpenditure(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-
     expense = load_to_S3(s3, expense_df, des_bucket, dirname)
     return monthly & expense
 
-def stage_priceindex(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged") -> bool:
+def stage_priceindex(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged"):
     filenames = s3.list_files(src_bucket, dirname)
     result_df = pd.DataFrame()
 
@@ -97,7 +94,7 @@ def stage_priceindex(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean
     return load_to_S3(s3, result_df, des_bucket, dirname)
 
     
-def stage_foodavailability(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged") -> bool:
+def stage_foodavailability(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-clean-usda", des_bucket: str = "s3-bucket-staged"):
     
     response =s3.client.list_objects_v2(Bucket=src_bucket, Prefix=dirname)
     files = response.get("Contents")
@@ -124,7 +121,7 @@ def stage_foodavailability(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket
     result_df = result_df.dropna(how="any")
     return load_to_S3(s3, result_df, des_bucket, f"{dirname}-clean")
 
-def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-raw-kaggle", des_bucket: str = "s3-bucket-staged") -> bool:
+def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-raw-kaggle", des_bucket: str = "s3-bucket-staged"):
     filenames = s3.list_files(src_bucket, dirname)
     
     for file in filenames:
@@ -142,49 +139,29 @@ def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-r
 
     return True
 
-stageStrategy = Callable[[S3AWS, str, str, str], bool]
 class Stager:
+    staging_strategy = {"obesity":stage_obesity_kaggle, 
+                        # "fast-food-clean":stage_fastfood, 
+                        # "food-consumption-estimates-clean":stage_foodnutrient_estimates,
+                        # "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
+                        # "food-expenditure-clean":stage_foodexpenditure,
+                        # "price-index-clean":stage_priceindex,
+                        # "loss-adjusted-food-availability-clean":stage_foodavailability
+                        }
     
-    def __init__(self, s3: S3AWS, src_dir: str, src_bucket: str,  des_bucket: str):
+    def __init__(self, s3: S3AWS):
         self.s3 = s3
-        self.src_dir = src_dir
-        self.src_bucket = src_bucket
-        self.des_bucket = des_bucket
 
-    def stage(self, stage_strategy: stageStrategy) -> None:
-        stage_strategy(self.s3, self.src_dir, self.src_bucket, self.des_bucket)
+    def stage(self):
+        for dir, staging_fn in self.staging_strategy.items():
+            staging_fn(self.s3, dir)
             
-def main() -> None:
+def run():
     # S3 instance
-    load_dotenv()
-    s3 = S3AWS(os.getenv("ACCESS_KEY_ID"),os.getenv("SECRET_ACCESS_KEY"))
+    s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     des_bucket = "s3-bucket-staged"
-    src_bucket = "s3-bucket-clean-usda"
     bucket = s3.create_bucket(des_bucket)
     
-    staging_strategy = {"obesity":stage_obesity_kaggle, 
-                        "fast-food-clean":stage_fastfood, 
-                        "food-consumption-estimates-clean":stage_foodnutrient_estimates,
-                        "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
-                        "food-expenditure-clean":stage_foodexpenditure,
-                        "price-index-clean":stage_priceindex,
-                        "loss-adjusted-food-availability-clean":stage_foodavailability
-                        }
     if bucket:
-        for dir, stage_fn in staging_strategy.items():
-            if dir == "obesity":
-                Stager(s3, dir,"s3-bucket-raw-kaggle", des_bucket).stage(stage_fn)
-            else:
-                Stager(s3, dir, src_bucket, des_bucket).stage(stage_fn)
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-
-
-
-
-
+        stager = Stager(s3)
+        stager.stage()
