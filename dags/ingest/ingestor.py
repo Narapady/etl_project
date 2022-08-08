@@ -101,7 +101,7 @@ class Ingestor:
         # ingest_kaggle(self.s3, self.kaggle_sources, self.bucket_name)
         ingest_usda(self.s3, self.source, self.bucket_name)
             
-def run() -> None:
+def run():
     """
     Main function of ingestion program. One aws s3 is instantiated, and
     ingest data from 2 sources systems including data from usda and kaggle. 

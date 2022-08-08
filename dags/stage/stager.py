@@ -139,12 +139,12 @@ def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-r
 
 class Stager:
     staging_strategy = {"obesity":stage_obesity_kaggle, 
-                        # "fast-food-clean":stage_fastfood, 
-                        # "food-consumption-estimates-clean":stage_foodnutrient_estimates,
-                        # "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
-                        # "food-expenditure-clean":stage_foodexpenditure,
-                        # "price-index-clean":stage_priceindex,
-                        # "loss-adjusted-food-availability-clean":stage_foodavailability
+                        "fast-food-clean":stage_fastfood, 
+                        "food-consumption-estimates-clean":stage_foodnutrient_estimates,
+                        "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
+                        "food-expenditure-clean":stage_foodexpenditure,
+                        "price-index-clean":stage_priceindex,
+                        "loss-adjusted-food-availability-clean":stage_foodavailability
                         }
     
     def __init__(self, s3: S3AWS):
