@@ -7,9 +7,6 @@ from dotenv import load_dotenv
 from ingest.source import USDA_URL
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
-# ACCESS_KEY_ID = "AKIATBLFVCUSBF24MDF7"
-# SECRET_ACCESS_KEY = "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"
-
 def to_lowercase(word: str):
     """
     Convert title to all lowercase delimited by "-"
