@@ -14,7 +14,7 @@ default_args = {
     
 with DAG(
     default_args=default_args,
-    dag_id="ETL_DAG_V3",
+    dag_id="ETL_DAG_V10",
     description="Extract Transform Load Operation Dag",
     start_date=datetime(2022, 8, 6),
     schedule_interval= '@weekly'
@@ -24,17 +24,17 @@ with DAG(
         task_id="Ingestor",
         python_callable=ingestor.run
     )
-    
+
     transform = PythonOperator(
         task_id = "Transformer",
         python_callable=transformer.run
     )
+    
     stage = PythonOperator(
         task_id = "Stager",
         python_callable=stager.run
     )
-
-
+    
     ingest >> transform >> stage   
 
         

@@ -68,7 +68,10 @@ def stage_foodexpenditure(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-
     expense_df = pd.concat([constant_df, nominal_df], axis=0)
     # drop duplicatec columns
     expense_df = expense_df.T.drop_duplicates().T 
-        
+    
+    monthly_df["year"] = monthly_df["year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
+    expense_df["year"] = expense_df["year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
+    
     monthly = load_to_S3(s3, monthly_df, des_bucket,"monthly-sales-clean")
     expense = load_to_S3(s3, expense_df, des_bucket, dirname)
     return monthly & expense
@@ -105,6 +108,9 @@ def stage_foodavailability(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket
             df = s3.load_df(src_bucket, f"{dirname}/{file}", "csv")
             key = file.split(".")[0]
             df = df.drop('Unnamed: 0', axis=1)
+            idx = df.loc[df["Year"] == 2000].index[0] + 1
+            df.loc[idx:idx, "Year"] = '2001'
+            df["Year"] = df["Year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
             load_to_S3(s3, df, des_bucket, f"{key}-clean")
         else:
             df["type"] = file.split("/")[0]
@@ -117,6 +123,7 @@ def stage_foodavailability(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket
             
     result_df = result_df.drop('Unnamed: 0', axis=1)
     result_df = result_df.dropna(how="any")
+    result_df["year"] = result_df["year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
     return load_to_S3(s3, result_df, des_bucket, f"{dirname}-clean")
 
 def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-raw-kaggle", des_bucket: str = "s3-bucket-staged"):
@@ -133,6 +140,7 @@ def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-r
                 df = df.drop(columns=["Adult.Obesity", "Poverty.Rate", "Real.GDP.Growth", "Region.Encoding", "Unit", "YearFE"])
 
             key = file.split(".")[0]
+            df["Year"] = df["Year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
             load_to_S3(s3, df, des_bucket, f"{key}-clean")
 
     return True
