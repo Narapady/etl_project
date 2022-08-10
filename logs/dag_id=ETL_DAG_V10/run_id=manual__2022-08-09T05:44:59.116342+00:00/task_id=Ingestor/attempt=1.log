@@ -1,0 +1,141 @@
+[2022-08-09 05:45:00,093] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V10.Ingestor manual__2022-08-09T05:44:59.116342+00:00 [queued]>
+[2022-08-09 05:45:00,099] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V10.Ingestor manual__2022-08-09T05:44:59.116342+00:00 [queued]>
+[2022-08-09 05:45:00,101] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 05:45:00,102] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-09 05:45:00,103] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 05:45:00,113] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingestor> on 2022-08-09 05:44:59.116342+00:00
+[2022-08-09 05:45:00,119] {standard_task_runner.py:52} INFO - Started process 24634 to run task
+[2022-08-09 05:45:00,122] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V10', 'Ingestor', 'manual__2022-08-09T05:44:59.116342+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2uav553r', '--error-file', '/tmp/tmp84q2x3nn']
+[2022-08-09 05:45:00,124] {standard_task_runner.py:80} INFO - Job 125: Subtask Ingestor
+[2022-08-09 05:45:00,172] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V10.Ingestor manual__2022-08-09T05:44:59.116342+00:00 [running]> on host 8d3924a1d70c
+[2022-08-09 05:45:00,220] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V10
+AIRFLOW_CTX_TASK_ID=Ingestor
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-09T05:44:59.116342+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-09T05:44:59.116342+00:00
+[2022-08-09 05:45:09,317] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_total.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:11,111] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_gender.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:12,860] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_income.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:14,595] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_education.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:16,215] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_race.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:17,793] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_total.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:19,290] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_gender.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:20,816] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_income.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:22,488] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_education.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:24,253] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table1.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:26,093] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table2.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:27,616] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table3.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:29,392] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table4.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:31,283] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table5.xls to s3-bucket-raw-usda
+[2022-08-09 05:45:50,730] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/dyfluid.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:10,652] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/dymfg.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:15,586] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/eggs.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:26,542] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fats.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:36,543] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/mtfish.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:49,295] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/frtot.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:55,622] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fruitcan.xls to s3-bucket-raw-usda
+[2022-08-09 05:46:59,485] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fruitdr.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:20,925] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fruitfr.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:23,682] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fruitfz.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:29,189] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fruitju.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:31,371] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/fruitveg.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:39,774] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/grains.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:50,264] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/nuts.xls to s3-bucket-raw-usda
+[2022-08-09 05:47:54,099] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/pop.xls to s3-bucket-raw-usda
+[2022-08-09 05:48:03,615] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/mtpoulsu.xls to s3-bucket-raw-usda
+[2022-08-09 05:48:14,870] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/mtredsu.xls to s3-bucket-raw-usda
+[2022-08-09 05:48:21,294] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/mtpcc.xls to s3-bucket-raw-usda
+[2022-08-09 05:48:31,854] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/sweets.xls to s3-bucket-raw-usda
+[2022-08-09 05:48:50,967] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/vegtot.xls to s3-bucket-raw-usda
+[2022-08-09 05:48:56,582] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/vegcan.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:49:09,418] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/vegfr.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:49:18,979] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/vegfrz.xls to s3-bucket-raw-usda
+[2022-08-09 05:49:28,898] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/legumes.xls to s3-bucket-raw-usda
+[2022-08-09 05:49:36,809] {logging_mixin.py:115} INFO - Successfully uploaded food-availability/potatoes.xls to s3-bucket-raw-usda
+[2022-08-09 05:49:45,592] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/calories.xls to s3-bucket-raw-usda
+[2022-08-09 05:50:31,695] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Dairy.xls to s3-bucket-raw-usda
+[2022-08-09 05:50:41,103] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/fat.xls to s3-bucket-raw-usda
+[2022-08-09 05:50:49,615] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/servings.xls to s3-bucket-raw-usda
+[2022-08-09 05:51:36,351] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Fruit.xls to s3-bucket-raw-usda
+[2022-08-09 05:51:47,247] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/grain.xls to s3-bucket-raw-usda
+[2022-08-09 05:52:12,662] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/meat.xls to s3-bucket-raw-usda
+[2022-08-09 05:52:21,664] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/sugar.xls to s3-bucket-raw-usda
+[2022-08-09 05:53:14,401] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/veg.xls to s3-bucket-raw-usda
+[2022-08-09 05:53:18,232] {logging_mixin.py:115} INFO - Successfully uploaded archived-tables/nutrients.xls to s3-bucket-raw-usda
+[2022-08-09 05:53:24,462] {logging_mixin.py:115} INFO - Successfully uploaded archived-tables/ctcsp.xls to s3-bucket-raw-usda
+[2022-08-09 05:53:25,913] {logging_mixin.py:115} INFO - Successfully uploaded food-consumption-estimates/food_table1.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:27,224] {logging_mixin.py:115} INFO - Successfully uploaded food-consumption-estimates/food_table2.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:28,481] {logging_mixin.py:115} INFO - Successfully uploaded food-consumption-estimates/food_table3.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:29,783] {logging_mixin.py:115} INFO - Successfully uploaded nutrient-intake-estimates/nutrient_table1.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:31,055] {logging_mixin.py:115} INFO - Successfully uploaded nutrient-intake-estimates/nutrient_table2.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:35,208] {logging_mixin.py:115} INFO - Successfully uploaded archived-files/Archived%202007-10%20Food%20Consumption%20and%20Nutrient%20Inta to s3-bucket-raw-usda
+[2022-08-09 05:53:36,384] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table1_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:37,664] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table2_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:38,826] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table3_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:40,105] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table4_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:41,337] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table5_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:42,594] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table6_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:43,912] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table7_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:45,078] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table8_2016.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:46,376] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table1_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:47,569] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table2_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:48,825] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table3_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:50,745] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table4_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:53,075] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table5_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:54,269] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table6_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:55,389] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table7_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:56,527] {logging_mixin.py:115} INFO - Successfully uploaded 2015/Table8_2015.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:53:58,052] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table1_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:53:59,574] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table2_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:01,007] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table3_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:02,454] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table4_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:03,863] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table5_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:05,357] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table6_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:06,925] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table7_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:08,366] {logging_mixin.py:115} INFO - Successfully uploaded 2014/table8_2014.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:09,711] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table1.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:11,162] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table2.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:13,048] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table3.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:14,538] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table4.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:15,852] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table5.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:17,614] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table6.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:19,248] {logging_mixin.py:115} INFO - Successfully uploaded 2014/2008_table7.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:21,033] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table1.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:22,520] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table2.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:24,042] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table3.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:25,320] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table4.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:26,755] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table5.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:28,353] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table6.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:29,808] {logging_mixin.py:115} INFO - Successfully uploaded 2007/2007_table7.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:31,154] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table1.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:32,760] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table2.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:34,194] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table3.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:35,524] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table4.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:36,910] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table5.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:38,395] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table6.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:39,804] {logging_mixin.py:115} INFO - Successfully uploaded 2006/2006_table7.xls to s3-bucket-raw-usda
+[2022-08-09 05:54:41,249] {logging_mixin.py:115} INFO - Successfully uploaded consumer-price-index/CPIforecast.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:42,791] {logging_mixin.py:115} INFO - Successfully uploaded consumer-price-index/historicalcpi.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:44,013] {logging_mixin.py:115} INFO - Successfully uploaded producer-price-index/PPIforecast.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:45,247] {logging_mixin.py:115} INFO - Successfully uploaded producer-price-index/historicalppi.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:47,232] {logging_mixin.py:115} INFO - Successfully uploaded archived-versions/CPIArchivedForecasts.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:48,935] {logging_mixin.py:115} INFO - Successfully uploaded archived-versions/PPIArchivedForecasts.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:50,272] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/nominal_expenditures.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:51,717] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/nominal_expenditures_no_taxes_tips.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:53,347] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/constant_dollar_expenditures.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:54,772] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/constant_dollar_expenditures_no_taxes_tips.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:55,965] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/food_expenditures_source_funds.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:57,266] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/normalized_food_expenditures.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:54:59,074] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/monthly_sales.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:55:00,528] {logging_mixin.py:115} INFO - Successfully uploaded archived-food-expenditure-tables/archived_nominal_expenditures_1.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:55:01,842] {logging_mixin.py:115} INFO - Successfully uploaded archived-food-expenditure-tables/archived_expenditures_purchaser_2.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:55:03,152] {logging_mixin.py:115} INFO - Successfully uploaded archived-food-expenditure-tables/archived_normalized_expenditures_3.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:55:04,407] {logging_mixin.py:115} INFO - Successfully uploaded archived-food-expenditure-tables/archived_monthly_4.xlsx to s3-bucket-raw-usda
+[2022-08-09 05:55:04,409] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-09 05:55:04,443] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V10, task_id=Ingestor, execution_date=20220809T054459, start_date=20220809T054500, end_date=20220809T055504
+[2022-08-09 05:55:04,503] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-09 05:55:04,533] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

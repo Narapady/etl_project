@@ -1,0 +1,131 @@
+[2022-08-09 01:37:33,065] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V6.Stager manual__2022-08-09T01:37:31.392597+00:00 [queued]>
+[2022-08-09 01:37:33,072] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V6.Stager manual__2022-08-09T01:37:31.392597+00:00 [queued]>
+[2022-08-09 01:37:33,073] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 01:37:33,074] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-09 01:37:33,074] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 01:37:33,083] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stager> on 2022-08-09 01:37:31.392597+00:00
+[2022-08-09 01:37:33,088] {standard_task_runner.py:52} INFO - Started process 16272 to run task
+[2022-08-09 01:37:33,091] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V6', 'Stager', 'manual__2022-08-09T01:37:31.392597+00:00', '--job-id', '117', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpwnswy4hn', '--error-file', '/tmp/tmp0obzc0z4']
+[2022-08-09 01:37:33,094] {standard_task_runner.py:80} INFO - Job 117: Subtask Stager
+[2022-08-09 01:37:33,148] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V6.Stager manual__2022-08-09T01:37:31.392597+00:00 [running]> on host 8d3924a1d70c
+[2022-08-09 01:37:33,212] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V6
+AIRFLOW_CTX_TASK_ID=Stager
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-09T01:37:31.392597+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-09T01:37:31.392597+00:00
+[2022-08-09 01:37:36,839] {logging_mixin.py:115} INFO - Successfully loaded Obesity_GDP_PanelData-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:01,342] {logging_mixin.py:115} INFO - Successfully loaded obesity-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:06,772] {logging_mixin.py:115} INFO - Successfully loaded fast-food-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:17,924] {logging_mixin.py:115} INFO - Successfully loaded food-consumption-estimates-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:29,841] {logging_mixin.py:115} INFO - Successfully loaded nutrient-intake-estimates-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:39,326] {logging_mixin.py:115} INFO - Successfully loaded monthly-sales-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:39,773] {logging_mixin.py:115} INFO - Successfully loaded food-expenditure-staged.csv to s3-bucket-staged
+[2022-08-09 01:38:42,781] {logging_mixin.py:115} INFO - Successfully loaded price-index-staged.csv to s3-bucket-staged
+[2022-08-09 01:40:45,003] {local_task_job.py:221} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2022-08-09 01:40:45,010] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 16272. PIDs of all processes in the group: [16272]
+[2022-08-09 01:40:45,011] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 16272
+[2022-08-09 01:40:45,013] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-08-09 01:40:45,016] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/httpsession.py", line 414, in send
+    chunked=self._chunked(request.headers),
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/stage/stager.py", line 171, in run
+    stager.stage()
+  File "/opt/airflow/dags/stage/stager.py", line 161, in stage
+    staging_fn(self.s3, dir)
+  File "/opt/airflow/dags/stage/stager.py", line 106, in stage_foodavailability
+    df = s3.load_df(src_bucket, f"{dirname}/{file}", "csv")
+  File "/opt/airflow/dags/storage/s3.py", line 31, in load_df
+    return pd.read_csv(smart_open(path))
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/smart_open_lib.py", line 503, in smart_open
+    return open(**locals())
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/smart_open_lib.py", line 224, in open
+    binary = _open_binary_stream(uri, binary_mode, transport_params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/smart_open_lib.py", line 400, in _open_binary_stream
+    fobj = submodule.open_uri(uri, mode, transport_params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 224, in open_uri
+    return open(parsed_uri['bucket_id'], parsed_uri['key_id'], mode, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 298, in open
+    client_kwargs=client_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 574, in __init__
+    self.seek(0)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 666, in seek
+    self._current_pos = self._raw_reader.seek(offset, whence)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 417, in seek
+    self._open_body(start, stop)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 443, in _open_body
+    range_string,
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 330, in _get
+    return client.get_object(Bucket=bucket, Key=key, Range=range_string)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 395, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 712, in _make_api_call
+    operation_model, request_dict, request_context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 731, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 107, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 184, in _send_request
+    success_response, exception):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 308, in _needs_retry
+    caught_exception=caught_exception, request_dict=request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 357, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 228, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 211, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 192, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 266, in __call__
+    caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 284, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 332, in __call__
+    caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 232, in __call__
+    attempt_number, caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 374, in _check_caught_exception
+    raise caught_exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 249, in _do_get_response
+    http_response = self._send(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 321, in _send
+    return self.http_session.send(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/httpsession.py", line 450, in send
+    raise HTTPClientError(error=e)
+botocore.exceptions.HTTPClientError: An HTTP Client raised an unhandled exception: Task received SIGTERM signal
+[2022-08-09 01:40:45,033] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V6, task_id=Stager, execution_date=20220809T013731, start_date=20220809T013733, end_date=20220809T014045
+[2022-08-09 01:40:45,058] {standard_task_runner.py:97} ERROR - Failed to execute job 117 for task Stager ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(ETL_DAG_V6, Stager, manual__2022-08-09T01:37:31.392597+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'Stager', 'dag_id': 'ETL_DAG_V6', 'run_id': 'manual__2022-08-09T01:37:31.392597+00:00', 'map_index': -1, 'start_date': datetime.datetime(2022, 8, 9, 1, 37, 33, 67351, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2022, 8, 9, 1, 40, 45, 33619, tzinfo=Timezone('UTC')), 'duration': 191}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 16272)
+[2022-08-09 01:40:45,109] {process_utils.py:75} INFO - Process psutil.Process(pid=16272, status='terminated', exitcode=1, started='01:37:32') (16272) terminated with exit code 1

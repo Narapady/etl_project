@@ -1,0 +1,69 @@
+[2022-08-09 00:51:19,788] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Transformer manual__2022-08-09T00:41:03.158285+00:00 [queued]>
+[2022-08-09 00:51:19,794] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Transformer manual__2022-08-09T00:41:03.158285+00:00 [queued]>
+[2022-08-09 00:51:19,795] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 00:51:19,796] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-09 00:51:19,797] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 00:51:19,804] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transformer> on 2022-08-09 00:41:03.158285+00:00
+[2022-08-09 00:51:19,809] {standard_task_runner.py:52} INFO - Started process 14242 to run task
+[2022-08-09 00:51:19,812] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V5', 'Transformer', 'manual__2022-08-09T00:41:03.158285+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp8shy8c83', '--error-file', '/tmp/tmpdkns6fgi']
+[2022-08-09 00:51:19,814] {standard_task_runner.py:80} INFO - Job 112: Subtask Transformer
+[2022-08-09 00:51:19,858] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V5.Transformer manual__2022-08-09T00:41:03.158285+00:00 [running]> on host 8d3924a1d70c
+[2022-08-09 00:51:19,900] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V5
+AIRFLOW_CTX_TASK_ID=Transformer
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-09T00:41:03.158285+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-09T00:41:03.158285+00:00
+[2022-08-09 00:51:36,684] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-fah.csv to S3
+[2022-08-09 00:51:37,128] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-fafh.csv to S3
+[2022-08-09 00:51:37,480] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-aah.csv to S3
+[2022-08-09 00:51:37,819] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-aafh.csv to S3
+[2022-08-09 00:51:54,122] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-fah.csv to S3
+[2022-08-09 00:51:54,584] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-fafh.csv to S3
+[2022-08-09 00:51:54,916] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-aah.csv to S3
+[2022-08-09 00:51:55,483] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-aafh.csv to S3
+[2022-08-09 00:52:20,731] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-monthly-sale.csv to S3
+[2022-08-09 00:52:21,278] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-monthly-sale.csv to S3
+[2022-08-09 00:52:53,793] {logging_mixin.py:115} INFO - Successfully process price-index-clean/consumer-price-index.csv to S3
+[2022-08-09 00:53:23,955] {logging_mixin.py:115} INFO - Successfully process price-index-clean/producer-price-index.csv to S3
+[2022-08-09 00:53:39,964] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Total population-2015-2016.csv to S3
+[2022-08-09 00:53:40,280] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Total population-2017-2018.csv to S3
+[2022-08-09 00:53:40,600] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Children age 2–19-2015-2016.csv to S3
+[2022-08-09 00:53:40,943] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Children age 2–19-2017-2018.csv to S3
+[2022-08-09 00:53:41,277] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Adults age 20-64-2015-2016.csv to S3
+[2022-08-09 00:53:41,624] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Adults age 20-64-2017-2018.csv to S3
+[2022-08-09 00:53:41,940] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Seniors age 65 and above-2015-2016.csv to S3
+[2022-08-09 00:53:42,279] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Seniors age 65 and above-2017-2018.csv to S3
+[2022-08-09 00:53:42,603] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income < 185% poverty line-2015-2016.csv to S3
+[2022-08-09 00:53:42,896] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income < 185% poverty line-2017-2018.csv to S3
+[2022-08-09 00:53:43,208] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income 185–300% poverty line-2015-2016.csv to S3
+[2022-08-09 00:53:43,512] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income 185–300% poverty line-2017-2018.csv to S3
+[2022-08-09 00:53:43,892] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income > 300% poverty line-2015-2016.csv to S3
+[2022-08-09 00:53:44,226] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income > 300% poverty line-2017-2018.csv to S3
+[2022-08-09 00:54:01,803] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Total population-2015-2016.csv to S3
+[2022-08-09 00:54:02,144] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Total population-2017-2018.csv to S3
+[2022-08-09 00:54:02,486] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Children age 2–19-2015-2016.csv to S3
+[2022-08-09 00:54:02,893] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Children age 2–19-2017-2018.csv to S3
+[2022-08-09 00:54:03,253] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Adults age 20-64-2015-2016.csv to S3
+[2022-08-09 00:54:03,579] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Adults age 20-64-2017-2018.csv to S3
+[2022-08-09 00:54:03,927] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Seniors age 65 and above-2015-2016.csv to S3
+[2022-08-09 00:54:04,293] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Seniors age 65 and above-2017-2018.csv to S3
+[2022-08-09 00:54:04,625] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income < 185% poverty line-2015-2016.csv to S3
+[2022-08-09 00:54:04,960] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income < 185% poverty line-2017-2018.csv to S3
+[2022-08-09 00:54:05,325] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income 185–300% poverty line-2015-2016.csv to S3
+[2022-08-09 00:54:05,649] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income 185–300% poverty line-2017-2018.csv to S3
+[2022-08-09 00:54:05,985] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income > 300% poverty line-2015-2016.csv to S3
+[2022-08-09 00:54:06,307] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income > 300% poverty line-2017-2018.csv to S3
+[2022-08-09 00:54:09,732] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-15-and-older-2014.csv to S3
+[2022-08-09 00:54:10,076] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-18-and-older-2014.csv to S3
+[2022-08-09 00:54:25,226] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-15-and-older-2015.csv to S3
+[2022-08-09 00:54:25,535] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-18-and-older-2015.csv to S3
+[2022-08-09 00:54:41,472] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-15-and-older-2016.csv to S3
+[2022-08-09 00:54:41,817] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-18-and-older-2016.csv to S3
+[2022-08-09 00:54:41,830] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-09 00:54:41,854] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V5, task_id=Transformer, execution_date=20220809T004103, start_date=20220809T005119, end_date=20220809T005441
+[2022-08-09 00:54:41,914] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-09 00:54:41,933] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

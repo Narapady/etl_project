@@ -1,0 +1,36 @@
+[2022-08-08 20:06:59,843] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: etl_dag_v5.Ingestor manual__2022-08-08T20:06:59.253743+00:00 [queued]>
+[2022-08-08 20:06:59,849] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: etl_dag_v5.Ingestor manual__2022-08-08T20:06:59.253743+00:00 [queued]>
+[2022-08-08 20:06:59,850] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 20:06:59,851] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-08 20:06:59,852] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 20:06:59,860] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingestor> on 2022-08-08 20:06:59.253743+00:00
+[2022-08-08 20:06:59,866] {standard_task_runner.py:52} INFO - Started process 13471 to run task
+[2022-08-08 20:06:59,869] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'etl_dag_v5', 'Ingestor', 'manual__2022-08-08T20:06:59.253743+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpg2g3pqkw', '--error-file', '/tmp/tmpnbtc45fo']
+[2022-08-08 20:06:59,871] {standard_task_runner.py:80} INFO - Job 95: Subtask Ingestor
+[2022-08-08 20:06:59,916] {task_command.py:371} INFO - Running <TaskInstance: etl_dag_v5.Ingestor manual__2022-08-08T20:06:59.253743+00:00 [running]> on host 8d3924a1d70c
+[2022-08-08 20:06:59,958] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=etl_dag_v5
+AIRFLOW_CTX_TASK_ID=Ingestor
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-08T20:06:59.253743+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-08T20:06:59.253743+00:00
+[2022-08-08 20:07:03,664] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_total.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:05,049] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_gender.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:06,645] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_income.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:08,287] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_education.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:09,843] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAH_race.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:11,457] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_total.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:13,150] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_gender.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:14,737] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_income.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:16,377] {logging_mixin.py:115} INFO - Successfully uploaded food-at-home-and-food-away-from-home/FAFH_education.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:18,115] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table1.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:19,965] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table2.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:21,679] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table3.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:23,239] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table4.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:25,052] {logging_mixin.py:115} INFO - Successfully uploaded demographic-and-socioeconomic-characteristics/CommodityConsumption_table5.xls to s3-bucket-raw-usda
+[2022-08-08 20:07:25,054] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-08 20:07:25,068] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=etl_dag_v5, task_id=Ingestor, execution_date=20220808T200659, start_date=20220808T200659, end_date=20220808T200725
+[2022-08-08 20:07:25,079] {local_task_job.py:221} WARNING - State of this instance has been externally set to success. Terminating instance.

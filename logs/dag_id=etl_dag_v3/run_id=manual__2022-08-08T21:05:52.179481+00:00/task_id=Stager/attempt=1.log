@@ -1,0 +1,34 @@
+[2022-08-08 21:19:09,398] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.Stager manual__2022-08-08T21:05:52.179481+00:00 [queued]>
+[2022-08-08 21:19:09,404] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.Stager manual__2022-08-08T21:05:52.179481+00:00 [queued]>
+[2022-08-08 21:19:09,405] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 21:19:09,406] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-08 21:19:09,407] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-08 21:19:09,415] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stager> on 2022-08-08 21:05:52.179481+00:00
+[2022-08-08 21:19:09,420] {standard_task_runner.py:52} INFO - Started process 1034 to run task
+[2022-08-08 21:19:09,423] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V3', 'Stager', 'manual__2022-08-08T21:05:52.179481+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2pzrs90g', '--error-file', '/tmp/tmpa2dggxcc']
+[2022-08-08 21:19:09,425] {standard_task_runner.py:80} INFO - Job 110: Subtask Stager
+[2022-08-08 21:19:09,468] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V3.Stager manual__2022-08-08T21:05:52.179481+00:00 [running]> on host 8d3924a1d70c
+[2022-08-08 21:19:09,535] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V3
+AIRFLOW_CTX_TASK_ID=Stager
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-08T21:05:52.179481+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-08T21:05:52.179481+00:00
+[2022-08-08 21:19:12,672] {logging_mixin.py:115} INFO - Successfully loaded Obesity_GDP_PanelData-staged.csv to s3-bucket-staged
+[2022-08-08 21:19:33,503] {logging_mixin.py:115} INFO - Successfully loaded obesity-staged.csv to s3-bucket-staged
+[2022-08-08 21:19:38,916] {logging_mixin.py:115} INFO - Successfully loaded fast-food-staged.csv to s3-bucket-staged
+[2022-08-08 21:19:49,500] {logging_mixin.py:115} INFO - Successfully loaded food-consumption-estimates-staged.csv to s3-bucket-staged
+[2022-08-08 21:20:00,641] {logging_mixin.py:115} INFO - Successfully loaded nutrient-intake-estimates-staged.csv to s3-bucket-staged
+[2022-08-08 21:20:09,998] {logging_mixin.py:115} INFO - Successfully loaded monthly-sales-staged.csv to s3-bucket-staged
+[2022-08-08 21:20:10,479] {logging_mixin.py:115} INFO - Successfully loaded food-expenditure-staged.csv to s3-bucket-staged
+[2022-08-08 21:20:13,037] {logging_mixin.py:115} INFO - Successfully loaded price-index-staged.csv to s3-bucket-staged
+[2022-08-08 21:22:35,829] {logging_mixin.py:115} INFO - Successfully loaded percents-staged.csv to s3-bucket-staged
+[2022-08-08 21:22:45,068] {logging_mixin.py:115} INFO - Successfully loaded totals-staged.csv to s3-bucket-staged
+[2022-08-08 21:23:43,110] {logging_mixin.py:115} INFO - Successfully loaded loss-adjusted-food-availability-staged.csv to s3-bucket-staged
+[2022-08-08 21:23:43,133] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-08 21:23:43,157] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V3, task_id=Stager, execution_date=20220808T210552, start_date=20220808T211909, end_date=20220808T212343
+[2022-08-08 21:23:43,219] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-08 21:23:43,237] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

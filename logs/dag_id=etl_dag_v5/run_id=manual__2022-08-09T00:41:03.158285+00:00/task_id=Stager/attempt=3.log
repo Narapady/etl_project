@@ -1,0 +1,59 @@
+[2022-08-09 01:21:37,460] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Stager manual__2022-08-09T00:41:03.158285+00:00 [queued]>
+[2022-08-09 01:21:37,466] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Stager manual__2022-08-09T00:41:03.158285+00:00 [queued]>
+[2022-08-09 01:21:37,468] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 01:21:37,469] {taskinstance.py:1377} INFO - Starting attempt 3 of 6
+[2022-08-09 01:21:37,470] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-09 01:21:37,479] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stager> on 2022-08-09 00:41:03.158285+00:00
+[2022-08-09 01:21:37,485] {standard_task_runner.py:52} INFO - Started process 15268 to run task
+[2022-08-09 01:21:37,487] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V5', 'Stager', 'manual__2022-08-09T00:41:03.158285+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmptpn0blic', '--error-file', '/tmp/tmpsprxdhfh']
+[2022-08-09 01:21:37,489] {standard_task_runner.py:80} INFO - Job 115: Subtask Stager
+[2022-08-09 01:21:37,536] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V5.Stager manual__2022-08-09T00:41:03.158285+00:00 [running]> on host 8d3924a1d70c
+[2022-08-09 01:21:37,588] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V5
+AIRFLOW_CTX_TASK_ID=Stager
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-09T00:41:03.158285+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-09T00:41:03.158285+00:00
+[2022-08-09 01:21:40,872] {logging_mixin.py:115} INFO - Successfully loaded Obesity_GDP_PanelData-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:04,854] {logging_mixin.py:115} INFO - Successfully loaded obesity-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:10,241] {logging_mixin.py:115} INFO - Successfully loaded fast-food-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:21,428] {logging_mixin.py:115} INFO - Successfully loaded food-consumption-estimates-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:32,779] {logging_mixin.py:115} INFO - Successfully loaded nutrient-intake-estimates-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:42,133] {logging_mixin.py:115} INFO - Successfully loaded monthly-sales-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:42,607] {logging_mixin.py:115} INFO - Successfully loaded food-expenditure-staged.csv to s3-bucket-staged
+[2022-08-09 01:22:45,301] {logging_mixin.py:115} INFO - Successfully loaded price-index-staged.csv to s3-bucket-staged
+[2022-08-09 01:25:02,810] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'year'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/stage/stager.py", line 171, in run
+    stager.stage()
+  File "/opt/airflow/dags/stage/stager.py", line 161, in stage
+    staging_fn(self.s3, dir)
+  File "/opt/airflow/dags/stage/stager.py", line 111, in stage_foodavailability
+    df["year"] = df["year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'year'
+[2022-08-09 01:25:02,846] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V5, task_id=Stager, execution_date=20220809T004103, start_date=20220809T012137, end_date=20220809T012502
+[2022-08-09 01:25:02,857] {standard_task_runner.py:97} ERROR - Failed to execute job 115 for task Stager ('year'; 15268)
+[2022-08-09 01:25:02,908] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-09 01:25:02,926] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

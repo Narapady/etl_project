@@ -1,0 +1,25 @@
+[2022-08-10 00:17:42,041] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V11.Stager manual__2022-08-10T00:17:40.803111+00:00 [queued]>
+[2022-08-10 00:17:42,047] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V11.Stager manual__2022-08-10T00:17:40.803111+00:00 [queued]>
+[2022-08-10 00:17:42,048] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-10 00:17:42,049] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-10 00:17:42,050] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-10 00:17:42,058] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stager> on 2022-08-10 00:17:40.803111+00:00
+[2022-08-10 00:17:42,064] {standard_task_runner.py:52} INFO - Started process 53687 to run task
+[2022-08-10 00:17:42,067] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V11', 'Stager', 'manual__2022-08-10T00:17:40.803111+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmphg0iij1s', '--error-file', '/tmp/tmp87oqfhlh']
+[2022-08-10 00:17:42,070] {standard_task_runner.py:80} INFO - Job 128: Subtask Stager
+[2022-08-10 00:17:42,118] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V11.Stager manual__2022-08-10T00:17:40.803111+00:00 [running]> on host 8d3924a1d70c
+[2022-08-10 00:17:42,163] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V11
+AIRFLOW_CTX_TASK_ID=Stager
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-10T00:17:40.803111+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-10T00:17:40.803111+00:00
+[2022-08-10 00:17:45,337] {logging_mixin.py:115} INFO - Successfully loaded Obesity_GDP_PanelData-staged.csv to s3-bucket-staged
+[2022-08-10 00:18:07,540] {logging_mixin.py:115} INFO - Successfully loaded obesity-staged.csv to s3-bucket-staged
+[2022-08-10 00:18:07,548] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-10 00:18:07,568] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V11, task_id=Stager, execution_date=20220810T001740, start_date=20220810T001742, end_date=20220810T001807
+[2022-08-10 00:18:07,632] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-10 00:18:07,651] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
