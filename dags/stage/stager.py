@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np
 from storage.s3 import S3AWS
-from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
+from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY, US_STATE_CODE
 
 def load_to_S3(s3: S3AWS, df: pd.DataFrame, des_bucket: str, src_dir: str):
     df = df.reset_index(drop=True)
@@ -126,6 +126,9 @@ def stage_foodavailability(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket
     result_df["year"] = result_df["year"].map(lambda x: pd.to_datetime(f"{x}-01-01"))
     return load_to_S3(s3, result_df, des_bucket, f"{dirname}-clean")
 
+def get_state_code(state: str):
+    return US_STATE_CODE[state]
+
 def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-raw-kaggle", des_bucket: str = "s3-bucket-staged"):
     filenames = s3.list_files(src_bucket, dirname)
     
@@ -137,6 +140,7 @@ def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-r
                 df["Obesity (%)"] = df["Obesity (%)"].apply(lambda x: x.split(" ")[0])
                 df["Obesity (%)"] = df["Obesity (%)"].replace("No", np.nan)
             else:
+                df["State_code"] = df['State'].apply(lambda x: get_state_code(x))
                 df = df.drop(columns=["Adult.Obesity", "Poverty.Rate", "Real.GDP.Growth", "Region.Encoding", "Unit", "YearFE"])
 
             key = file.split(".")[0]

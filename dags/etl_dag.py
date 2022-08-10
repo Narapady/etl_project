@@ -14,7 +14,7 @@ default_args = {
     
 with DAG(
     default_args=default_args,
-    dag_id="ETL_DAG_V10",
+    dag_id="ETL_DAG_V12",
     description="Extract Transform Load Operation Dag",
     start_date=datetime(2022, 8, 6),
     schedule_interval= '@weekly'
