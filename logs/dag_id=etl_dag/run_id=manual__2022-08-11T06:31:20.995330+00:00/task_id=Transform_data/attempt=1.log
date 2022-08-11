@@ -1,0 +1,27 @@
+[2022-08-11 06:41:26,511] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_data manual__2022-08-11T06:31:20.995330+00:00 [queued]>
+[2022-08-11 06:41:26,520] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_data manual__2022-08-11T06:31:20.995330+00:00 [queued]>
+[2022-08-11 06:41:26,521] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:41:26,522] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 06:41:26,523] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:41:26,531] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_data> on 2022-08-11 06:31:20.995330+00:00
+[2022-08-11 06:41:26,537] {standard_task_runner.py:52} INFO - Started process 22071 to run task
+[2022-08-11 06:41:26,540] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Transform_data', 'manual__2022-08-11T06:31:20.995330+00:00', '--job-id', '400', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpqzkmvr01', '--error-file', '/tmp/tmplx_rp9km']
+[2022-08-11 06:41:26,543] {standard_task_runner.py:80} INFO - Job 400: Subtask Transform_data
+[2022-08-11 06:41:26,587] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Transform_data manual__2022-08-11T06:31:20.995330+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 06:41:26,634] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T06:31:20.995330+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T06:31:20.995330+00:00
+[2022-08-11 06:41:44,773] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-fah.csv to S3
+[2022-08-11 06:41:45,203] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-fafh.csv to S3
+[2022-08-11 06:41:45,537] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-aah.csv to S3
+[2022-08-11 06:41:45,844] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-aafh.csv to S3
+[2022-08-11 06:42:03,213] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-fah.csv to S3
+[2022-08-11 06:42:03,639] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-fafh.csv to S3
+[2022-08-11 06:42:03,965] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-aah.csv to S3
+[2022-08-11 06:42:04,269] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-aafh.csv to S3

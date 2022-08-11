@@ -1,0 +1,76 @@
+[2022-08-11 06:03:07,752] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.Create_snowflake_database manual__2022-08-11T00:43:37.451055+00:00 [queued]>
+[2022-08-11 06:03:07,759] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.Create_snowflake_database manual__2022-08-11T00:43:37.451055+00:00 [queued]>
+[2022-08-11 06:03:07,760] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:03:07,761] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 06:03:07,762] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:03:07,774] {taskinstance.py:1397} INFO - Executing <Task(SnowflakeOperator): Create_snowflake_database> on 2022-08-11 00:43:37.451055+00:00
+[2022-08-11 06:03:07,780] {standard_task_runner.py:52} INFO - Started process 18679 to run task
+[2022-08-11 06:03:07,784] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V3', 'Create_snowflake_database', 'manual__2022-08-11T00:43:37.451055+00:00', '--job-id', '249', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpt7gub2hh', '--error-file', '/tmp/tmpw4b9yyge']
+[2022-08-11 06:03:07,788] {standard_task_runner.py:80} INFO - Job 249: Subtask Create_snowflake_database
+[2022-08-11 06:03:07,845] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V3.Create_snowflake_database manual__2022-08-11T00:43:37.451055+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 06:03:07,899] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V3
+AIRFLOW_CTX_TASK_ID=Create_snowflake_database
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T00:43:37.451055+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T00:43:37.451055+00:00
+[2022-08-11 06:03:07,902] {snowflake.py:118} INFO - Executing: 
+create or replace database us_food_nutrition;
+use database us_food_nutrition;
+use schema us_food_nutrition.public;
+
+create or replace warehouse food_nutrition_wh with
+  warehouse_size='X-SMALL'
+  auto_suspend = 180
+  auto_resume = true
+  initially_suspended=true;
+
+use warehouse food_nutrition_wh;
+[2022-08-11 06:03:07,909] {base.py:68} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2022-08-11 06:03:07,913] {connection.py:275} INFO - Snowflake Connector for Python Version: 2.7.11, Python Version: 3.7.13, Platform: Linux-5.10.104-linuxkit-aarch64-with-debian-11.3
+[2022-08-11 06:03:07,915] {connection.py:927} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2022-08-11 06:03:07,916] {connection.py:944} INFO - Setting use_openssl_only mode to False
+[2022-08-11 06:03:09,090] {cursor.py:715} INFO - query: [ALTER SESSION SET autocommit=True]
+[2022-08-11 06:03:09,688] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:09,689] {snowflake.py:328} INFO - Running statement: create or replace database us_food_nutrition;, parameters: None
+[2022-08-11 06:03:09,690] {cursor.py:715} INFO - query: [create or replace database us_food_nutrition;]
+[2022-08-11 06:03:10,122] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:10,123] {snowflake.py:338} INFO - Statement execution info - {'status': 'Database US_FOOD_NUTRITION successfully created.'}
+[2022-08-11 06:03:10,124] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:10,125] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2869-001e-00070003411e
+[2022-08-11 06:03:10,126] {snowflake.py:328} INFO - Running statement: use database us_food_nutrition;, parameters: None
+[2022-08-11 06:03:10,128] {cursor.py:715} INFO - query: [use database us_food_nutrition;]
+[2022-08-11 06:03:10,312] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:10,313] {snowflake.py:338} INFO - Statement execution info - {'status': 'Statement executed successfully.'}
+[2022-08-11 06:03:10,316] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:10,317] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2870-001e-000700030382
+[2022-08-11 06:03:10,319] {snowflake.py:328} INFO - Running statement: use schema us_food_nutrition.public;, parameters: None
+[2022-08-11 06:03:10,320] {cursor.py:715} INFO - query: [use schema us_food_nutrition.public;]
+[2022-08-11 06:03:10,609] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:10,615] {snowflake.py:338} INFO - Statement execution info - {'status': 'Statement executed successfully.'}
+[2022-08-11 06:03:10,620] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:10,623] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-286c-001e-00070002c2d6
+[2022-08-11 06:03:10,627] {snowflake.py:328} INFO - Running statement: create or replace warehouse food_nutrition_wh with
+  warehouse_size='X-SMALL'
+  auto_suspend = 180
+  auto_resume = true
+  initially_suspended=true;, parameters: None
+[2022-08-11 06:03:10,629] {cursor.py:715} INFO - query: [create or replace warehouse food_nutrition_wh with warehouse_size='X-SMALL' auto...]
+[2022-08-11 06:03:11,005] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:11,007] {snowflake.py:338} INFO - Statement execution info - {'status': 'Warehouse FOOD_NUTRITION_WH successfully created.'}
+[2022-08-11 06:03:11,008] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:11,009] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2869-001e-000700034126
+[2022-08-11 06:03:11,010] {snowflake.py:328} INFO - Running statement: use warehouse food_nutrition_wh;, parameters: None
+[2022-08-11 06:03:11,010] {cursor.py:715} INFO - query: [use warehouse food_nutrition_wh;]
+[2022-08-11 06:03:11,202] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:11,204] {snowflake.py:338} INFO - Statement execution info - {'status': 'Statement executed successfully.'}
+[2022-08-11 06:03:11,205] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:11,206] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-286c-001e-00070002c2da
+[2022-08-11 06:03:11,207] {connection.py:557} INFO - closed
+[2022-08-11 06:03:11,366] {connection.py:560} INFO - No async queries seem to be running, deleting session
+[2022-08-11 06:03:11,618] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V3, task_id=Create_snowflake_database, execution_date=20220811T004337, start_date=20220811T060307, end_date=20220811T060311
+[2022-08-11 06:03:11,663] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 06:03:11,693] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

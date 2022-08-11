@@ -1,22 +1,5 @@
--- Create database and data warehouse
-create or replace database us_food_nutrition;
-use database us_food_nutrition;
-use schema us_food_nutrition.public;
 
-create or replace warehouse food_nutrition_wh with
-  warehouse_size='X-SMALL'
-  auto_suspend = 180
-  auto_resume = true
-  initially_suspended=true;
-
-use warehouse food_nutrition_wh;
-select current_warehouse();
-
--- Integrate with Preset for visulization
-create network policy PRESET_WHITELIST
-ALLOWED_IP_LIST = ('44.193.153.196', '52.70.123.52', '54.83.88.93')
-
--- Create tables
+CREATE_TABLE_SQL = """
 create or replace table monthly_sales (
     id int,
     year datetime,
@@ -210,48 +193,18 @@ create or replace table obesity_gdp(
     real_gdp_percapita float,
     state_code string
 );
+"""
 
--- Load from S3 to snowflake
-copy into monthly_sales
-    from @s3_stage/monthly-sales-staged.csv
-    on_error = 'skip_file';
-
-copy into food_availability_calories
-    from @s3_stage/totals-staged.csv
-    on_error = 'skip_file';
-
-copy into food_availability_percent
-    from @s3_stage/percents-staged.csv
-    on_error = 'skip_file';
-    
-copy into daily_food_availability
-    from @s3_stage/loss-adjusted-food-availability-staged.csv
-    on_error = 'skip_file';
-    
-copy into food_consumption_estimates
-    from @s3_stage/food-consumption-estimates-staged.csv
-    on_error = 'skip_file';
-    
-copy into nutrient_intake_estimates
-    from @s3_stage/nutrient-intake-estimates-staged.csv
-    on_error = 'skip_file';
-
-copy into food_expenditure
-    from @s3_stage/food-expenditure-staged.csv
-    on_error = 'skip_file';
-
-copy into fast_food
-    from @s3_stage/fast-food-staged.csv
-    on_error = 'skip_file';
-    
-copy into price_index
-    from @s3_stage/price-index-staged.csv
-    on_error = 'skip_file';
-    
-copy into obesity_world
-    from @s3_stage/obesity-staged.csv
-    on_error = 'skip_file';
-    
-copy into obesity_gdp
-    from @s3_stage/Obesity_GDP_PanelData-staged.csv
-    on_error = 'skip_file';
+TABLE_MAP = {
+        "obesity_gdp": "Obesity_GDP_PanelData-staged.csv",
+        "fast_food": "fast-food-staged.csv",
+        "food_consumption_estimates": "food-consumption-estimates-staged.csv",
+        "food_expenditure": "food-expenditure-staged.csv",
+        "daily_food_availability": "loss-adjusted-food-availability-staged.csv",
+        "monthly_sales": "monthly-sales-staged.csv",
+        "nutrient_intake_estimates": "nutrient-intake-estimates-staged.csv",
+        "obesity_world": "obesity-staged.csv",
+        "food_availability_percent": "percents-staged.csv",
+        "price_index": "price-index-staged.csv",
+        "food_availability_calories": "totals-staged.csv",
+        }

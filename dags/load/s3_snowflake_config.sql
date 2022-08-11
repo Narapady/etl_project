@@ -1,4 +1,3 @@
-
 -- Stage in snowflake represents the data sources from both
 -- internal and external of Snowflake. In this case, we use external
 -- data storage source, S3. After stage has been created we can load
@@ -29,3 +28,21 @@ create or replace stage s3_stage
     file_format = csv_format;
     
 show stages; 
+-- Create database and data warehouse
+create or replace database us_food_nutrition;
+use database us_food_nutrition;
+use schema us_food_nutrition.public;
+
+create or replace warehouse food_nutrition_wh with
+  warehouse_size='X-SMALL'
+  auto_suspend = 180
+  auto_resume = true
+  initially_suspended=true;
+
+use warehouse food_nutrition_wh;
+select current_warehouse();
+
+-- Integrate with Preset for visulization
+create network policy PRESET_WHITELIST
+ALLOWED_IP_LIST = ('44.193.153.196', '52.70.123.52', '54.83.88.93');
+

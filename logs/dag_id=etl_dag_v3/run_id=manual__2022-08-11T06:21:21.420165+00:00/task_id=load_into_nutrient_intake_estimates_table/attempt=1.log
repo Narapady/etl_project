@@ -1,0 +1,41 @@
+[2022-08-11 06:21:33,233] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.load_into_nutrient_intake_estimates_table manual__2022-08-11T06:21:21.420165+00:00 [queued]>
+[2022-08-11 06:21:33,251] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.load_into_nutrient_intake_estimates_table manual__2022-08-11T06:21:21.420165+00:00 [queued]>
+[2022-08-11 06:21:33,252] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:21:33,253] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 06:21:33,254] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:21:33,278] {taskinstance.py:1397} INFO - Executing <Task(S3ToSnowflakeOperator): load_into_nutrient_intake_estimates_table> on 2022-08-11 06:21:21.420165+00:00
+[2022-08-11 06:21:33,287] {standard_task_runner.py:52} INFO - Started process 20723 to run task
+[2022-08-11 06:21:33,290] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V3', 'load_into_nutrient_intake_estimates_table', 'manual__2022-08-11T06:21:21.420165+00:00', '--job-id', '396', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpjxxs06cw', '--error-file', '/tmp/tmpi5is5fa7']
+[2022-08-11 06:21:33,294] {standard_task_runner.py:80} INFO - Job 396: Subtask load_into_nutrient_intake_estimates_table
+[2022-08-11 06:21:33,418] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V3.load_into_nutrient_intake_estimates_table manual__2022-08-11T06:21:21.420165+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 06:21:33,496] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V3
+AIRFLOW_CTX_TASK_ID=load_into_nutrient_intake_estimates_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T06:21:21.420165+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T06:21:21.420165+00:00
+[2022-08-11 06:21:33,497] {s3_to_snowflake.py:135} INFO - Executing COPY command...
+[2022-08-11 06:21:33,504] {base.py:68} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2022-08-11 06:21:33,509] {connection.py:275} INFO - Snowflake Connector for Python Version: 2.7.11, Python Version: 3.7.13, Platform: Linux-5.10.104-linuxkit-aarch64-with-debian-11.3
+[2022-08-11 06:21:33,511] {connection.py:927} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2022-08-11 06:21:33,512] {connection.py:944} INFO - Setting use_openssl_only mode to False
+[2022-08-11 06:21:34,755] {cursor.py:715} INFO - query: [ALTER SESSION SET autocommit=True]
+[2022-08-11 06:21:34,958] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:21:34,960] {snowflake.py:328} INFO - Running statement: COPY INTO public.nutrient_intake_estimates
+FROM @s3_stage/
+files=('nutrient-intake-estimates-staged.csv')
+file_format=csv_format, parameters: None
+[2022-08-11 06:21:34,961] {cursor.py:715} INFO - query: [COPY INTO public.nutrient_intake_estimates FROM @s3_stage/ files=('nutrient-inta...]
+[2022-08-11 06:21:35,877] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:21:35,879] {snowflake.py:338} INFO - Statement execution info - {'file': 's3://s3-bucket-staged/nutrient-intake-estimates-staged.csv', 'status': 'LOADED', 'rows_parsed': 112, 'rows_loaded': 112, 'error_limit': 1, 'errors_seen': 0, 'first_error': None, 'first_error_line': None, 'first_error_character': None, 'first_error_column_name': None}
+[2022-08-11 06:21:35,881] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:21:35,882] {snowflake.py:343} INFO - Snowflake query id: 01a635dd-0004-286c-001e-00070002c4be
+[2022-08-11 06:21:35,883] {connection.py:557} INFO - closed
+[2022-08-11 06:21:36,096] {connection.py:560} INFO - No async queries seem to be running, deleting session
+[2022-08-11 06:21:36,264] {s3_to_snowflake.py:137} INFO - COPY command completed
+[2022-08-11 06:21:36,289] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V3, task_id=load_into_nutrient_intake_estimates_table, execution_date=20220811T062121, start_date=20220811T062133, end_date=20220811T062136
+[2022-08-11 06:21:36,348] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 06:21:36,382] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

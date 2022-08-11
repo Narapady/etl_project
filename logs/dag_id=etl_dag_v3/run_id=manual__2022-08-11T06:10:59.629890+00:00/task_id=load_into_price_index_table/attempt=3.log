@@ -1,0 +1,41 @@
+[2022-08-11 06:21:20,480] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.load_into_price_index_table manual__2022-08-11T06:10:59.629890+00:00 [queued]>
+[2022-08-11 06:21:20,508] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.load_into_price_index_table manual__2022-08-11T06:10:59.629890+00:00 [queued]>
+[2022-08-11 06:21:20,509] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:21:20,511] {taskinstance.py:1377} INFO - Starting attempt 3 of 6
+[2022-08-11 06:21:20,512] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:21:20,548] {taskinstance.py:1397} INFO - Executing <Task(S3ToSnowflakeOperator): load_into_price_index_table> on 2022-08-11 06:10:59.629890+00:00
+[2022-08-11 06:21:20,570] {standard_task_runner.py:52} INFO - Started process 20630 to run task
+[2022-08-11 06:21:20,579] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V3', 'load_into_price_index_table', 'manual__2022-08-11T06:10:59.629890+00:00', '--job-id', '379', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpk37uzowz', '--error-file', '/tmp/tmpobdw9ogq']
+[2022-08-11 06:21:20,587] {standard_task_runner.py:80} INFO - Job 379: Subtask load_into_price_index_table
+[2022-08-11 06:21:20,737] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V3.load_into_price_index_table manual__2022-08-11T06:10:59.629890+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 06:21:20,870] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V3
+AIRFLOW_CTX_TASK_ID=load_into_price_index_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T06:10:59.629890+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T06:10:59.629890+00:00
+[2022-08-11 06:21:20,874] {s3_to_snowflake.py:135} INFO - Executing COPY command...
+[2022-08-11 06:21:20,900] {base.py:68} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2022-08-11 06:21:20,907] {connection.py:275} INFO - Snowflake Connector for Python Version: 2.7.11, Python Version: 3.7.13, Platform: Linux-5.10.104-linuxkit-aarch64-with-debian-11.3
+[2022-08-11 06:21:20,912] {connection.py:927} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2022-08-11 06:21:20,923] {connection.py:944} INFO - Setting use_openssl_only mode to False
+[2022-08-11 06:21:22,005] {cursor.py:715} INFO - query: [ALTER SESSION SET autocommit=True]
+[2022-08-11 06:21:22,190] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:21:22,191] {snowflake.py:328} INFO - Running statement: COPY INTO public.price_index
+FROM @s3_stage/
+files=('price-index-staged.csv')
+file_format=csv_format, parameters: None
+[2022-08-11 06:21:22,192] {cursor.py:715} INFO - query: [COPY INTO public.price_index FROM @s3_stage/ files=('price-index-staged.csv') fi...]
+[2022-08-11 06:21:22,666] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:21:22,668] {snowflake.py:338} INFO - Statement execution info - {'file': 's3://s3-bucket-staged/price-index-staged.csv', 'status': 'LOAD_SKIPPED', 'rows_parsed': 0, 'rows_loaded': 0, 'error_limit': None, 'errors_seen': 1, 'first_error': 'File was loaded before.', 'first_error_line': None, 'first_error_character': None, 'first_error_column_name': None}
+[2022-08-11 06:21:22,669] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:21:22,671] {snowflake.py:343} INFO - Snowflake query id: 01a635dd-0004-2869-001e-0007000342ce
+[2022-08-11 06:21:22,673] {connection.py:557} INFO - closed
+[2022-08-11 06:21:22,801] {connection.py:560} INFO - No async queries seem to be running, deleting session
+[2022-08-11 06:21:22,960] {s3_to_snowflake.py:137} INFO - COPY command completed
+[2022-08-11 06:21:22,991] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V3, task_id=load_into_price_index_table, execution_date=20220811T061059, start_date=20220811T062120, end_date=20220811T062122
+[2022-08-11 06:21:23,061] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 06:21:23,119] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
