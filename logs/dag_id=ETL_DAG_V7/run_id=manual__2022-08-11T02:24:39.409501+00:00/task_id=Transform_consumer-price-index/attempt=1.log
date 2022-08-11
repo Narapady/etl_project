@@ -1,0 +1,24 @@
+[2022-08-11 20:49:47,358] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V7.Transform_consumer-price-index manual__2022-08-11T02:24:39.409501+00:00 [queued]>
+[2022-08-11 20:49:47,389] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V7.Transform_consumer-price-index manual__2022-08-11T02:24:39.409501+00:00 [queued]>
+[2022-08-11 20:49:47,390] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 20:49:47,391] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 20:49:47,392] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 20:49:47,423] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_consumer-price-index> on 2022-08-11 02:24:39.409501+00:00
+[2022-08-11 20:49:47,438] {standard_task_runner.py:52} INFO - Started process 8195 to run task
+[2022-08-11 20:49:47,446] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V7', 'Transform_consumer-price-index', 'manual__2022-08-11T02:24:39.409501+00:00', '--job-id', '595', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp1bz7x5rm', '--error-file', '/tmp/tmpj3us6t8g']
+[2022-08-11 20:49:47,449] {standard_task_runner.py:80} INFO - Job 595: Subtask Transform_consumer-price-index
+[2022-08-11 20:49:47,579] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V7.Transform_consumer-price-index manual__2022-08-11T02:24:39.409501+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 20:49:47,691] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V7
+AIRFLOW_CTX_TASK_ID=Transform_consumer-price-index
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T02:24:39.409501+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T02:24:39.409501+00:00
+[2022-08-11 20:50:18,482] {logging_mixin.py:115} INFO - Successfully process price-index-clean/consumer-price-index.csv to S3
+[2022-08-11 20:50:18,486] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-11 20:50:18,506] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V7, task_id=Transform_consumer-price-index, execution_date=20220811T022439, start_date=20220811T204947, end_date=20220811T205018
+[2022-08-11 20:50:18,572] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 20:50:18,605] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

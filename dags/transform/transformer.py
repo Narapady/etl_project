@@ -6,37 +6,49 @@ from transform.food_expenditure import FoodExpenditure
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 from storage.s3 import S3AWS
 
-def run() -> None:
+USDA_TRANSFORM_LIST = (
+        "current-food-expenditure-series",
+        "consumer-price-index",
+        "producer-price-index",
+        "nutrient-intake-estimates",
+        "food-consumption-estimates",
+        # "loss-adjusted-food-availability"
+        "2014",
+        "2015",
+        "2016"
+        )
+
+def create_s3_bucket_transform(bucket_name):
+    s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
+    return s3.create_bucket(bucket_name)
+
+def tranform_data(category, s3):
+    # Process food expenditure 
+    if category == "current-food-expenditure-series":
+        food_exp = FoodExpenditure(category, s3)
+        food_exp.process_food_expenditure()
+        food_exp.process_monthly_sale()
+    elif category == "consumer-price-index":
+        cpi = PriceIndex(category, "consumer", s3)
+        cpi.process_data()
+    elif category == "producer-price-index":
+        ppi = PriceIndex(category, "producer", s3)
+        ppi.process_data()
+    elif category == "loss-adjusted-food-availability":
+        food = FoodAvailablity(category, s3)
+        food.process_data()
+    elif category == "nutrient-intake-estimates" or category == "food-consumption-estimates":
+        nutrient_food_estimate = NutrientFoodEstimate(category, s3)
+        nutrient_food_estimate.process_data()
+    elif category in ["2014", "2015", "2016"]:
+            fastfood = FastFood(category, s3)
+            fastfood.process_data()
+        
+        
+    
+def run(category): 
 
     # S3 instance
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
-    bucket = s3.create_bucket("s3-bucket-clean-usda")
-    
-    if bucket:
-        # Process food expenditure 
-        food_exp = FoodExpenditure("current-food-expenditure-series", s3)
-        food_exp.process_food_expenditure()
-        food_exp.process_monthly_sale()
-
-        # Process consumer price index and producer price index
-        cpi = PriceIndex("consumer-price-index", "consumer", s3)
-        ppi = PriceIndex("producer-price-index", "producer", s3)
-        cpi.process_data()
-        ppi.process_data()
-
-        # Process Food Availability 
-        # food = FoodAvailablity("loss-adjusted-food-availability", s3)
-        # food.process_data()
-
-        #Process nutrient intake and food consumption estimates
-        nutrient_estimate = NutrientFoodEstimate("nutrient-intake-estimates", s3)
-        food_estimate = NutrientFoodEstimate("food-consumption-estimates", s3)
-        nutrient_estimate.process_data()
-        food_estimate.process_data()
-
-         # Process fast food purchasers
-        dir_names = ["2014", "2015", "2016"]
-        for directiory in dir_names:
-            fastfood = FastFood(directiory, s3)
-            fastfood.process_data()
-
+    # bucket = s3.create_bucket("s3-bucket-clean-usda")
+    tranform_data(category, s3)

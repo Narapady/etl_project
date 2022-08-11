@@ -91,7 +91,7 @@ def ingest_kaggle(s3, sources, bucket_name):
             
     os.system("rm *.zip *.csv")
     
-def create_s3_bucket_raw(bucket_name):
+def create_s3_bucket_ingest(bucket_name):
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     return s3.create_bucket(bucket_name)
 
@@ -131,7 +131,7 @@ def run(category):
     ingestor_usda = Ingestor(s3, USDA_URL, "s3-bucket-raw-usda", category)
     ingestor_usda.ingest()
 
-USDA_LIST = [
+USDA_INGEST_LIST = (
         "Loss-Adjusted Food Availability",
         "Food Consumption Estimates",
         "Nutrient Intake Estimates",
@@ -141,4 +141,4 @@ USDA_LIST = [
         "Consumer Price Index",
         "Producer Price Index",
         "Current Food Expenditure Series"
-        ]
+        )

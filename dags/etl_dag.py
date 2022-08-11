@@ -11,7 +11,7 @@ from load import sql_command
 from datetime import datetime, timedelta
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
-DAG_ID = "ETL_DAG_V6"
+DAG_ID = "ETL_DAG_V7"
 DATABASE = "us_food_nutrition"
 SCHEMA = "public"
 WAREHOUSE = "food_nutrition_wh"
@@ -22,7 +22,8 @@ STAGE_FILE_FORMAT = "csv_format"
 
 CREATE_TABLE_CMD = sql_command.CREATE_TABLE_SQL
 TABLE_MAP_DICT = sql_command.TABLE_MAP
-CATEGORY_LIST  = ingestor.USDA_LIST
+INGEST_LIST  = ingestor.USDA_INGEST_LIST
+TRANSFORM_LIST = transformer.USDA_TRANSFORM_LIST
 
 default_args = {
     "owner": "narapady",
@@ -38,16 +39,16 @@ with DAG(
     schedule_interval= '@weekly'
 
 ) as dag:
-    dummy = DummyOperator(task_id="Start")
+    dummy = DummyOperator(task_id="Start_ETL")
 
-    create_s3_bucket_raw = PythonOperator(
-        task_id = "Create_s3_buckek_raw",
-        python_callable=ingestor.create_s3_bucket_raw,
+    ingest_s3_bucket = PythonOperator(
+        task_id = "Create_s3_bucket_ingest",
+        python_callable=ingestor.create_s3_bucket_ingest,
         op_kwargs={"bucket_name":"s3-bucket-raw-usda"}
     )
-    
+
     ingest_jobs = []
-    for source in CATEGORY_LIST:
+    for source in INGEST_LIST:
         source_category = source.lower().replace(" ", "_")
         ingest = PythonOperator(
             task_id=f"Ingest_from_{source_category}",
@@ -56,10 +57,21 @@ with DAG(
         )
         ingest_jobs.append(ingest)
 
-    transform = PythonOperator(
-        task_id = "Transform_data",
-        python_callable=transformer.run
+    transform_s3_bucket = PythonOperator(
+        task_id = "Create_s3_bucket_transform",
+        python_callable=transformer.create_s3_bucket_transform,
+        op_kwargs={"bucket_name":"s3-bucket-clean-usda"}
     )
+    
+    transform_jobs = []
+    for source in TRANSFORM_LIST:
+        transform = PythonOperator(
+            task_id=f"Transform_{source}",
+            python_callable=transformer.run,
+            op_kwargs={"category":source}
+        )
+        transform_jobs.append(transform)
+        
 
     stage = PythonOperator(
         task_id = "Stage_data",
@@ -89,7 +101,13 @@ with DAG(
             snowflake_conn_id=SNOWFLAKE_CONN_ID
         )
         snowflake_load_jobs.append(load)
-     
-    dummy >> create_s3_bucket_raw >> ingest_jobs >> transform >> stage >> create_snowflake_tables >> snowflake_load_jobs
+    
+    # Tasks Flow
+    (
+        dummy >> ingest_s3_bucket >> ingest_jobs
+        >> transform_s3_bucket >> transform_jobs 
+        >> stage >> create_snowflake_tables 
+        >> snowflake_load_jobs
+    )
 
         
