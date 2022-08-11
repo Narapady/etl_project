@@ -30,7 +30,7 @@ def get_links(url: str):
         table_data = row.find_all("td")
         for item in table_data:
             title = item.find("strong")
-            if title and title not in links:
+            if title and title not in links and "Archived" not in title.text:
                 links[title.text] = []
                 continue
             link = item.find("a")
@@ -38,28 +38,41 @@ def get_links(url: str):
                 links[list(links.keys())[-1]].append(base_url + link["href"])
  
     return links
-def ingest_usda(s3, sources, bucket_name):
+
+def filter_links(source_list):
+    new_dict = {}
+    for dict_ in source_list:
+        for key, value in dict_.items():
+           new_dict[key] = value 
+           
+    del new_dict["2006"]
+    del new_dict["2007"]
+    del new_dict["Food Availability"]
+    del new_dict["Food at Home and Food Away from Home"]
+    del new_dict["Demographic and Socioeconomic Characteristics"]
+
+    return new_dict
+def ingest_usda(s3, sources, bucket_name, category):
     """
     Ingest data from USDA ERS to specified S3 buckets. 'sources' paramenter
     is the website links that contain data to ingest. 
     """
     source_list = [get_links(source) for source in sources]
+    links = filter_links(source_list)[category]    
+    key = to_lowercase(category)        
     
-    for urls_dict in source_list: 
-        for key, values in urls_dict.items():
-            key = to_lowercase(key)        
-            for link in values:
-                req = requests.get(link)
-                filename = req.url[link.rfind("/") + 1: link.rfind("?")]
-                load_to_s3 = s3.s3_client().put_object( 
-                                Bucket= bucket_name,
-                                Body= req.content,
-                                Key=  key + "/" + filename
-                            )
-                if load_to_s3:
-                    print(f"Successfully uploaded {key}/{filename} to {bucket_name}")
-                else:
-                    print(f"Failed to upload {key}/{filename} to {bucket_name}")
+    for link in links:
+        req = requests.get(link)
+        filename = req.url[link.rfind("/") + 1: link.rfind("?")]
+        load_to_s3 = s3.s3_client().put_object( 
+                        Bucket= bucket_name,
+                        Body= req.content,
+                        Key=  key + "/" + filename
+                    )
+        if load_to_s3:
+            print(f"Successfully uploaded {key}/{filename} to {bucket_name}")
+        else:
+            print(f"Failed to upload {key}/{filename} to {bucket_name}")
 
 def ingest_kaggle(s3, sources, bucket_name):
     """
@@ -77,11 +90,10 @@ def ingest_kaggle(s3, sources, bucket_name):
                     print(f"Successfully uploaded {file} to {bucket_name}")
             
     os.system("rm *.zip *.csv")
-
-"""
-Type alias for ingesting stragegy. Any callable object of this
-type can be bass as parameter to Ingestor.ingest() method
-"""
+    
+def create_s3_bucket_raw(bucket_name):
+    s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
+    return s3.create_bucket(bucket_name)
 
 class Ingestor:
     """
@@ -89,19 +101,20 @@ class Ingestor:
     instance method ingest() to ingest data from source systems to aws object storage s3.
     The instantiation takes s3 object, s3's bucket name to load data to, and list of source links/api commands
     """
-    def __init__(self, s3, source, bucket_name):
+    def __init__(self, s3, source, bucket_name, category):
         self.s3 = s3
         self.bucket_name = bucket_name 
         self.source = source
+        self.category = category
         
     def ingest(self):
         """
         ingesting data to s3 bucket based on ingesting strategy
         """
         # ingest_kaggle(self.s3, self.kaggle_sources, self.bucket_name)
-        ingest_usda(self.s3, self.source, self.bucket_name)
+        ingest_usda(self.s3, self.source, self.bucket_name, self.category)
             
-def run():
+def run(category):
     """
     Main function of ingestion program. One aws s3 is instantiated, and
     ingest data from 2 sources systems including data from usda and kaggle. 
@@ -110,15 +123,22 @@ def run():
     
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     # kaggle = s3.create_bucket("s3-bucket-raw-kaggle") 
-    usda = s3.create_bucket("s3-bucket-raw-usda") 
+    # usda = s3.create_bucket("s3-bucket-raw-usda") 
     
-    if usda:
-        # ingestor_kaggle = Ingestor(s3, kaggle_sources, "s3-bucket-raw-kaggle")
-        # ingestor_kaggle.ingest("ingest_kaggle")
+    # ingestor_kaggle = Ingestor(s3, kaggle_sources, "s3-bucket-raw-kaggle")
+    # ingestor_kaggle.ingest("ingest_kaggle")
 
-        ingestor_usda = Ingestor(s3, USDA_URL, "s3-bucket-raw-usda")
-        ingestor_usda.ingest()
+    ingestor_usda = Ingestor(s3, USDA_URL, "s3-bucket-raw-usda", category)
+    ingestor_usda.ingest()
 
-
-
-
+USDA_LIST = [
+        "Loss-Adjusted Food Availability",
+        "Food Consumption Estimates",
+        "Nutrient Intake Estimates",
+        "2016",
+        "2015",
+        "2014",
+        "Consumer Price Index",
+        "Producer Price Index",
+        "Current Food Expenditure Series"
+        ]

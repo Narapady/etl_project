@@ -1,0 +1,36 @@
+[2022-08-11 19:19:51,328] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V2.Ingest_from_nutrient_intake_estimates manual__2022-08-11T19:19:47.922898+00:00 [queued]>
+[2022-08-11 19:19:51,361] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V2.Ingest_from_nutrient_intake_estimates manual__2022-08-11T19:19:47.922898+00:00 [queued]>
+[2022-08-11 19:19:51,363] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:19:51,364] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 19:19:51,367] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:19:51,393] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_nutrient_intake_estimates> on 2022-08-11 19:19:47.922898+00:00
+[2022-08-11 19:19:51,408] {standard_task_runner.py:52} INFO - Started process 1722 to run task
+[2022-08-11 19:19:51,427] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V2', 'Ingest_from_nutrient_intake_estimates', 'manual__2022-08-11T19:19:47.922898+00:00', '--job-id', '463', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpj7_1ffv0', '--error-file', '/tmp/tmp07icqnsl']
+[2022-08-11 19:19:51,431] {standard_task_runner.py:80} INFO - Job 463: Subtask Ingest_from_nutrient_intake_estimates
+[2022-08-11 19:19:51,553] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V2.Ingest_from_nutrient_intake_estimates manual__2022-08-11T19:19:47.922898+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 19:19:51,628] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V2
+AIRFLOW_CTX_TASK_ID=Ingest_from_nutrient_intake_estimates
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T19:19:47.922898+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T19:19:47.922898+00:00
+[2022-08-11 19:19:58,948] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 129, in run
+    ingestor_usda.ingest()
+  File "/opt/airflow/dags/ingest/ingestor.py", line 111, in ingest
+    ingest_usda(self.s3, self.source, self.bucket_name, self.category)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 61, in ingest_usda
+    links = filter_links(source_list)[category]
+KeyError: 'nutrient_intake_estimates'
+[2022-08-11 19:19:58,963] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V2, task_id=Ingest_from_nutrient_intake_estimates, execution_date=20220811T191947, start_date=20220811T191951, end_date=20220811T191958
+[2022-08-11 19:19:58,973] {standard_task_runner.py:97} ERROR - Failed to execute job 463 for task Ingest_from_nutrient_intake_estimates ('nutrient_intake_estimates'; 1722)
+[2022-08-11 19:19:59,006] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-11 19:19:59,033] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

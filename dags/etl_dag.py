@@ -11,7 +11,7 @@ from load import sql_command
 from datetime import datetime, timedelta
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
-DAG_ID = "ETL_DAG"
+DAG_ID = "ETL_DAG_V6"
 DATABASE = "us_food_nutrition"
 SCHEMA = "public"
 WAREHOUSE = "food_nutrition_wh"
@@ -22,6 +22,7 @@ STAGE_FILE_FORMAT = "csv_format"
 
 CREATE_TABLE_CMD = sql_command.CREATE_TABLE_SQL
 TABLE_MAP_DICT = sql_command.TABLE_MAP
+CATEGORY_LIST  = ingestor.USDA_LIST
 
 default_args = {
     "owner": "narapady",
@@ -38,11 +39,22 @@ with DAG(
 
 ) as dag:
     dummy = DummyOperator(task_id="Start")
-    
-    ingest = PythonOperator(
-        task_id="Ingest_data_from_sources",
-        python_callable=ingestor.run
+
+    create_s3_bucket_raw = PythonOperator(
+        task_id = "Create_s3_buckek_raw",
+        python_callable=ingestor.create_s3_bucket_raw,
+        op_kwargs={"bucket_name":"s3-bucket-raw-usda"}
     )
+    
+    ingest_jobs = []
+    for source in CATEGORY_LIST:
+        source_category = source.lower().replace(" ", "_")
+        ingest = PythonOperator(
+            task_id=f"Ingest_from_{source_category}",
+            python_callable=ingestor.run,
+            op_kwargs={"category":source}
+        )
+        ingest_jobs.append(ingest)
 
     transform = PythonOperator(
         task_id = "Transform_data",
@@ -78,6 +90,6 @@ with DAG(
         )
         snowflake_load_jobs.append(load)
      
-    dummy >> ingest >> transform >> stage >> create_snowflake_tables >> snowflake_load_jobs
+    dummy >> create_s3_bucket_raw >> ingest_jobs >> transform >> stage >> create_snowflake_tables >> snowflake_load_jobs
 
         

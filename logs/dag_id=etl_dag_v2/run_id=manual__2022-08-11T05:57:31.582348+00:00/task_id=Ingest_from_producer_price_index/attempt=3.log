@@ -1,0 +1,32 @@
+[2022-08-11 19:27:09,700] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V2.Ingest_from_producer_price_index manual__2022-08-11T05:57:31.582348+00:00 [queued]>
+[2022-08-11 19:27:09,720] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V2.Ingest_from_producer_price_index manual__2022-08-11T05:57:31.582348+00:00 [queued]>
+[2022-08-11 19:27:09,722] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:27:09,723] {taskinstance.py:1377} INFO - Starting attempt 3 of 6
+[2022-08-11 19:27:09,724] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:27:09,748] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_producer_price_index> on 2022-08-11 05:57:31.582348+00:00
+[2022-08-11 19:27:09,761] {standard_task_runner.py:52} INFO - Started process 2308 to run task
+[2022-08-11 19:27:09,775] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V2', 'Ingest_from_producer_price_index', 'manual__2022-08-11T05:57:31.582348+00:00', '--job-id', '491', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmplxk0gpnb', '--error-file', '/tmp/tmp2zr8ifu8']
+[2022-08-11 19:27:09,779] {standard_task_runner.py:80} INFO - Job 491: Subtask Ingest_from_producer_price_index
+[2022-08-11 19:27:09,890] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V2.Ingest_from_producer_price_index manual__2022-08-11T05:57:31.582348+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 19:27:09,987] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V2
+AIRFLOW_CTX_TASK_ID=Ingest_from_producer_price_index
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T05:57:31.582348+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T05:57:31.582348+00:00
+[2022-08-11 19:27:10,045] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 124, in run
+    if usda:
+NameError: name 'usda' is not defined
+[2022-08-11 19:27:10,058] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V2, task_id=Ingest_from_producer_price_index, execution_date=20220811T055731, start_date=20220811T192709, end_date=20220811T192710
+[2022-08-11 19:27:10,068] {standard_task_runner.py:97} ERROR - Failed to execute job 491 for task Ingest_from_producer_price_index (name 'usda' is not defined; 2308)
+[2022-08-11 19:27:10,102] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-11 19:27:10,154] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
