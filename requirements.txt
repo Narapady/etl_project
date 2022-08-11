@@ -77,3 +77,7 @@ wrapt
 xlrd
 yarl
 zipfile36
+apache-airflow-providers-common-sql
+snowflake-connector-python
+snowflake-sqlalchemy
+apache-airflow-providers-snowflake
