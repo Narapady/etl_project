@@ -1,0 +1,31 @@
+[2022-08-11 21:16:08,458] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V8.Ingest_from_2016 manual__2022-08-11T21:16:03.096610+00:00 [queued]>
+[2022-08-11 21:16:08,479] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V8.Ingest_from_2016 manual__2022-08-11T21:16:03.096610+00:00 [queued]>
+[2022-08-11 21:16:08,480] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 21:16:08,480] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 21:16:08,481] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 21:16:08,496] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_2016> on 2022-08-11 21:16:03.096610+00:00
+[2022-08-11 21:16:08,507] {standard_task_runner.py:52} INFO - Started process 10117 to run task
+[2022-08-11 21:16:08,524] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V8', 'Ingest_from_2016', 'manual__2022-08-11T21:16:03.096610+00:00', '--job-id', '636', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpykobfqyw', '--error-file', '/tmp/tmppfm3rs2a']
+[2022-08-11 21:16:08,528] {standard_task_runner.py:80} INFO - Job 636: Subtask Ingest_from_2016
+[2022-08-11 21:16:08,690] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V8.Ingest_from_2016 manual__2022-08-11T21:16:03.096610+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 21:16:08,802] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V8
+AIRFLOW_CTX_TASK_ID=Ingest_from_2016
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T21:16:03.096610+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T21:16:03.096610+00:00
+[2022-08-11 21:16:16,021] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table1_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:17,205] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table2_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:18,410] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table3_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:19,655] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table4_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:20,821] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table5_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:22,092] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table6_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:23,296] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table7_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:24,635] {logging_mixin.py:115} INFO - Successfully uploaded 2016/Table8_2016.xlsx to s3-bucket-raw-usda
+[2022-08-11 21:16:24,638] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-11 21:16:24,666] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V8, task_id=Ingest_from_2016, execution_date=20220811T211603, start_date=20220811T211608, end_date=20220811T211624
+[2022-08-11 21:16:24,700] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 21:16:24,730] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

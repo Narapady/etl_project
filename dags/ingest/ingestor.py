@@ -123,8 +123,6 @@ def run(category):
     
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     # kaggle = s3.create_bucket("s3-bucket-raw-kaggle") 
-    # usda = s3.create_bucket("s3-bucket-raw-usda") 
-    
     # ingestor_kaggle = Ingestor(s3, kaggle_sources, "s3-bucket-raw-kaggle")
     # ingestor_kaggle.ingest("ingest_kaggle")
 

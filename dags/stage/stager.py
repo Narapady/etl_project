@@ -3,6 +3,7 @@ import numpy as np
 from storage.s3 import S3AWS
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY, US_STATE_CODE
 
+
 def load_to_S3(s3: S3AWS, df: pd.DataFrame, des_bucket: str, src_dir: str):
     df = df.reset_index(drop=True)
     key = src_dir.split("clean")[0][:-1] + "-staged.csv"
@@ -149,29 +150,25 @@ def stage_obesity_kaggle(s3: S3AWS, dirname: str, src_bucket: str = "s3-bucket-r
 
     return True
 
-class Stager:
-    staging_strategy = {"obesity":stage_obesity_kaggle, 
-                        "fast-food-clean":stage_fastfood, 
-                        "food-consumption-estimates-clean":stage_foodnutrient_estimates,
-                        "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
-                        "food-expenditure-clean":stage_foodexpenditure,
-                        "price-index-clean":stage_priceindex,
-                        "loss-adjusted-food-availability-clean":stage_foodavailability
-                        }
-    
-    def __init__(self, s3: S3AWS):
-        self.s3 = s3
+def create_s3_bucket_stage(bucket_name):
+    s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
+    return s3.create_bucket(bucket_name)
 
-    def stage(self):
-        for dir, staging_fn in self.staging_strategy.items():
-            staging_fn(self.s3, dir)
             
-def run():
+STAGING_LIST = {"obesity":stage_obesity_kaggle, 
+                "fast-food-clean":stage_fastfood, 
+                "food-consumption-estimates-clean":stage_foodnutrient_estimates,
+                "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
+                "food-expenditure-clean":stage_foodexpenditure,
+                "price-index-clean":stage_priceindex,
+                "loss-adjusted-food-availability-clean":stage_foodavailability
+                }
+
+def run(category):
     # S3 instance
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
-    des_bucket = "s3-bucket-staged"
-    bucket = s3.create_bucket(des_bucket)
-    
-    if bucket:
-        stager = Stager(s3)
-        stager.stage()
+    # des_bucket = "s3-bucket-staged"
+    # bucket = s3.create_bucket(des_bucket)
+    staging_fn = STAGING_LIST[category]
+    staging_fn(s3, category)
+

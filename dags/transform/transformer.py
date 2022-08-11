@@ -43,12 +43,9 @@ def tranform_data(category, s3):
     elif category in ["2014", "2015", "2016"]:
             fastfood = FastFood(category, s3)
             fastfood.process_data()
-        
-        
     
 def run(category): 
 
     # S3 instance
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
-    # bucket = s3.create_bucket("s3-bucket-clean-usda")
     tranform_data(category, s3)

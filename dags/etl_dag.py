@@ -11,7 +11,7 @@ from load import sql_command
 from datetime import datetime, timedelta
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
-DAG_ID = "ETL_DAG_V7"
+DAG_ID = "ETL_DAG_V8"
 DATABASE = "us_food_nutrition"
 SCHEMA = "public"
 WAREHOUSE = "food_nutrition_wh"
@@ -24,6 +24,7 @@ CREATE_TABLE_CMD = sql_command.CREATE_TABLE_SQL
 TABLE_MAP_DICT = sql_command.TABLE_MAP
 INGEST_LIST  = ingestor.USDA_INGEST_LIST
 TRANSFORM_LIST = transformer.USDA_TRANSFORM_LIST
+STAGE_LIST = stager.STAGING_LIST
 
 default_args = {
     "owner": "narapady",
@@ -39,7 +40,7 @@ with DAG(
     schedule_interval= '@weekly'
 
 ) as dag:
-    dummy = DummyOperator(task_id="Start_ETL")
+    start_etl = DummyOperator(task_id="Start_ETL")
 
     ingest_s3_bucket = PythonOperator(
         task_id = "Create_s3_bucket_ingest",
@@ -73,10 +74,20 @@ with DAG(
         transform_jobs.append(transform)
         
 
-    stage = PythonOperator(
-        task_id = "Stage_data",
-        python_callable=stager.run
+    stage_s3_bucket = PythonOperator(
+        task_id = "Create_s3_bucket_stage",
+        python_callable=stager.create_s3_bucket_stage,
+        op_kwargs={"bucket_name":"s3-bucket-staged"}
     )
+    
+    stage_jobs = []
+    for source in list(STAGE_LIST.keys()):
+        stage = PythonOperator(
+            task_id=f"Stage_{source}",
+            python_callable=stager.run,
+            op_kwargs={"category":source}
+        )
+        stage_jobs.append(stage)
 
     create_snowflake_tables = SnowflakeOperator(
         task_id='Create_snowflake_tables',
@@ -104,10 +115,10 @@ with DAG(
     
     # Tasks Flow
     (
-        dummy >> ingest_s3_bucket >> ingest_jobs
+        start_etl 
+        >> ingest_s3_bucket >> ingest_jobs
         >> transform_s3_bucket >> transform_jobs 
-        >> stage >> create_snowflake_tables 
-        >> snowflake_load_jobs
+        >> stage_s3_bucket >> stage_jobs
+        >> create_snowflake_tables >> snowflake_load_jobs
     )
-
         
