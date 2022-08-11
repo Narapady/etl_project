@@ -8,11 +8,14 @@ from storage.s3 import S3AWS
 
 
 def has_numbers(input_str: str):
+    """ return true if a string start with 19 or 20"""
     if input_str.startswith("19") or input_str.startswith("20"):
         return True
     return False
 
 class FoodAvailablity:
+    """Tranform food availabilty data"""
+    
     des_bucket = "s3-bucket-clean-usda" 
     src_bucket = "s3-bucket-raw-usda" 
 

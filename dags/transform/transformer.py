@@ -6,6 +6,7 @@ from transform.food_expenditure import FoodExpenditure
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 from storage.s3 import S3AWS
 
+# list of directory to store tranformed data
 USDA_TRANSFORM_LIST = (
         "current-food-expenditure-series",
         "consumer-price-index",
@@ -19,15 +20,18 @@ USDA_TRANSFORM_LIST = (
         )
 
 def create_s3_bucket_transform(bucket_name):
+    """ create s3 bucket for transformation layer """
+    
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     return s3.create_bucket(bucket_name)
 
 def tranform_data(category, s3):
-    # Process food expenditure 
+    """ tranform data based on category or directory name"""
+    
     if category == "current-food-expenditure-series":
         food_exp = FoodExpenditure(category, s3)
         food_exp.process_food_expenditure()
-        food_exp.process_monthly_sale()
+        food_exp.process_monthly_sale()    
     elif category == "consumer-price-index":
         cpi = PriceIndex(category, "consumer", s3)
         cpi.process_data()
@@ -45,7 +49,7 @@ def tranform_data(category, s3):
             fastfood.process_data()
     
 def run(category): 
-
+    """Run the transformer base on category"""
     # S3 instance
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     tranform_data(category, s3)

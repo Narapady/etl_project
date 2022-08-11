@@ -2,6 +2,8 @@ import os
 from storage.s3 import S3AWS
 
 class FoodExpenditure:
+    """ Transform food expenditure series data"""
+    
     new_dir = "food-expenditure-clean"
     des_bucket = "s3-bucket-clean-usda" 
     src_bucket = "s3-bucket-raw-usda" 
@@ -11,6 +13,8 @@ class FoodExpenditure:
         self.s3 = s3
     
     def process_food_expenditure(self):
+        """transform, clean and process food expenditure data"""
+        
         paths = [os.path.join(self.dirname, "constant_dollar_expenditures.xlsx"),
                  os.path.join(self.dirname, "nominal_expenditures.xlsx")]
         
@@ -39,6 +43,8 @@ class FoodExpenditure:
                 start_pos = end_pos + 1
                 
     def process_monthly_sale(self):
+        """transform, clean and process monthly sales data"""
+        
         path = os.path.join(self.dirname, "monthly_sales.xlsx")
         df = self.s3.load_df(self.src_bucket, path, "xlsx")
         

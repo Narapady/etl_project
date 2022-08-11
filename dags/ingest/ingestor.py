@@ -40,6 +40,9 @@ def get_links(url: str):
     return links
 
 def filter_links(source_list):
+    """Filter out unnessary links. Return a dictionary with key as
+       group titile and value as a list of links
+    """
     new_dict = {}
     for dict_ in source_list:
         for key, value in dict_.items():
@@ -52,6 +55,7 @@ def filter_links(source_list):
     del new_dict["Demographic and Socioeconomic Characteristics"]
 
     return new_dict
+
 def ingest_usda(s3, sources, bucket_name, category):
     """
     Ingest data from USDA ERS to specified S3 buckets. 'sources' paramenter
@@ -92,6 +96,7 @@ def ingest_kaggle(s3, sources, bucket_name):
     os.system("rm *.zip *.csv")
     
 def create_s3_bucket_ingest(bucket_name):
+    """ create s3 bucket for ingestion layer """
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     return s3.create_bucket(bucket_name)
 
@@ -116,9 +121,7 @@ class Ingestor:
             
 def run(category):
     """
-    Main function of ingestion program. One aws s3 is instantiated, and
-    ingest data from 2 sources systems including data from usda and kaggle. 
-    Data will land in S3 with specified bucket names. 
+    Run the ingestor based on category
     """
     
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
@@ -129,6 +132,7 @@ def run(category):
     ingestor_usda = Ingestor(s3, USDA_URL, "s3-bucket-raw-usda", category)
     ingestor_usda.ingest()
 
+# List of topic to ingest from USDA
 USDA_INGEST_LIST = (
         "Loss-Adjusted Food Availability",
         "Food Consumption Estimates",

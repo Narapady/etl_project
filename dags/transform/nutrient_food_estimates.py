@@ -1,16 +1,19 @@
 import sys
 sys.path.append("..")
 
-import pandas as pd 
 import os
 from storage.s3 import S3AWS
 
 def get_dirname(input_str: str) -> str:
+    " return new format directory name "
+    
     s = input_str.split("/")[0]
     s = "".join(s)
     return s.lower().replace(" ", "-")
 
 class NutrientFoodEstimate:
+    """ Transform nutrition intake and food consumpiton estimates data"""
+    
     des_bucket = "s3-bucket-clean-usda" 
     src_bucket = "s3-bucket-raw-usda" 
     
@@ -20,6 +23,7 @@ class NutrientFoodEstimate:
         self.s3 = s3
         
     def change_name(self, input_str: str):
+        """ change column names"""
         input_str = input_str.strip()
         if input_str == "Total population1":
             return "Total population"
@@ -30,6 +34,8 @@ class NutrientFoodEstimate:
         return input_str
 
     def get_columns(self):
+        """ get dataframe columns based on directory name """
+        
         col_names = [
         "total-2015-2016",
         "at-home-2015-2016",
@@ -63,7 +69,8 @@ class NutrientFoodEstimate:
         return os.path.join(self.dirname, filename)
         
     def process_data(self):
-            
+        "transform, clean and process data"    
+        
         path = self.get_path()    
         df = self.s3.load_df(self.src_bucket, path, 'xlsx')
         

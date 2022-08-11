@@ -3,6 +3,8 @@ import os
 from storage.s3 import S3AWS
 
 class PriceIndex:
+    """ Transform consumer and producer price index data"""
+    
     new_dir = "price-index-clean"
     des_bucket = "s3-bucket-clean-usda" 
     src_bucket = "s3-bucket-raw-usda" 
@@ -13,6 +15,7 @@ class PriceIndex:
         self.s3 = s3
     
     def get_2022_pct_change(self,path: str):
+        """ return a list of percentage change in price index base on price index type"""
         df = self.s3.load_df(self.src_bucket, path, "xlsx") 
         if self.pi_type == "consumer":
             col = "Forecast range2 2022"
@@ -34,6 +37,7 @@ class PriceIndex:
         return result  
 
     def get_path(self):
+        """ construct file path"""
         if self.dirname == "consumer-price-index":
             filename = "historicalcpi.xlsx"
         elif self.dirname == "producer-price-index":
@@ -42,7 +46,7 @@ class PriceIndex:
         return os.path.join(self.dirname,filename)
 
     def process_data(self):
-
+        """ transformk, clean, and process price index data"""
         path = self.get_path()
         df = self.s3.load_df(self.src_bucket, path, "xlsx")
         df.columns = df.iloc[0]

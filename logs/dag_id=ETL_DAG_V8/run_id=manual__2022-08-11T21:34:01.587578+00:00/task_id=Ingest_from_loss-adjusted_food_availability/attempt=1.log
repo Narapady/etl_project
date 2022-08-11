@@ -21,3 +21,14 @@ AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T21:34:01.587578+00:00
 [2022-08-11 21:34:56,113] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Dairy.xls to s3-bucket-raw-usda
 [2022-08-11 21:35:06,264] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/fat.xls to s3-bucket-raw-usda
 [2022-08-11 21:35:14,997] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/servings.xls to s3-bucket-raw-usda
+[2022-08-11 21:36:01,614] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Fruit.xls to s3-bucket-raw-usda
+[2022-08-11 21:36:13,757] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/grain.xls to s3-bucket-raw-usda
+[2022-08-11 21:36:40,024] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/meat.xls to s3-bucket-raw-usda
+[2022-08-11 21:36:48,749] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/sugar.xls to s3-bucket-raw-usda
+[2022-08-11 21:37:46,275] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/veg.xls to s3-bucket-raw-usda
+[2022-08-11 21:37:50,363] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/nutrients.xls to s3-bucket-raw-usda
+[2022-08-11 21:37:56,920] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/ctcsp.xls to s3-bucket-raw-usda
+[2022-08-11 21:37:56,929] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-11 21:37:57,148] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V8, task_id=Ingest_from_loss-adjusted_food_availability, execution_date=20220811T213401, start_date=20220811T213406, end_date=20220811T213757
+[2022-08-11 21:37:57,187] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 21:37:57,221] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

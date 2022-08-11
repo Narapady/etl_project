@@ -1,11 +1,12 @@
 import sys
 sys.path.append("..")
 
-import pandas as pd 
 import os
 from storage.s3 import S3AWS
 
 class FastFood:
+    """Tranform fast food data"""
+    
     new_dir = "fast-food-clean"
     des_bucket = "s3-bucket-clean-usda" 
     src_bucket = "s3-bucket-raw-usda" 
@@ -15,12 +16,14 @@ class FastFood:
         self.s3 = s3
     
     def get_path(self) -> str:
+        """ get file path to s3 bucket """
         if self.dirname == "2014":
             return os.path.join(self.dirname, f"table4_{self.dirname}.xls")
         
         return  os.path.join(self.dirname, f"Table4_{self.dirname}.xlsx")
             
     def process_data(self) -> None:
+        """ clean, transform, and process data"""
         
         path = self.get_path()
         type = "xls" if self.dirname == 2014 else "xlsx"

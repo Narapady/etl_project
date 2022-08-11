@@ -1,4 +1,6 @@
 
+""" SQL commands to create tables in snowflake before loading"""
+
 CREATE_TABLE_SQL = """
 create or replace table monthly_sales (
     id int,
