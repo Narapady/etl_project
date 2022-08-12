@@ -1,0 +1,110 @@
+[2022-08-11 19:43:24,842] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Ingest_from_loss-adjusted_food_availability manual__2022-08-11T19:43:19.932213+00:00 [queued]>
+[2022-08-11 19:43:24,872] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Ingest_from_loss-adjusted_food_availability manual__2022-08-11T19:43:19.932213+00:00 [queued]>
+[2022-08-11 19:43:24,873] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:43:24,875] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 19:43:24,876] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:43:24,900] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_loss-adjusted_food_availability> on 2022-08-11 19:43:19.932213+00:00
+[2022-08-11 19:43:24,928] {standard_task_runner.py:52} INFO - Started process 3548 to run task
+[2022-08-11 19:43:24,963] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V5', 'Ingest_from_loss-adjusted_food_availability', 'manual__2022-08-11T19:43:19.932213+00:00', '--job-id', '530', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpyir9c6mu', '--error-file', '/tmp/tmpxhqx54x7']
+[2022-08-11 19:43:24,977] {standard_task_runner.py:80} INFO - Job 530: Subtask Ingest_from_loss-adjusted_food_availability
+[2022-08-11 19:43:25,104] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V5.Ingest_from_loss-adjusted_food_availability manual__2022-08-11T19:43:19.932213+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 19:43:25,241] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V5
+AIRFLOW_CTX_TASK_ID=Ingest_from_loss-adjusted_food_availability
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T19:43:19.932213+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T19:43:19.932213+00:00
+[2022-08-11 19:43:40,986] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/calories.xls to s3-bucket-raw-usda
+[2022-08-11 19:44:16,944] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Dairy.xls to s3-bucket-raw-usda
+[2022-08-11 19:44:26,635] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/fat.xls to s3-bucket-raw-usda
+[2022-08-11 19:44:36,931] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/servings.xls to s3-bucket-raw-usda
+[2022-08-11 19:45:34,699] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Fruit.xls to s3-bucket-raw-usda
+[2022-08-11 19:45:51,276] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/grain.xls to s3-bucket-raw-usda
+[2022-08-11 19:46:17,600] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/meat.xls to s3-bucket-raw-usda
+[2022-08-11 19:46:27,098] {local_task_job.py:221} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2022-08-11 19:46:27,109] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 3548. PIDs of all processes in the group: [3548]
+[2022-08-11 19:46:27,111] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 3548
+[2022-08-11 19:46:27,113] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-08-11 19:46:27,116] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/httpsession.py", line 414, in send
+    chunked=self._chunked(request.headers),
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.7/ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.7/ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 132, in run
+    ingestor_usda.ingest()
+  File "/opt/airflow/dags/ingest/ingestor.py", line 115, in ingest
+    ingest_usda(self.s3, self.source, self.bucket_name, self.category)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 70, in ingest_usda
+    Key=  key + "/" + filename
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 395, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 712, in _make_api_call
+    operation_model, request_dict, request_context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 731, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 107, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 184, in _send_request
+    success_response, exception):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 308, in _needs_retry
+    caught_exception=caught_exception, request_dict=request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 357, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 228, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 211, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 192, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 266, in __call__
+    caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 284, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 332, in __call__
+    caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 232, in __call__
+    attempt_number, caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 374, in _check_caught_exception
+    raise caught_exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 249, in _do_get_response
+    http_response = self._send(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 321, in _send
+    return self.http_session.send(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/httpsession.py", line 450, in send
+    raise HTTPClientError(error=e)
+botocore.exceptions.HTTPClientError: An HTTP Client raised an unhandled exception: Task received SIGTERM signal
+[2022-08-11 19:46:27,135] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V5, task_id=Ingest_from_loss-adjusted_food_availability, execution_date=20220811T194319, start_date=20220811T194324, end_date=20220811T194627
+[2022-08-11 19:46:27,148] {standard_task_runner.py:97} ERROR - Failed to execute job 530 for task Ingest_from_loss-adjusted_food_availability (An HTTP Client raised an unhandled exception: Task received SIGTERM signal; 3548)
+[2022-08-11 19:46:27,208] {process_utils.py:75} INFO - Process psutil.Process(pid=3548, status='terminated', exitcode=1, started='19:43:24') (3548) terminated with exit code 1

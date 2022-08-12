@@ -1,0 +1,26 @@
+[2022-08-11 20:45:39,584] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V7.Ingest_from_nutrient_intake_estimates manual__2022-08-11T02:24:39.409501+00:00 [queued]>
+[2022-08-11 20:45:39,608] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V7.Ingest_from_nutrient_intake_estimates manual__2022-08-11T02:24:39.409501+00:00 [queued]>
+[2022-08-11 20:45:39,609] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 20:45:39,610] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 20:45:39,618] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 20:45:39,647] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_nutrient_intake_estimates> on 2022-08-11 02:24:39.409501+00:00
+[2022-08-11 20:45:39,661] {standard_task_runner.py:52} INFO - Started process 7816 to run task
+[2022-08-11 20:45:39,680] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V7', 'Ingest_from_nutrient_intake_estimates', 'manual__2022-08-11T02:24:39.409501+00:00', '--job-id', '565', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprojzqk3c', '--error-file', '/tmp/tmpszdrf56f']
+[2022-08-11 20:45:39,684] {standard_task_runner.py:80} INFO - Job 565: Subtask Ingest_from_nutrient_intake_estimates
+[2022-08-11 20:45:39,859] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V7.Ingest_from_nutrient_intake_estimates manual__2022-08-11T02:24:39.409501+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 20:45:39,978] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V7
+AIRFLOW_CTX_TASK_ID=Ingest_from_nutrient_intake_estimates
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T02:24:39.409501+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T02:24:39.409501+00:00
+[2022-08-11 20:45:47,727] {logging_mixin.py:115} INFO - Successfully uploaded nutrient-intake-estimates/nutrient_table1.xlsx to s3-bucket-raw-usda
+[2022-08-11 20:45:49,009] {logging_mixin.py:115} INFO - Successfully uploaded nutrient-intake-estimates/nutrient_table2.xlsx to s3-bucket-raw-usda
+[2022-08-11 20:45:54,260] {logging_mixin.py:115} INFO - Successfully uploaded nutrient-intake-estimates/Archived%202007-10%20Food%20Consumption%20and%20Nutrient%20Inta to s3-bucket-raw-usda
+[2022-08-11 20:45:54,265] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-11 20:45:54,304] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V7, task_id=Ingest_from_nutrient_intake_estimates, execution_date=20220811T022439, start_date=20220811T204539, end_date=20220811T204554
+[2022-08-11 20:45:54,380] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 20:45:54,430] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

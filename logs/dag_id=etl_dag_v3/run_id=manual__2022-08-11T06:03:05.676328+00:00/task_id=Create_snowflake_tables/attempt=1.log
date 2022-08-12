@@ -1,0 +1,462 @@
+[2022-08-11 06:03:12,726] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.Create_snowflake_tables manual__2022-08-11T06:03:05.676328+00:00 [queued]>
+[2022-08-11 06:03:12,736] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.Create_snowflake_tables manual__2022-08-11T06:03:05.676328+00:00 [queued]>
+[2022-08-11 06:03:12,737] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:03:12,738] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 06:03:12,739] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 06:03:12,747] {taskinstance.py:1397} INFO - Executing <Task(SnowflakeOperator): Create_snowflake_tables> on 2022-08-11 06:03:05.676328+00:00
+[2022-08-11 06:03:12,753] {standard_task_runner.py:52} INFO - Started process 18701 to run task
+[2022-08-11 06:03:12,757] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V3', 'Create_snowflake_tables', 'manual__2022-08-11T06:03:05.676328+00:00', '--job-id', '252', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpjqd2pyql', '--error-file', '/tmp/tmp3r_b41vw']
+[2022-08-11 06:03:12,760] {standard_task_runner.py:80} INFO - Job 252: Subtask Create_snowflake_tables
+[2022-08-11 06:03:12,806] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V3.Create_snowflake_tables manual__2022-08-11T06:03:05.676328+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 06:03:12,853] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V3
+AIRFLOW_CTX_TASK_ID=Create_snowflake_tables
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T06:03:05.676328+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T06:03:05.676328+00:00
+[2022-08-11 06:03:12,855] {snowflake.py:118} INFO - Executing: 
+create or replace table monthly_sales (
+    id int,
+    year datetime,
+    month string,
+    fah_sale float,
+    fafh_sale float,
+    total_sales float,
+    dollar_type string
+);
+
+create or replace table food_availability_calories (
+    id int,
+    year datetime,
+    protein float,
+    dairy float,
+    fruit float,
+    veggie float,
+    flour_and_cereal float,
+    fat_oil_dairy_fat float,
+    sugar_and_sweeteners float,
+    total_calories float
+);
+
+create or replace table food_availability_percent (
+    id int,
+    year datetime,
+    protein float,
+    dairy float,
+    fruit float,
+    veggie float,
+    flour_and_cereal float,
+    fat_oil_dairy_fat float,
+    sugar_and_sweeteners float,
+    total_percentages float
+);
+
+create or replace table daily_food_availability(
+    id int,
+    year datetime,
+    original_weight float,
+    edible_weight float,
+    total_percent_loss float,
+    loss_lbs_per_year float,
+    loss_gram_per_day float,
+    available_calories_per_day float,
+    type string,
+    item_name string
+);
+
+create or replace table food_consumption_estimates(
+    id int,
+    food_nutrient_group string,
+    total_at_home float,
+    total_away_from_home float,
+    restaurant float,
+    fast_food float,
+    school float,
+    other float,
+    demographic_year string
+);
+
+create or replace table nutrient_intake_estimates(
+    id int,
+    food_nutrient_group string,
+    total_at_home float,
+    total_away_from_home float,
+    restaurant float,
+    fast_food float,
+    school float,
+    other float,
+    demographic_year string
+);
+
+create or replace table food_expenditure(
+    id int,
+    year datetime,
+    hotels_motels_alcohol float,
+    other_aafh float,
+    total_aafh float,
+    dollar_type string,
+    food_stores float,
+    other_aah float,
+    total_aah float,
+    restaurants float,
+    drinking_places float,
+    hotels_motels_food float,
+    retail_stores_and_vending float,
+    recreational_places float,
+    schools float,
+    other_fafh float,
+    food_furnished_and_donated float,
+    total_fafh float,
+    grocery_stores float,
+    convenience_stores float,
+    other_foodstores float,
+    clubs_and_supercenters float,
+    other_stores_and_foodservicef float,
+    mail_order_and_home_delivery float,
+    farmers_manufacturers_wholesalers float,
+    home_production_and_donation float,
+    total_fah float
+);
+
+create or replace table fast_food(
+    id int,
+    times_per_week string,
+    unit string,
+    total float,
+    men float,
+    women float,
+    year int,
+    age_group string
+);
+
+create or replace table price_index(
+    id int,
+    price_index_item string,
+    pc_1974 float,
+    pc_1975 float,
+    pc_1976 float,
+    pc_1977 float,
+    pc_1978 float,
+    pc_1979 float,
+    pc_1980 float,
+    pc_1981 float,
+    pc_1982 float,
+    pc_1983 float,
+    pc_1984 float,
+    pc_1985 float,
+    pc_1986 float,
+    pc_1987 float,
+    pc_1988 float,
+    pc_1989 float,
+    pc_1990 float,
+    pc_1991 float,
+    pc_1992 float,
+    pc_1993 float,
+    pc_1994 float,
+    pc_1995 float,
+    pc_1996 float,
+    pc_1997 float,
+    pc_1998 float,
+    pc_1999 float,
+    pc_2000 float,
+    pc_2001 float,
+    pc_2002 float,
+    pc_2003 float,
+    pc_2004 float,
+    pc_2005 float,
+    pc_2006 float,
+    pc_2007 float,
+    pc_2008 float,
+    pc_2009 float,
+    pc_2010 float,
+    pc_2011 float,
+    pc_2012 float,
+    pc_2013 float,
+    pc_2014 float,
+    pc_2015 float,
+    pc_2016 float,
+    pc_2017 float,
+    pc_2018 float,
+    pc_2019 float,
+    pc_2020 float,
+    pc_2021 float,
+    pc_2022 float,
+    price_index_type string
+);
+
+create or replace table obesity_world(
+    id int,
+    country string,
+    year datetime,
+    obesity_percent float,
+    sex string
+);
+
+create or replace table obesity_gdp(
+    id int,
+    state string,
+    year datetime,
+    obesity_rate float,
+    average_age float,
+    average_income float,
+    population int,
+    poverty_rate float,
+    real_gdp float,
+    real_gdp_growth float,
+    real_personal_income float,
+    region string,
+    real_gdp_percapita float,
+    state_code string
+);
+[2022-08-11 06:03:12,866] {base.py:68} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2022-08-11 06:03:12,873] {connection.py:275} INFO - Snowflake Connector for Python Version: 2.7.11, Python Version: 3.7.13, Platform: Linux-5.10.104-linuxkit-aarch64-with-debian-11.3
+[2022-08-11 06:03:12,874] {connection.py:927} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2022-08-11 06:03:12,875] {connection.py:944} INFO - Setting use_openssl_only mode to False
+[2022-08-11 06:03:14,063] {cursor.py:715} INFO - query: [ALTER SESSION SET autocommit=True]
+[2022-08-11 06:03:14,331] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:14,333] {snowflake.py:328} INFO - Running statement: create or replace table monthly_sales (
+    id int,
+    year datetime,
+    month string,
+    fah_sale float,
+    fafh_sale float,
+    total_sales float,
+    dollar_type string
+);, parameters: None
+[2022-08-11 06:03:14,334] {cursor.py:715} INFO - query: [create or replace table monthly_sales ( id int, year datetime, month string, fah...]
+[2022-08-11 06:03:14,727] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:14,735] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table MONTHLY_SALES successfully created.'}
+[2022-08-11 06:03:14,739] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:14,741] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2870-001e-000700030386
+[2022-08-11 06:03:14,747] {snowflake.py:328} INFO - Running statement: create or replace table food_availability_calories (
+    id int,
+    year datetime,
+    protein float,
+    dairy float,
+    fruit float,
+    veggie float,
+    flour_and_cereal float,
+    fat_oil_dairy_fat float,
+    sugar_and_sweeteners float,
+    total_calories float
+);, parameters: None
+[2022-08-11 06:03:14,757] {cursor.py:715} INFO - query: [create or replace table food_availability_calories ( id int, year datetime, prot...]
+[2022-08-11 06:03:15,019] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:15,026] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table FOOD_AVAILABILITY_CALORIES successfully created.'}
+[2022-08-11 06:03:15,034] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:15,038] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-286c-001e-00070002c2ea
+[2022-08-11 06:03:15,040] {snowflake.py:328} INFO - Running statement: create or replace table food_availability_percent (
+    id int,
+    year datetime,
+    protein float,
+    dairy float,
+    fruit float,
+    veggie float,
+    flour_and_cereal float,
+    fat_oil_dairy_fat float,
+    sugar_and_sweeteners float,
+    total_percentages float
+);, parameters: None
+[2022-08-11 06:03:15,043] {cursor.py:715} INFO - query: [create or replace table food_availability_percent ( id int, year datetime, prote...]
+[2022-08-11 06:03:15,342] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:15,353] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table FOOD_AVAILABILITY_PERCENT successfully created.'}
+[2022-08-11 06:03:15,357] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:15,360] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2875-001e-00070003514e
+[2022-08-11 06:03:15,363] {snowflake.py:328} INFO - Running statement: create or replace table daily_food_availability(
+    id int,
+    year datetime,
+    original_weight float,
+    edible_weight float,
+    total_percent_loss float,
+    loss_lbs_per_year float,
+    loss_gram_per_day float,
+    available_calories_per_day float,
+    type string,
+    item_name string
+);, parameters: None
+[2022-08-11 06:03:15,366] {cursor.py:715} INFO - query: [create or replace table daily_food_availability( id int, year datetime, original...]
+[2022-08-11 06:03:15,718] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:15,723] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table DAILY_FOOD_AVAILABILITY successfully created.'}
+[2022-08-11 06:03:15,727] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:15,730] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2869-001e-000700034132
+[2022-08-11 06:03:15,733] {snowflake.py:328} INFO - Running statement: create or replace table food_consumption_estimates(
+    id int,
+    food_nutrient_group string,
+    total_at_home float,
+    total_away_from_home float,
+    restaurant float,
+    fast_food float,
+    school float,
+    other float,
+    demographic_year string
+);, parameters: None
+[2022-08-11 06:03:15,735] {cursor.py:715} INFO - query: [create or replace table food_consumption_estimates( id int, food_nutrient_group ...]
+[2022-08-11 06:03:16,130] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:16,131] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table FOOD_CONSUMPTION_ESTIMATES successfully created.'}
+[2022-08-11 06:03:16,132] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:16,133] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2875-001e-000700035152
+[2022-08-11 06:03:16,134] {snowflake.py:328} INFO - Running statement: create or replace table nutrient_intake_estimates(
+    id int,
+    food_nutrient_group string,
+    total_at_home float,
+    total_away_from_home float,
+    restaurant float,
+    fast_food float,
+    school float,
+    other float,
+    demographic_year string
+);, parameters: None
+[2022-08-11 06:03:16,135] {cursor.py:715} INFO - query: [create or replace table nutrient_intake_estimates( id int, food_nutrient_group s...]
+[2022-08-11 06:03:16,467] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:16,485] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table NUTRIENT_INTAKE_ESTIMATES successfully created.'}
+[2022-08-11 06:03:16,488] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:16,491] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2869-001e-00070003413a
+[2022-08-11 06:03:16,493] {snowflake.py:328} INFO - Running statement: create or replace table food_expenditure(
+    id int,
+    year datetime,
+    hotels_motels_alcohol float,
+    other_aafh float,
+    total_aafh float,
+    dollar_type string,
+    food_stores float,
+    other_aah float,
+    total_aah float,
+    restaurants float,
+    drinking_places float,
+    hotels_motels_food float,
+    retail_stores_and_vending float,
+    recreational_places float,
+    schools float,
+    other_fafh float,
+    food_furnished_and_donated float,
+    total_fafh float,
+    grocery_stores float,
+    convenience_stores float,
+    other_foodstores float,
+    clubs_and_supercenters float,
+    other_stores_and_foodservicef float,
+    mail_order_and_home_delivery float,
+    farmers_manufacturers_wholesalers float,
+    home_production_and_donation float,
+    total_fah float
+);, parameters: None
+[2022-08-11 06:03:16,498] {cursor.py:715} INFO - query: [create or replace table food_expenditure( id int, year datetime, hotels_motels_a...]
+[2022-08-11 06:03:16,830] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:16,838] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table FOOD_EXPENDITURE successfully created.'}
+[2022-08-11 06:03:16,846] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:16,849] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2875-001e-00070003515a
+[2022-08-11 06:03:16,853] {snowflake.py:328} INFO - Running statement: create or replace table fast_food(
+    id int,
+    times_per_week string,
+    unit string,
+    total float,
+    men float,
+    women float,
+    year int,
+    age_group string
+);, parameters: None
+[2022-08-11 06:03:16,856] {cursor.py:715} INFO - query: [create or replace table fast_food( id int, times_per_week string, unit string, t...]
+[2022-08-11 06:03:17,359] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:17,363] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table FAST_FOOD successfully created.'}
+[2022-08-11 06:03:17,365] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:17,368] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2870-001e-00070003038e
+[2022-08-11 06:03:17,371] {snowflake.py:328} INFO - Running statement: create or replace table price_index(
+    id int,
+    price_index_item string,
+    pc_1974 float,
+    pc_1975 float,
+    pc_1976 float,
+    pc_1977 float,
+    pc_1978 float,
+    pc_1979 float,
+    pc_1980 float,
+    pc_1981 float,
+    pc_1982 float,
+    pc_1983 float,
+    pc_1984 float,
+    pc_1985 float,
+    pc_1986 float,
+    pc_1987 float,
+    pc_1988 float,
+    pc_1989 float,
+    pc_1990 float,
+    pc_1991 float,
+    pc_1992 float,
+    pc_1993 float,
+    pc_1994 float,
+    pc_1995 float,
+    pc_1996 float,
+    pc_1997 float,
+    pc_1998 float,
+    pc_1999 float,
+    pc_2000 float,
+    pc_2001 float,
+    pc_2002 float,
+    pc_2003 float,
+    pc_2004 float,
+    pc_2005 float,
+    pc_2006 float,
+    pc_2007 float,
+    pc_2008 float,
+    pc_2009 float,
+    pc_2010 float,
+    pc_2011 float,
+    pc_2012 float,
+    pc_2013 float,
+    pc_2014 float,
+    pc_2015 float,
+    pc_2016 float,
+    pc_2017 float,
+    pc_2018 float,
+    pc_2019 float,
+    pc_2020 float,
+    pc_2021 float,
+    pc_2022 float,
+    price_index_type string
+);, parameters: None
+[2022-08-11 06:03:17,373] {cursor.py:715} INFO - query: [create or replace table price_index( id int, price_index_item string, pc_1974 fl...]
+[2022-08-11 06:03:17,793] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:17,795] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table PRICE_INDEX successfully created.'}
+[2022-08-11 06:03:17,798] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:17,799] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-286c-001e-00070002c2f2
+[2022-08-11 06:03:17,800] {snowflake.py:328} INFO - Running statement: create or replace table obesity_world(
+    id int,
+    country string,
+    year datetime,
+    obesity_percent float,
+    sex string
+);, parameters: None
+[2022-08-11 06:03:17,802] {cursor.py:715} INFO - query: [create or replace table obesity_world( id int, country string, year datetime, ob...]
+[2022-08-11 06:03:18,069] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:18,072] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table OBESITY_WORLD successfully created.'}
+[2022-08-11 06:03:18,075] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:18,078] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-286c-001e-00070002c2f6
+[2022-08-11 06:03:18,081] {snowflake.py:328} INFO - Running statement: create or replace table obesity_gdp(
+    id int,
+    state string,
+    year datetime,
+    obesity_rate float,
+    average_age float,
+    average_income float,
+    population int,
+    poverty_rate float,
+    real_gdp float,
+    real_gdp_growth float,
+    real_personal_income float,
+    region string,
+    real_gdp_percapita float,
+    state_code string
+);, parameters: None
+[2022-08-11 06:03:18,083] {cursor.py:715} INFO - query: [create or replace table obesity_gdp( id int, state string, year datetime, obesit...]
+[2022-08-11 06:03:18,449] {cursor.py:739} INFO - query execution done
+[2022-08-11 06:03:18,450] {snowflake.py:338} INFO - Statement execution info - {'status': 'Table OBESITY_GDP successfully created.'}
+[2022-08-11 06:03:18,451] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-11 06:03:18,452] {snowflake.py:343} INFO - Snowflake query id: 01a635cb-0004-2875-001e-000700035162
+[2022-08-11 06:03:18,453] {connection.py:557} INFO - closed
+[2022-08-11 06:03:18,587] {connection.py:560} INFO - No async queries seem to be running, deleting session
+[2022-08-11 06:03:18,780] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V3, task_id=Create_snowflake_tables, execution_date=20220811T060305, start_date=20220811T060312, end_date=20220811T060318
+[2022-08-11 06:03:18,835] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 06:03:18,857] {local_task_job.py:273} INFO - 11 downstream tasks scheduled from follow-on schedule check

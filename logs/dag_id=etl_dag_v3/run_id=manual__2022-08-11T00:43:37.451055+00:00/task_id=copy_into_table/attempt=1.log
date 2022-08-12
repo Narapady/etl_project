@@ -1,0 +1,53 @@
+[2022-08-11 00:43:38,217] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.copy_into_table manual__2022-08-11T00:43:37.451055+00:00 [queued]>
+[2022-08-11 00:43:38,224] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V3.copy_into_table manual__2022-08-11T00:43:37.451055+00:00 [queued]>
+[2022-08-11 00:43:38,225] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 00:43:38,227] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 00:43:38,227] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 00:43:38,235] {taskinstance.py:1397} INFO - Executing <Task(S3ToSnowflakeOperator): copy_into_table> on 2022-08-11 00:43:37.451055+00:00
+[2022-08-11 00:43:38,241] {standard_task_runner.py:52} INFO - Started process 1856 to run task
+[2022-08-11 00:43:38,244] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V3', 'copy_into_table', 'manual__2022-08-11T00:43:37.451055+00:00', '--job-id', '146', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpe_y3w8lg', '--error-file', '/tmp/tmpxittcmlz']
+[2022-08-11 00:43:38,247] {standard_task_runner.py:80} INFO - Job 146: Subtask copy_into_table
+[2022-08-11 00:43:38,290] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V3.copy_into_table manual__2022-08-11T00:43:37.451055+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 00:43:38,332] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V3
+AIRFLOW_CTX_TASK_ID=copy_into_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T00:43:37.451055+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T00:43:37.451055+00:00
+[2022-08-11 00:43:38,334] {s3_to_snowflake.py:135} INFO - Executing COPY command...
+[2022-08-11 00:43:38,341] {base.py:68} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2022-08-11 00:43:38,345] {connection.py:275} INFO - Snowflake Connector for Python Version: 2.7.11, Python Version: 3.7.13, Platform: Linux-5.10.104-linuxkit-aarch64-with-debian-11.3
+[2022-08-11 00:43:38,347] {connection.py:927} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2022-08-11 00:43:38,348] {connection.py:944} INFO - Setting use_openssl_only mode to False
+[2022-08-11 00:43:39,791] {cursor.py:715} INFO - query: [ALTER SESSION SET autocommit=True]
+[2022-08-11 00:43:40,003] {cursor.py:739} INFO - query execution done
+[2022-08-11 00:43:40,023] {snowflake.py:328} INFO - Running statement: COPY INTO public.monthly_sales
+FROM @s3_stage/
+files=('s3://s3-bucket-staged/monthly-sales-staged.csv')
+file_format=csv_format, parameters: None
+[2022-08-11 00:43:40,024] {cursor.py:715} INFO - query: [COPY INTO public.monthly_sales FROM @s3_stage/ files=('s3://s3-bucket-staged/mon...]
+[2022-08-11 00:43:41,079] {cursor.py:739} INFO - query execution done
+[2022-08-11 00:43:41,102] {connection.py:557} INFO - closed
+[2022-08-11 00:43:41,330] {connection.py:560} INFO - No async queries seem to be running, deleting session
+[2022-08-11 00:43:41,519] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/snowflake/transfers/s3_to_snowflake.py", line 136, in execute
+    snowflake_hook.run(copy_query, self.autocommit)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 332, in run
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/cursor.py", line 804, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/errors.py", line 280, in errorhandler_wrapper
+    error_value,
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/errors.py", line 331, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/errors.py", line 217, in default_errorhandler
+    cursor=cursor,
+snowflake.connector.errors.ProgrammingError: 091016 (22000): 01a6348b-0004-286c-001e-00070002c0a6: Remote file 's3://s3-bucket-staged/s3://s3-bucket-staged/monthly-sales-staged.csv' was not found. If you are running a copy command, please make sure files are not deleted when they are being loaded or files are not being loaded into two different tables concurrently with auto purge option.
+[2022-08-11 00:43:41,549] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V3, task_id=copy_into_table, execution_date=20220811T004337, start_date=20220811T004338, end_date=20220811T004341
+[2022-08-11 00:43:41,602] {standard_task_runner.py:97} ERROR - Failed to execute job 146 for task copy_into_table (091016 (22000): 01a6348b-0004-286c-001e-00070002c0a6: Remote file 's3://s3-bucket-staged/s3://s3-bucket-staged/monthly-sales-staged.csv' was not found. If you are running a copy command, please make sure files are not deleted when they are being loaded or files are not being loaded into two different tables concurrently with auto purge option.; 1856)
+[2022-08-11 00:43:41,646] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-11 00:43:41,669] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

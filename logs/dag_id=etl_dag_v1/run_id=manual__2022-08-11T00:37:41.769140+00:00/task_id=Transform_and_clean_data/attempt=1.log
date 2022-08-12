@@ -1,0 +1,147 @@
+[2022-08-11 05:54:19,340] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V1.Transform_and_clean_data manual__2022-08-11T00:37:41.769140+00:00 [queued]>
+[2022-08-11 05:54:19,350] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V1.Transform_and_clean_data manual__2022-08-11T00:37:41.769140+00:00 [queued]>
+[2022-08-11 05:54:19,351] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 05:54:19,352] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 05:54:19,354] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 05:54:19,366] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_and_clean_data> on 2022-08-11 00:37:41.769140+00:00
+[2022-08-11 05:54:19,375] {standard_task_runner.py:52} INFO - Started process 17743 to run task
+[2022-08-11 05:54:19,381] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V1', 'Transform_and_clean_data', 'manual__2022-08-11T00:37:41.769140+00:00', '--job-id', '187', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp1avc8xsq', '--error-file', '/tmp/tmpd6yksdu1']
+[2022-08-11 05:54:19,384] {standard_task_runner.py:80} INFO - Job 187: Subtask Transform_and_clean_data
+[2022-08-11 05:54:19,465] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V1.Transform_and_clean_data manual__2022-08-11T00:37:41.769140+00:00 [running]> on host c9fcec21ee59
+[2022-08-11 05:54:19,556] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V1
+AIRFLOW_CTX_TASK_ID=Transform_and_clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T00:37:41.769140+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T00:37:41.769140+00:00
+[2022-08-11 05:54:36,620] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-fah.csv to S3
+[2022-08-11 05:54:37,000] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-fafh.csv to S3
+[2022-08-11 05:54:37,319] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-aah.csv to S3
+[2022-08-11 05:54:37,753] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/constant-total-aafh.csv to S3
+[2022-08-11 05:54:53,548] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-fah.csv to S3
+[2022-08-11 05:54:53,845] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-fafh.csv to S3
+[2022-08-11 05:54:54,154] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-aah.csv to S3
+[2022-08-11 05:54:54,463] {logging_mixin.py:115} INFO - Successfully process food-expenditure-clean/nominal-total-aafh.csv to S3
+[2022-08-11 05:55:05,458] {local_task_job.py:221} WARNING - State of this instance has been externally set to removed. Terminating instance.
+[2022-08-11 05:55:05,469] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 17743. PIDs of all processes in the group: [17743]
+[2022-08-11 05:55:05,471] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 17743
+[2022-08-11 05:55:05,472] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-08-11 05:55:05,475] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/httpsession.py", line 414, in send
+    chunked=self._chunked(request.headers),
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.7/ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.7/ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transform/transformer.py", line 19, in run
+    food_exp.process_monthly_sale()
+  File "/opt/airflow/dags/transform/food_expenditure.py", line 43, in process_monthly_sale
+    df = self.s3.load_df(self.src_bucket, path, "xlsx")
+  File "/opt/airflow/dags/storage/s3.py", line 33, in load_df
+    return pd.read_excel(smart_open(path), sheet)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 1233, in __init__
+    self._reader = self._engines[engine](self._io, storage_options=storage_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_openpyxl.py", line 522, in __init__
+    super().__init__(filepath_or_buffer, storage_options=storage_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 420, in __init__
+    self.book = self.load_workbook(self.handles.handle)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_openpyxl.py", line 534, in load_workbook
+    filepath_or_buffer, read_only=True, data_only=True, keep_links=False
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/reader/excel.py", line 317, in load_workbook
+    reader.read()
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/reader/excel.py", line 279, in read
+    self.read_properties()
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/reader/excel.py", line 172, in read_properties
+    src = fromstring(self.archive.read(ARC_CORE))
+  File "/usr/local/lib/python3.7/zipfile.py", line 1465, in read
+    return fp.read()
+  File "/usr/local/lib/python3.7/zipfile.py", line 916, in read
+    buf += self._read1(self.MAX_N)
+  File "/usr/local/lib/python3.7/zipfile.py", line 998, in _read1
+    data += self._read2(n - len(data))
+  File "/usr/local/lib/python3.7/zipfile.py", line 1030, in _read2
+    data = self._fileobj.read(n)
+  File "/usr/local/lib/python3.7/zipfile.py", line 753, in read
+    self._file.seek(self._pos)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 666, in seek
+    self._current_pos = self._raw_reader.seek(offset, whence)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 417, in seek
+    self._open_body(start, stop)
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 443, in _open_body
+    range_string,
+  File "/home/airflow/.local/lib/python3.7/site-packages/smart_open/s3.py", line 330, in _get
+    return client.get_object(Bucket=bucket, Key=key, Range=range_string)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 395, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 712, in _make_api_call
+    operation_model, request_dict, request_context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 731, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 107, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 184, in _send_request
+    success_response, exception):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 308, in _needs_retry
+    caught_exception=caught_exception, request_dict=request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 357, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 228, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 211, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 192, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 266, in __call__
+    caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 284, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 332, in __call__
+    caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 232, in __call__
+    attempt_number, caught_exception)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/retryhandler.py", line 374, in _check_caught_exception
+    raise caught_exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 249, in _do_get_response
+    http_response = self._send(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 321, in _send
+    return self.http_session.send(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/httpsession.py", line 450, in send
+    raise HTTPClientError(error=e)
+botocore.exceptions.HTTPClientError: An HTTP Client raised an unhandled exception: Task received SIGTERM signal
+[2022-08-11 05:55:05,500] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG_V1, task_id=Transform_and_clean_data, execution_date=20220811T003741, start_date=20220811T055419, end_date=20220811T055505
+[2022-08-11 05:55:05,520] {standard_task_runner.py:97} ERROR - Failed to execute job 187 for task Transform_and_clean_data (An HTTP Client raised an unhandled exception: Task received SIGTERM signal; 17743)
+[2022-08-11 05:55:05,565] {process_utils.py:75} INFO - Process psutil.Process(pid=17743, status='terminated', exitcode=1, started='05:54:18') (17743) terminated with exit code 1

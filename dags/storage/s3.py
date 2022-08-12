@@ -21,34 +21,42 @@ class S3AWS:
     
     def create_bucket(self, bucket_name: str):
         """
-        Create S3 bucket with bucket_name
+        create S3 bucket with bucket_name
         """
         return self.client.create_bucket(Bucket=bucket_name)
 
     def load_df(self, bucket_name: str, key: str, type: str, sheet=0) -> pd.DataFrame:
+        """
+        read data from s3 bucket as pandas dataframe
+        """
         path = f"s3://{self.access_key_id}:{self.secret_key_id}@{bucket_name}/{key}"
         if type == "csv":
             return pd.read_csv(smart_open(path))
         elif type == "xls" or type == 'xlsx':
             return pd.read_excel(smart_open(path), sheet)
 
-        
-    def df_to_s3(self, dataframe: pd.DataFrame, bucket_name: str, key: str) -> None:
-        
+    def df_to_s3(self, dataframe: pd.DataFrame, bucket_name: str, key: str):
+        """
+        write pandas dataframe to specified S3 bucket
+        """    
         return self.client.put_object(
                 Bucket=bucket_name,
                 Body=dataframe.to_csv(None).encode(),
                 Key=key)
 
     def list_files(self, bucket_name: str, dirname: str):
+        "list all file in specified S3directory and bucket"
         response =self.client.list_objects_v2(Bucket=bucket_name, Prefix=dirname)
         files = response.get("Contents")
-    
+        
         return [file['Key'].split("/")[1] for file in files]
 
     def get_sheetnames(self, bucket_name: str, key: str):
+        """get the sheetname of spreadsheet file in specified S3 file and bucket"""
         s3_file = BytesIO()
         self.client.download_fileobj(bucket_name, key, s3_file)
+        
         return pd.ExcelFile(s3_file).sheet_names
 
-    
+
+

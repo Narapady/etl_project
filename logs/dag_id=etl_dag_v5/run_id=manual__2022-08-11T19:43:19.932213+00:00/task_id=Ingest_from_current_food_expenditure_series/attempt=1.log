@@ -1,0 +1,34 @@
+[2022-08-11 19:43:25,653] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Ingest_from_current_food_expenditure_series manual__2022-08-11T19:43:19.932213+00:00 [queued]>
+[2022-08-11 19:43:25,677] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_V5.Ingest_from_current_food_expenditure_series manual__2022-08-11T19:43:19.932213+00:00 [queued]>
+[2022-08-11 19:43:25,678] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:43:25,679] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 19:43:25,680] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 19:43:25,703] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_current_food_expenditure_series> on 2022-08-11 19:43:19.932213+00:00
+[2022-08-11 19:43:25,710] {standard_task_runner.py:52} INFO - Started process 3562 to run task
+[2022-08-11 19:43:25,723] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_V5', 'Ingest_from_current_food_expenditure_series', 'manual__2022-08-11T19:43:19.932213+00:00', '--job-id', '537', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpelgbi331', '--error-file', '/tmp/tmpxxg5mkyr']
+[2022-08-11 19:43:25,735] {standard_task_runner.py:80} INFO - Job 537: Subtask Ingest_from_current_food_expenditure_series
+[2022-08-11 19:43:25,856] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_V5.Ingest_from_current_food_expenditure_series manual__2022-08-11T19:43:19.932213+00:00 [running]> on host ce1be8c59d56
+[2022-08-11 19:43:25,953] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_V5
+AIRFLOW_CTX_TASK_ID=Ingest_from_current_food_expenditure_series
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T19:43:19.932213+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T19:43:19.932213+00:00
+[2022-08-11 19:43:33,390] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/nominal_expenditures.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:34,746] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/nominal_expenditures_no_taxes_tips.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:36,414] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/constant_dollar_expenditures.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:37,659] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/constant_dollar_expenditures_no_taxes_tips.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:38,849] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/food_expenditures_source_funds.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:40,132] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/normalized_food_expenditures.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:41,892] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/monthly_sales.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:44,220] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/archived_nominal_expenditures_1.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:45,455] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/archived_expenditures_purchaser_2.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:46,811] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/archived_normalized_expenditures_3.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:48,033] {logging_mixin.py:115} INFO - Successfully uploaded current-food-expenditure-series/archived_monthly_4.xlsx to s3-bucket-raw-usda
+[2022-08-11 19:43:48,035] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-11 19:43:48,047] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_V5, task_id=Ingest_from_current_food_expenditure_series, execution_date=20220811T194319, start_date=20220811T194325, end_date=20220811T194348
+[2022-08-11 19:43:48,093] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 19:43:48,120] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
