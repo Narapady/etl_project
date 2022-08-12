@@ -430,3 +430,19 @@
 [2022-08-12 00:27:34,717] {logging_mixin.py:115} INFO - [2022-08-12 00:27:34,716] {dag.py:2420} INFO - Sync 1 DAGs
 [2022-08-12 00:27:34,728] {logging_mixin.py:115} INFO - [2022-08-12 00:27:34,728] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG_US_FOOD_NUTRITION to 2022-08-07T00:00:00+00:00, run_after=2022-08-14T00:00:00+00:00
 [2022-08-12 00:27:34,734] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.508 seconds
+[2022-08-12 00:28:05,003] {processor.py:153} INFO - Started process (PID=11371) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-12 00:28:05,006] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-12 00:28:05,008] {logging_mixin.py:115} INFO - [2022-08-12 00:28:05,008] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-12 00:28:05,142] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-12 00:28:05,464] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG_US_FOOD_NUTRITION']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-12 00:28:05,482] {logging_mixin.py:115} INFO - [2022-08-12 00:28:05,481] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-12 00:28:05,493] {logging_mixin.py:115} INFO - [2022-08-12 00:28:05,493] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG_US_FOOD_NUTRITION to 2022-08-07T00:00:00+00:00, run_after=2022-08-14T00:00:00+00:00
+[2022-08-12 00:28:05,499] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.501 seconds
+[2022-08-12 00:28:35,742] {processor.py:153} INFO - Started process (PID=11405) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-12 00:28:35,746] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-12 00:28:35,748] {logging_mixin.py:115} INFO - [2022-08-12 00:28:35,748] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-12 00:28:35,881] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-12 00:28:36,204] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG_US_FOOD_NUTRITION']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-12 00:28:36,220] {logging_mixin.py:115} INFO - [2022-08-12 00:28:36,219] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-12 00:28:36,230] {logging_mixin.py:115} INFO - [2022-08-12 00:28:36,229] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG_US_FOOD_NUTRITION to 2022-08-07T00:00:00+00:00, run_after=2022-08-14T00:00:00+00:00
+[2022-08-12 00:28:36,236] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.499 seconds
