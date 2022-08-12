@@ -1,0 +1,25 @@
+[2022-08-11 23:15:15,107] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Stage_food-expenditure-clean manual__2022-08-11T23:09:24.436624+00:00 [queued]>
+[2022-08-11 23:15:15,127] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Stage_food-expenditure-clean manual__2022-08-11T23:09:24.436624+00:00 [queued]>
+[2022-08-11 23:15:15,129] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 23:15:15,131] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-11 23:15:15,132] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-11 23:15:15,154] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stage_food-expenditure-clean> on 2022-08-11 23:09:24.436624+00:00
+[2022-08-11 23:15:15,172] {standard_task_runner.py:52} INFO - Started process 6644 to run task
+[2022-08-11 23:15:15,182] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_US_FOOD_NUTRITION', 'Stage_food-expenditure-clean', 'manual__2022-08-11T23:09:24.436624+00:00', '--job-id', '728', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpyu56pcmm', '--error-file', '/tmp/tmp701qk54y']
+[2022-08-11 23:15:15,193] {standard_task_runner.py:80} INFO - Job 728: Subtask Stage_food-expenditure-clean
+[2022-08-11 23:15:15,280] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Stage_food-expenditure-clean manual__2022-08-11T23:09:24.436624+00:00 [running]> on host a02c2b8cab8b
+[2022-08-11 23:15:15,384] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_US_FOOD_NUTRITION
+AIRFLOW_CTX_TASK_ID=Stage_food-expenditure-clean
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-11T23:09:24.436624+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-11T23:09:24.436624+00:00
+[2022-08-11 23:15:25,441] {logging_mixin.py:115} INFO - Successfully loaded monthly-sales-staged.csv to s3-bucket-staged
+[2022-08-11 23:15:25,841] {logging_mixin.py:115} INFO - Successfully loaded food-expenditure-staged.csv to s3-bucket-staged
+[2022-08-11 23:15:25,843] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-11 23:15:25,854] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_US_FOOD_NUTRITION, task_id=Stage_food-expenditure-clean, execution_date=20220811T230924, start_date=20220811T231515, end_date=20220811T231525
+[2022-08-11 23:15:25,910] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-11 23:15:25,935] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

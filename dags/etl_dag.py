@@ -36,7 +36,7 @@ from datetime import datetime, timedelta
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
 # parameter for connecting to snowflake
-DAG_ID = "ETL_DAG_V8"
+DAG_ID = "ETL_DAG_US_FOOD_NUTRITION"
 DATABASE = "us_food_nutrition"
 SCHEMA = "public"
 WAREHOUSE = "food_nutrition_wh"
