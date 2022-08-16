@@ -134,7 +134,7 @@ def run(category):
 
 # List of topic to ingest from USDA
 USDA_INGEST_LIST = (
-        "Loss-Adjusted Food Availability",
+        # "Loss-Adjusted Food Availability",
         "Food Consumption Estimates",
         "Nutrient Intake Estimates",
         "2016",

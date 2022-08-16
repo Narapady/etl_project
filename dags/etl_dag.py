@@ -11,7 +11,7 @@ Data Pipeline Information:
      - Airflow Dag is run in docker-compose (multi-containers)
      - Data pipeline is scheduled to run weekly
      - Starting date of the data pipeline is August, 6, 2022
-     - Computationally intensive tasks are run in parallel (ingest, tranform, stage)
+     - Computationally intensive tasks are run in parallel (ingest, tranform, stage, load)
 Flow of Data Pipeline:
     (
     start_etl 

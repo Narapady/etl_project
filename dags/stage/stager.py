@@ -174,7 +174,7 @@ STAGING_LIST = {"obesity":stage_obesity_kaggle,
                 "nutrient-intake-estimates-clean":stage_foodnutrient_estimates,
                 "food-expenditure-clean":stage_foodexpenditure,
                 "price-index-clean":stage_priceindex,
-                "loss-adjusted-food-availability-clean":stage_foodavailability
+                # "loss-adjusted-food-availability-clean":stage_foodavailability
                 }
 
 def run(category):
