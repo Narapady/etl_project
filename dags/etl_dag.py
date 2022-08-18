@@ -35,7 +35,7 @@ from datetime import datetime, timedelta
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
 # parameter for connecting to snowflake
-DAG_ID = "ETL_DAG"
+DAG_ID = "ETL_DAG_US_FOOOD_NURITION"
 DATABASE = "us_food_nutrition"
 SCHEMA = "public"
 WAREHOUSE = "food_nutrition_wh"
@@ -53,7 +53,6 @@ STAGE_LIST = stager.STAGING_LIST
 
 default_args = {"owner": "narapady", "retries": 5,
                 "retry_delay": timedelta(minutes=5)}
-
 with DAG(
     default_args=default_args,
     dag_id=DAG_ID,
