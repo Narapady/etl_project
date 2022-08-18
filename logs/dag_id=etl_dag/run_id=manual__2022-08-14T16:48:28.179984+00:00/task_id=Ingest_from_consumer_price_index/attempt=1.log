@@ -1,0 +1,25 @@
+[2022-08-14 16:48:33,126] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Ingest_from_consumer_price_index manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:48:33,135] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Ingest_from_consumer_price_index manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:48:33,136] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:48:33,137] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:48:33,138] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:48:33,148] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_consumer_price_index> on 2022-08-14 16:48:28.179984+00:00
+[2022-08-14 16:48:33,153] {standard_task_runner.py:52} INFO - Started process 472 to run task
+[2022-08-14 16:48:33,158] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Ingest_from_consumer_price_index', 'manual__2022-08-14T16:48:28.179984+00:00', '--job-id', '941', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpd970wmnm', '--error-file', '/tmp/tmpav8xy03y']
+[2022-08-14 16:48:33,160] {standard_task_runner.py:80} INFO - Job 941: Subtask Ingest_from_consumer_price_index
+[2022-08-14 16:48:33,252] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Ingest_from_consumer_price_index manual__2022-08-14T16:48:28.179984+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:48:33,388] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Ingest_from_consumer_price_index
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-14T16:48:28.179984+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-14T16:48:28.179984+00:00
+[2022-08-14 16:48:39,611] {logging_mixin.py:115} INFO - Successfully uploaded consumer-price-index/CPIforecast.xlsx to s3-bucket-raw-usda
+[2022-08-14 16:48:40,851] {logging_mixin.py:115} INFO - Successfully uploaded consumer-price-index/historicalcpi.xlsx to s3-bucket-raw-usda
+[2022-08-14 16:48:40,852] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-14 16:48:40,862] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Ingest_from_consumer_price_index, execution_date=20220814T164828, start_date=20220814T164833, end_date=20220814T164840
+[2022-08-14 16:48:40,916] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-14 16:48:40,945] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

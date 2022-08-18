@@ -1,4 +1,3 @@
-
 """
 Heart of the program. This is Extract Transform Load DAG (Directed acyclic Graph).
 There are 3 main operators used to process data pipeline:
@@ -48,34 +47,30 @@ CREATE_TABLE_CMD = sql_command.CREATE_TABLE_SQL
 TABLE_MAP_DICT = sql_command.TABLE_MAP
 
 # list of dynamic python dags for ingest, transform, and load
-INGEST_LIST  = ingestor.USDA_INGEST_LIST
+INGEST_LIST = ingestor.USDA_INGEST_LIST
 TRANSFORM_LIST = transformer.USDA_TRANSFORM_LIST
 STAGE_LIST = stager.STAGING_LIST
 
-default_args = {
-    "owner": "narapady",
-    "retries": 5,
-    "retry_delay": timedelta(minutes=5)
-    }
-    
+default_args = {"owner": "narapady", "retries": 5,
+                "retry_delay": timedelta(minutes=5)}
+
 with DAG(
     default_args=default_args,
     dag_id=DAG_ID,
-    description="Extract Transform Load Dag", 
+    description="Extract Transform Load Dag",
     start_date=datetime(2022, 8, 6),
-    schedule_interval= '@weekly'
-
+    schedule_interval="@weekly",
 ) as dag:
     # start the dag
     start_etl = DummyOperator(task_id="Start_ETL")
-    
+
     # create s3 bucket for raw data
     ingest_s3_bucket = PythonOperator(
-        task_id = "Create_s3_bucket_ingest",
+        task_id="Create_s3_bucket_ingest",
         python_callable=ingestor.create_s3_bucket_ingest,
-        op_kwargs={"bucket_name":"s3-bucket-raw-usda"}
+        op_kwargs={"bucket_name": "s3-bucket-raw-usda"},
     )
-    
+
     # ingest jobs than run in parallel
     ingest_jobs = []
     for source in INGEST_LIST:
@@ -83,76 +78,79 @@ with DAG(
         ingest = PythonOperator(
             task_id=f"Ingest_from_{source_category}",
             python_callable=ingestor.run,
-            op_kwargs={"category":source}
+            op_kwargs={"category": source},
         )
         ingest_jobs.append(ingest)
 
     # create s3 bucket for transformed data
     transform_s3_bucket = PythonOperator(
-        task_id = "Create_s3_bucket_transform",
+        task_id="Create_s3_bucket_transform",
         python_callable=transformer.create_s3_bucket_transform,
-        op_kwargs={"bucket_name":"s3-bucket-clean-usda"}
+        op_kwargs={"bucket_name": "s3-bucket-clean-usda"},
     )
-    
+
     # transform jobs than run in parallel
     transform_jobs = []
     for source in TRANSFORM_LIST:
         transform = PythonOperator(
             task_id=f"Transform_{source}",
             python_callable=transformer.run,
-            op_kwargs={"category":source}
+            op_kwargs={"category": source},
         )
         transform_jobs.append(transform)
-        
+
     # create s3 bucket for staging data
     stage_s3_bucket = PythonOperator(
-        task_id = "Create_s3_bucket_stage",
+        task_id="Create_s3_bucket_stage",
         python_callable=stager.create_s3_bucket_stage,
-        op_kwargs={"bucket_name":"s3-bucket-staged"}
+        op_kwargs={"bucket_name": "s3-bucket-staged"},
     )
-    
+
     # stage jobs than run in parallel
     stage_jobs = []
     for source in list(STAGE_LIST.keys()):
         stage = PythonOperator(
             task_id=f"Stage_{source}",
             python_callable=stager.run,
-            op_kwargs={"category":source}
+            op_kwargs={"category": source},
         )
         stage_jobs.append(stage)
 
     # create tables in Snowflake
     create_snowflake_tables = SnowflakeOperator(
-        task_id='Create_snowflake_tables',
+        task_id="Create_snowflake_tables",
         sql=CREATE_TABLE_CMD,
         warehouse=WAREHOUSE,
         database=DATABASE,
         schema=SCHEMA,
         role=SNOWFLAKE_ROLE,
-        snowflake_conn_id=SNOWFLAKE_CONN_ID
+        snowflake_conn_id=SNOWFLAKE_CONN_ID,
     )
-    
+
     # load to snowflake tables in parallel
     snowflake_load_jobs = []
     for table_name, filename in TABLE_MAP_DICT.items():
         load = S3ToSnowflakeOperator(
-            task_id=f'Load_into_{table_name}_table',
+            task_id=f"Load_into_{table_name}_table",
             s3_keys=[filename],
             table=table_name,
             schema=SCHEMA,
             stage=S3_SNOWFLAKE_STAGE,
             file_format=STAGE_FILE_FORMAT,
             role=SNOWFLAKE_ROLE,
-            snowflake_conn_id=SNOWFLAKE_CONN_ID
+            snowflake_conn_id=SNOWFLAKE_CONN_ID,
         )
         snowflake_load_jobs.append(load)
-    
+
     # Flow and order of data pipeline
     (
-        start_etl 
-        >> ingest_s3_bucket >> ingest_jobs
-        >> transform_s3_bucket >> transform_jobs 
-        >> stage_s3_bucket >> stage_jobs
-        >> create_snowflake_tables >> snowflake_load_jobs
+        start_etl
+        >> ingest_s3_bucket
+        >> ingest_jobs
+        >> transform_s3_bucket
+        >> transform_jobs
+        >> stage_s3_bucket
+        >> stage_jobs
+        >> create_snowflake_tables
+        >> snowflake_load_jobs
     )
-        

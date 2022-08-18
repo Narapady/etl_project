@@ -1,0 +1,25 @@
+[2022-08-12 05:37:38,077] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_2015 manual__2022-08-12T05:33:31.619708+00:00 [queued]>
+[2022-08-12 05:37:38,109] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_2015 manual__2022-08-12T05:33:31.619708+00:00 [queued]>
+[2022-08-12 05:37:38,118] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 05:37:38,120] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-12 05:37:38,121] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 05:37:38,141] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_2015> on 2022-08-12 05:33:31.619708+00:00
+[2022-08-12 05:37:38,158] {standard_task_runner.py:52} INFO - Started process 617 to run task
+[2022-08-12 05:37:38,196] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Transform_2015', 'manual__2022-08-12T05:33:31.619708+00:00', '--job-id', '857', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpioke86uv', '--error-file', '/tmp/tmpm_dpxyx9']
+[2022-08-12 05:37:38,221] {standard_task_runner.py:80} INFO - Job 857: Subtask Transform_2015
+[2022-08-12 05:37:38,348] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Transform_2015 manual__2022-08-12T05:33:31.619708+00:00 [running]> on host 959a8f00817b
+[2022-08-12 05:37:38,449] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Transform_2015
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-12T05:33:31.619708+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-12T05:33:31.619708+00:00
+[2022-08-12 05:37:55,144] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-15-and-older-2015.csv to S3
+[2022-08-12 05:37:55,457] {logging_mixin.py:115} INFO - Successfully process fast-food-clean/age-18-and-older-2015.csv to S3
+[2022-08-12 05:37:55,459] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-12 05:37:55,472] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Transform_2015, execution_date=20220812T053331, start_date=20220812T053738, end_date=20220812T053755
+[2022-08-12 05:37:55,500] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-12 05:37:55,526] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

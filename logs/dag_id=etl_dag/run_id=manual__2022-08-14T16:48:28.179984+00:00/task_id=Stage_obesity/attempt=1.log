@@ -1,0 +1,25 @@
+[2022-08-14 16:53:10,337] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Stage_obesity manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:53:10,349] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Stage_obesity manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:53:10,353] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:53:10,354] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:53:10,355] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:53:10,375] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stage_obesity> on 2022-08-14 16:48:28.179984+00:00
+[2022-08-14 16:53:10,393] {standard_task_runner.py:52} INFO - Started process 912 to run task
+[2022-08-14 16:53:10,395] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Stage_obesity', 'manual__2022-08-14T16:48:28.179984+00:00', '--job-id', '976', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpw8ixgh6m', '--error-file', '/tmp/tmpxzppqmte']
+[2022-08-14 16:53:10,399] {standard_task_runner.py:80} INFO - Job 976: Subtask Stage_obesity
+[2022-08-14 16:53:10,505] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Stage_obesity manual__2022-08-14T16:48:28.179984+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:53:10,594] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Stage_obesity
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-14T16:48:28.179984+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-14T16:48:28.179984+00:00
+[2022-08-14 16:53:13,620] {logging_mixin.py:115} INFO - Successfully loaded Obesity_GDP_PanelData-staged.csv to s3-bucket-staged
+[2022-08-14 16:53:34,559] {logging_mixin.py:115} INFO - Successfully loaded obesity-staged.csv to s3-bucket-staged
+[2022-08-14 16:53:34,573] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-14 16:53:34,597] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Stage_obesity, execution_date=20220814T164828, start_date=20220814T165310, end_date=20220814T165334
+[2022-08-14 16:53:34,674] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-14 16:53:34,699] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

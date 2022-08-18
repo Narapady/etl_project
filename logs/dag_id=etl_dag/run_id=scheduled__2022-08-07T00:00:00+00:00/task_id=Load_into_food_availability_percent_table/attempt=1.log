@@ -1,0 +1,41 @@
+[2022-08-14 16:55:08,444] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Load_into_food_availability_percent_table scheduled__2022-08-07T00:00:00+00:00 [queued]>
+[2022-08-14 16:55:08,460] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Load_into_food_availability_percent_table scheduled__2022-08-07T00:00:00+00:00 [queued]>
+[2022-08-14 16:55:08,461] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:55:08,463] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:55:08,463] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:55:08,498] {taskinstance.py:1397} INFO - Executing <Task(S3ToSnowflakeOperator): Load_into_food_availability_percent_table> on 2022-08-07 00:00:00+00:00
+[2022-08-14 16:55:08,503] {standard_task_runner.py:52} INFO - Started process 1079 to run task
+[2022-08-14 16:55:08,513] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Load_into_food_availability_percent_table', 'scheduled__2022-08-07T00:00:00+00:00', '--job-id', '982', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpy4a329zj', '--error-file', '/tmp/tmp1ygwo8wp']
+[2022-08-14 16:55:08,515] {standard_task_runner.py:80} INFO - Job 982: Subtask Load_into_food_availability_percent_table
+[2022-08-14 16:55:08,630] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Load_into_food_availability_percent_table scheduled__2022-08-07T00:00:00+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:55:08,896] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Load_into_food_availability_percent_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-07T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-07T00:00:00+00:00
+[2022-08-14 16:55:08,899] {s3_to_snowflake.py:135} INFO - Executing COPY command...
+[2022-08-14 16:55:08,912] {base.py:68} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2022-08-14 16:55:08,920] {connection.py:275} INFO - Snowflake Connector for Python Version: 2.7.11, Python Version: 3.7.13, Platform: Linux-5.10.104-linuxkit-aarch64-with-debian-11.3
+[2022-08-14 16:55:08,921] {connection.py:927} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2022-08-14 16:55:08,923] {connection.py:944} INFO - Setting use_openssl_only mode to False
+[2022-08-14 16:55:10,263] {cursor.py:715} INFO - query: [ALTER SESSION SET autocommit=True]
+[2022-08-14 16:55:10,514] {cursor.py:739} INFO - query execution done
+[2022-08-14 16:55:10,518] {snowflake.py:328} INFO - Running statement: COPY INTO public.food_availability_percent
+FROM @s3_stage/
+files=('percents-staged.csv')
+file_format=csv_format, parameters: None
+[2022-08-14 16:55:10,521] {cursor.py:715} INFO - query: [COPY INTO public.food_availability_percent FROM @s3_stage/ files=('percents-stag...]
+[2022-08-14 16:55:12,326] {cursor.py:739} INFO - query execution done
+[2022-08-14 16:55:12,327] {snowflake.py:338} INFO - Statement execution info - {'file': 's3://s3-bucket-staged/percents-staged.csv', 'status': 'LOADED', 'rows_parsed': 41, 'rows_loaded': 41, 'error_limit': 1, 'errors_seen': 0, 'first_error': None, 'first_error_line': None, 'first_error_character': None, 'first_error_column_name': None}
+[2022-08-14 16:55:12,328] {snowflake.py:342} INFO - Rows affected: 1
+[2022-08-14 16:55:12,329] {snowflake.py:343} INFO - Snowflake query id: 01a64937-0004-2899-001e-000700040176
+[2022-08-14 16:55:12,330] {connection.py:557} INFO - closed
+[2022-08-14 16:55:12,465] {connection.py:560} INFO - No async queries seem to be running, deleting session
+[2022-08-14 16:55:12,635] {s3_to_snowflake.py:137} INFO - COPY command completed
+[2022-08-14 16:55:12,650] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Load_into_food_availability_percent_table, execution_date=20220807T000000, start_date=20220814T165508, end_date=20220814T165512
+[2022-08-14 16:55:12,708] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-14 16:55:12,731] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

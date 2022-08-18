@@ -1,0 +1,24 @@
+[2022-08-14 16:50:38,461] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_producer-price-index scheduled__2022-08-07T00:00:00+00:00 [queued]>
+[2022-08-14 16:50:38,479] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_producer-price-index scheduled__2022-08-07T00:00:00+00:00 [queued]>
+[2022-08-14 16:50:38,481] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:50:38,482] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:50:38,484] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:50:38,510] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_producer-price-index> on 2022-08-07 00:00:00+00:00
+[2022-08-14 16:50:38,517] {standard_task_runner.py:52} INFO - Started process 650 to run task
+[2022-08-14 16:50:38,524] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Transform_producer-price-index', 'scheduled__2022-08-07T00:00:00+00:00', '--job-id', '949', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpq_xphrc5', '--error-file', '/tmp/tmpmho5sgk1']
+[2022-08-14 16:50:38,533] {standard_task_runner.py:80} INFO - Job 949: Subtask Transform_producer-price-index
+[2022-08-14 16:50:38,659] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Transform_producer-price-index scheduled__2022-08-07T00:00:00+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:50:38,732] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Transform_producer-price-index
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-07T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-07T00:00:00+00:00
+[2022-08-14 16:51:09,681] {logging_mixin.py:115} INFO - Successfully process price-index-clean/producer-price-index.csv to S3
+[2022-08-14 16:51:09,688] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-14 16:51:09,711] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Transform_producer-price-index, execution_date=20220807T000000, start_date=20220814T165038, end_date=20220814T165109
+[2022-08-14 16:51:09,769] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-14 16:51:09,794] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,24 @@
+[2022-08-14 16:53:10,135] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Stage_price-index-clean manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:53:10,152] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Stage_price-index-clean manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:53:10,157] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:53:10,169] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:53:10,171] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:53:10,193] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stage_price-index-clean> on 2022-08-14 16:48:28.179984+00:00
+[2022-08-14 16:53:10,199] {standard_task_runner.py:52} INFO - Started process 908 to run task
+[2022-08-14 16:53:10,218] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Stage_price-index-clean', 'manual__2022-08-14T16:48:28.179984+00:00', '--job-id', '973', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpp5nrljb2', '--error-file', '/tmp/tmp8wc_g4s1']
+[2022-08-14 16:53:10,222] {standard_task_runner.py:80} INFO - Job 973: Subtask Stage_price-index-clean
+[2022-08-14 16:53:10,320] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Stage_price-index-clean manual__2022-08-14T16:48:28.179984+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:53:10,410] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Stage_price-index-clean
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-14T16:48:28.179984+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-14T16:48:28.179984+00:00
+[2022-08-14 16:53:13,495] {logging_mixin.py:115} INFO - Successfully loaded price-index-staged.csv to s3-bucket-staged
+[2022-08-14 16:53:13,497] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-14 16:53:13,507] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Stage_price-index-clean, execution_date=20220814T164828, start_date=20220814T165310, end_date=20220814T165313
+[2022-08-14 16:53:13,525] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-14 16:53:13,552] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

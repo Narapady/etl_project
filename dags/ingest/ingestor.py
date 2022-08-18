@@ -2,9 +2,10 @@ import os
 import requests
 import zipfile
 from bs4 import BeautifulSoup
-from storage.s3 import S3AWS 
+from storage.s3 import S3AWS
 from ingest.source import USDA_URL
 from credential import ACCESS_KEY_ID, SECRET_ACCESS_KEY
+
 
 def to_lowercase(word: str):
     """
@@ -14,14 +15,15 @@ def to_lowercase(word: str):
     result = [item.lower() for item in result]
     return " ".join(result).replace(" ", "-")
 
-def get_links(url: str): 
+
+def get_links(url: str):
     """
     Fetch the download links and group titles for each dataset from usda.
-    returns a dictionary in form of {"group title": list of download links 
+    returns a dictionary in form of {"group title": list of download links
     corresponding to the group title}. This is used as helper function when
     ingesting data from usda to S3
     """
-    base_url = url[:url.find("v") + 1]
+    base_url = url[: url.find("v") + 1]
     req = requests.get(url)
     soup = BeautifulSoup(req.content, features="html.parser")
     table_rows = soup.find_all("tr")
@@ -36,18 +38,19 @@ def get_links(url: str):
             link = item.find("a")
             if link:
                 links[list(links.keys())[-1]].append(base_url + link["href"])
- 
+
     return links
+
 
 def filter_links(source_list):
     """Filter out unnessary links. Return a dictionary with key as
-       group titile and value as a list of links
+    group titile and value as a list of links
     """
     new_dict = {}
     for dict_ in source_list:
         for key, value in dict_.items():
-           new_dict[key] = value 
-           
+            new_dict[key] = value
+
     del new_dict["2006"]
     del new_dict["2007"]
     del new_dict["Food Availability"]
@@ -56,32 +59,32 @@ def filter_links(source_list):
 
     return new_dict
 
+
 def ingest_usda(s3, sources, bucket_name, category):
     """
     Ingest data from USDA ERS to specified S3 buckets. 'sources' paramenter
-    is the website links that contain data to ingest. 
+    is the website links that contain data to ingest.
     """
     source_list = [get_links(source) for source in sources]
-    links = filter_links(source_list)[category]    
-    key = to_lowercase(category)        
-    
+    links = filter_links(source_list)[category]
+    key = to_lowercase(category)
+
     for link in links:
         req = requests.get(link)
         filename = req.url[link.rfind("/") + 1: link.rfind("?")]
-        load_to_s3 = s3.s3_client().put_object( 
-                        Bucket= bucket_name,
-                        Body= req.content,
-                        Key=  key + "/" + filename
-                    )
+        load_to_s3 = s3.s3_client().put_object(
+            Bucket=bucket_name, Body=req.content, Key=key + "/" + filename
+        )
         if load_to_s3:
             print(f"Successfully uploaded {key}/{filename} to {bucket_name}")
         else:
             print(f"Failed to upload {key}/{filename} to {bucket_name}")
 
+
 def ingest_kaggle(s3, sources, bucket_name):
     """
     Ingest data from Kaggle to specified S3 bucket via Kaggle API commnads.
-    'sources' paramenter is a list of kaggle api commands to get the data. 
+    'sources' paramenter is a list of kaggle api commands to get the data.
     """
     for api_command in sources:
         os.system(api_command)
@@ -92,13 +95,15 @@ def ingest_kaggle(s3, sources, bucket_name):
                 if ".csv" in file:
                     s3.s3_client().upload_file(file, bucket_name, "obesity/" + file)
                     print(f"Successfully uploaded {file} to {bucket_name}")
-            
+
     os.system("rm *.zip *.csv")
-    
+
+
 def create_s3_bucket_ingest(bucket_name):
-    """ create s3 bucket for ingestion layer """
+    """create s3 bucket for ingestion layer"""
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
     return s3.create_bucket(bucket_name)
+
 
 class Ingestor:
     """
@@ -106,41 +111,44 @@ class Ingestor:
     instance method ingest() to ingest data from source systems to aws object storage s3.
     The instantiation takes s3 object, s3's bucket name to load data to, and list of source links/api commands
     """
+
     def __init__(self, s3, source, bucket_name, category):
         self.s3 = s3
-        self.bucket_name = bucket_name 
+        self.bucket_name = bucket_name
         self.source = source
         self.category = category
-        
+
     def ingest(self):
         """
         ingesting data to s3 bucket based on ingesting strategy
         """
         # ingest_kaggle(self.s3, self.kaggle_sources, self.bucket_name)
         ingest_usda(self.s3, self.source, self.bucket_name, self.category)
-            
+
+
 def run(category):
     """
     Run the ingestor based on category
     """
-    
+
     s3 = S3AWS(ACCESS_KEY_ID, SECRET_ACCESS_KEY)
-    # kaggle = s3.create_bucket("s3-bucket-raw-kaggle") 
+    # kaggle = s3.create_bucket("s3-bucket-raw-kaggle")
     # ingestor_kaggle = Ingestor(s3, kaggle_sources, "s3-bucket-raw-kaggle")
     # ingestor_kaggle.ingest("ingest_kaggle")
 
     ingestor_usda = Ingestor(s3, USDA_URL, "s3-bucket-raw-usda", category)
     ingestor_usda.ingest()
 
+
 # List of topic to ingest from USDA
 USDA_INGEST_LIST = (
-        # "Loss-Adjusted Food Availability",
-        "Food Consumption Estimates",
-        "Nutrient Intake Estimates",
-        "2016",
-        "2015",
-        "2014",
-        "Consumer Price Index",
-        "Producer Price Index",
-        "Current Food Expenditure Series"
-        )
+    # "Loss-Adjusted Food Availability",
+    "Food Consumption Estimates",
+    "Nutrient Intake Estimates",
+    "2016",
+    "2015",
+    "2014",
+    "Consumer Price Index",
+    "Producer Price Index",
+    "Current Food Expenditure Series",
+)

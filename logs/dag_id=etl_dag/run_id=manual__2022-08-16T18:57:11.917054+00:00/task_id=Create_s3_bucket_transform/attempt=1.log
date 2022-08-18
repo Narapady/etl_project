@@ -1,0 +1,23 @@
+[2022-08-16 18:57:55,011] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Create_s3_bucket_transform manual__2022-08-16T18:57:11.917054+00:00 [queued]>
+[2022-08-16 18:57:55,018] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Create_s3_bucket_transform manual__2022-08-16T18:57:11.917054+00:00 [queued]>
+[2022-08-16 18:57:55,019] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-16 18:57:55,020] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-16 18:57:55,021] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-16 18:57:55,029] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Create_s3_bucket_transform> on 2022-08-16 18:57:11.917054+00:00
+[2022-08-16 18:57:55,033] {standard_task_runner.py:52} INFO - Started process 290 to run task
+[2022-08-16 18:57:55,036] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Create_s3_bucket_transform', 'manual__2022-08-16T18:57:11.917054+00:00', '--job-id', '1091', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpesay8npr', '--error-file', '/tmp/tmpt6_rzm5c']
+[2022-08-16 18:57:55,039] {standard_task_runner.py:80} INFO - Job 1091: Subtask Create_s3_bucket_transform
+[2022-08-16 18:57:55,084] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Create_s3_bucket_transform manual__2022-08-16T18:57:11.917054+00:00 [running]> on host c7fa0145da3e
+[2022-08-16 18:57:55,127] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Create_s3_bucket_transform
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-16T18:57:11.917054+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-16T18:57:11.917054+00:00
+[2022-08-16 18:57:56,953] {python.py:173} INFO - Done. Returned value was: {'ResponseMetadata': {'RequestId': 'GYJZTRSEJN92Q7HM', 'HostId': 'lpL5QBgU7Pw/j0Qv+ROpeRbIMVCsMeHHQ/DFHZL8ZgmZXRK6eGEYsPffXXN5gtLIO/GttVciFNk=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'lpL5QBgU7Pw/j0Qv+ROpeRbIMVCsMeHHQ/DFHZL8ZgmZXRK6eGEYsPffXXN5gtLIO/GttVciFNk=', 'x-amz-request-id': 'GYJZTRSEJN92Q7HM', 'date': 'Tue, 16 Aug 2022 18:57:58 GMT', 'location': '/s3-bucket-clean-usda', 'server': 'AmazonS3', 'content-length': '0'}, 'RetryAttempts': 0}, 'Location': '/s3-bucket-clean-usda'}
+[2022-08-16 18:57:57,000] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Create_s3_bucket_transform, execution_date=20220816T185711, start_date=20220816T185755, end_date=20220816T185757
+[2022-08-16 18:57:57,034] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-16 18:57:57,065] {local_task_job.py:273} INFO - 8 downstream tasks scheduled from follow-on schedule check

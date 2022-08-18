@@ -1,0 +1,37 @@
+[2022-08-14 16:52:10,562] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_food-consumption-estimates manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:52:10,571] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Transform_food-consumption-estimates manual__2022-08-14T16:48:28.179984+00:00 [queued]>
+[2022-08-14 16:52:10,572] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:52:10,573] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:52:10,574] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:52:10,597] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_food-consumption-estimates> on 2022-08-14 16:48:28.179984+00:00
+[2022-08-14 16:52:10,610] {standard_task_runner.py:52} INFO - Started process 809 to run task
+[2022-08-14 16:52:10,619] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Transform_food-consumption-estimates', 'manual__2022-08-14T16:48:28.179984+00:00', '--job-id', '964', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpu9dvkrwq', '--error-file', '/tmp/tmpo7psg2q3']
+[2022-08-14 16:52:10,622] {standard_task_runner.py:80} INFO - Job 964: Subtask Transform_food-consumption-estimates
+[2022-08-14 16:52:10,711] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Transform_food-consumption-estimates manual__2022-08-14T16:48:28.179984+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:52:10,821] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Transform_food-consumption-estimates
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-14T16:48:28.179984+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-14T16:48:28.179984+00:00
+[2022-08-14 16:52:27,407] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Total population-2015-2016.csv to S3
+[2022-08-14 16:52:27,695] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Total population-2017-2018.csv to S3
+[2022-08-14 16:52:28,005] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Children age 2–19-2015-2016.csv to S3
+[2022-08-14 16:52:28,293] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Children age 2–19-2017-2018.csv to S3
+[2022-08-14 16:52:28,614] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Adults age 20-64-2015-2016.csv to S3
+[2022-08-14 16:52:28,924] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Adults age 20-64-2017-2018.csv to S3
+[2022-08-14 16:52:29,203] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Seniors age 65 and above-2015-2016.csv to S3
+[2022-08-14 16:52:29,516] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Seniors age 65 and above-2017-2018.csv to S3
+[2022-08-14 16:52:29,816] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income < 185% poverty line-2015-2016.csv to S3
+[2022-08-14 16:52:30,112] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income < 185% poverty line-2017-2018.csv to S3
+[2022-08-14 16:52:30,435] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income 185–300% poverty line-2015-2016.csv to S3
+[2022-08-14 16:52:30,745] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income 185–300% poverty line-2017-2018.csv to S3
+[2022-08-14 16:52:31,054] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income > 300% poverty line-2015-2016.csv to S3
+[2022-08-14 16:52:31,359] {logging_mixin.py:115} INFO - Successfully process food-consumption-estimates-clean/Household income > 300% poverty line-2017-2018.csv to S3
+[2022-08-14 16:52:31,366] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-14 16:52:31,388] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Transform_food-consumption-estimates, execution_date=20220814T164828, start_date=20220814T165210, end_date=20220814T165231
+[2022-08-14 16:52:31,449] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-14 16:52:31,474] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

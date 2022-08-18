@@ -1,0 +1,24 @@
+[2022-08-12 01:26:45,392] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Stage_fast-food-clean manual__2022-08-12T01:21:26.402383+00:00 [queued]>
+[2022-08-12 01:26:45,409] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Stage_fast-food-clean manual__2022-08-12T01:21:26.402383+00:00 [queued]>
+[2022-08-12 01:26:45,413] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 01:26:45,419] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-12 01:26:45,427] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 01:26:45,446] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Stage_fast-food-clean> on 2022-08-12 01:21:26.402383+00:00
+[2022-08-12 01:26:45,456] {standard_task_runner.py:52} INFO - Started process 654 to run task
+[2022-08-12 01:26:45,463] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_US_FOOD_NUTRITION', 'Stage_fast-food-clean', 'manual__2022-08-12T01:21:26.402383+00:00', '--job-id', '769', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmps6ae8_i7', '--error-file', '/tmp/tmp6iemmfd9']
+[2022-08-12 01:26:45,465] {standard_task_runner.py:80} INFO - Job 769: Subtask Stage_fast-food-clean
+[2022-08-12 01:26:45,581] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Stage_fast-food-clean manual__2022-08-12T01:21:26.402383+00:00 [running]> on host ae5c2449a624
+[2022-08-12 01:26:45,757] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_US_FOOD_NUTRITION
+AIRFLOW_CTX_TASK_ID=Stage_fast-food-clean
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-12T01:21:26.402383+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-12T01:21:26.402383+00:00
+[2022-08-12 01:26:52,737] {logging_mixin.py:115} INFO - Successfully loaded fast-food-staged.csv to s3-bucket-staged
+[2022-08-12 01:26:52,745] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-12 01:26:52,773] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_US_FOOD_NUTRITION, task_id=Stage_fast-food-clean, execution_date=20220812T012126, start_date=20220812T012645, end_date=20220812T012652
+[2022-08-12 01:26:52,837] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-12 01:26:52,867] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,34 @@
+[2022-08-12 05:18:37,167] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Ingest_from_loss-adjusted_food_availability manual__2022-08-12T05:11:17.280858+00:00 [queued]>
+[2022-08-12 05:18:37,205] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Ingest_from_loss-adjusted_food_availability manual__2022-08-12T05:11:17.280858+00:00 [queued]>
+[2022-08-12 05:18:37,209] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 05:18:37,213] {taskinstance.py:1377} INFO - Starting attempt 2 of 6
+[2022-08-12 05:18:37,215] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 05:18:37,254] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_loss-adjusted_food_availability> on 2022-08-12 05:11:17.280858+00:00
+[2022-08-12 05:18:37,272] {standard_task_runner.py:52} INFO - Started process 11083 to run task
+[2022-08-12 05:18:37,301] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_US_FOOD_NUTRITION', 'Ingest_from_loss-adjusted_food_availability', 'manual__2022-08-12T05:11:17.280858+00:00', '--job-id', '806', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpe4durbhh', '--error-file', '/tmp/tmp3p5ctokd']
+[2022-08-12 05:18:37,313] {standard_task_runner.py:80} INFO - Job 806: Subtask Ingest_from_loss-adjusted_food_availability
+[2022-08-12 05:18:37,417] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Ingest_from_loss-adjusted_food_availability manual__2022-08-12T05:11:17.280858+00:00 [running]> on host ae5c2449a624
+[2022-08-12 05:18:37,577] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_US_FOOD_NUTRITION
+AIRFLOW_CTX_TASK_ID=Ingest_from_loss-adjusted_food_availability
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-12T05:11:17.280858+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-12T05:11:17.280858+00:00
+[2022-08-12 05:18:52,715] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/calories.xls to s3-bucket-raw-usda
+[2022-08-12 05:19:25,166] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Dairy.xls to s3-bucket-raw-usda
+[2022-08-12 05:19:36,231] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/fat.xls to s3-bucket-raw-usda
+[2022-08-12 05:19:45,307] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/servings.xls to s3-bucket-raw-usda
+[2022-08-12 05:20:34,135] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Fruit.xls to s3-bucket-raw-usda
+[2022-08-12 05:20:45,731] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/grain.xls to s3-bucket-raw-usda
+[2022-08-12 05:21:13,114] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/meat.xls to s3-bucket-raw-usda
+[2022-08-12 05:21:21,859] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/sugar.xls to s3-bucket-raw-usda
+[2022-08-12 05:22:15,923] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/veg.xls to s3-bucket-raw-usda
+[2022-08-12 05:22:19,721] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/nutrients.xls to s3-bucket-raw-usda
+[2022-08-12 05:22:25,523] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/ctcsp.xls to s3-bucket-raw-usda
+[2022-08-12 05:22:25,545] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-12 05:22:25,759] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_US_FOOD_NUTRITION, task_id=Ingest_from_loss-adjusted_food_availability, execution_date=20220812T051117, start_date=20220812T051837, end_date=20220812T052225
+[2022-08-12 05:22:25,792] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-12 05:22:25,832] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

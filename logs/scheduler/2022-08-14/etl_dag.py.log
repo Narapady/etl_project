@@ -1,0 +1,328 @@
+[2022-08-14 16:44:57,702] {processor.py:153} INFO - Started process (PID=167) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:44:57,704] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:44:57,705] {logging_mixin.py:115} INFO - [2022-08-14 16:44:57,705] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:44:58,226] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:44:58,947] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:44:58,966] {logging_mixin.py:115} INFO - [2022-08-14 16:44:58,966] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:44:58,981] {logging_mixin.py:115} INFO - [2022-08-14 16:44:58,981] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:44:58,990] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 1.291 seconds
+[2022-08-14 16:45:29,157] {processor.py:153} INFO - Started process (PID=241) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:45:29,159] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:45:29,160] {logging_mixin.py:115} INFO - [2022-08-14 16:45:29,160] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:45:29,302] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:45:29,616] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:45:29,634] {logging_mixin.py:115} INFO - [2022-08-14 16:45:29,634] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:45:29,645] {logging_mixin.py:115} INFO - [2022-08-14 16:45:29,645] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:45:29,651] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.497 seconds
+[2022-08-14 16:45:59,822] {processor.py:153} INFO - Started process (PID=275) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:45:59,823] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:45:59,824] {logging_mixin.py:115} INFO - [2022-08-14 16:45:59,824] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:45:59,948] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:46:00,258] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:46:00,274] {logging_mixin.py:115} INFO - [2022-08-14 16:46:00,274] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:46:00,285] {logging_mixin.py:115} INFO - [2022-08-14 16:46:00,284] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:46:00,291] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.472 seconds
+[2022-08-14 16:46:30,520] {processor.py:153} INFO - Started process (PID=309) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:46:30,522] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:46:30,524] {logging_mixin.py:115} INFO - [2022-08-14 16:46:30,524] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:46:30,655] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:46:30,968] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:46:30,983] {logging_mixin.py:115} INFO - [2022-08-14 16:46:30,983] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:46:30,994] {logging_mixin.py:115} INFO - [2022-08-14 16:46:30,994] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:46:31,001] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.484 seconds
+[2022-08-14 16:47:01,160] {processor.py:153} INFO - Started process (PID=343) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:47:01,162] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:47:01,163] {logging_mixin.py:115} INFO - [2022-08-14 16:47:01,163] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:47:01,284] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:47:01,602] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:47:01,618] {logging_mixin.py:115} INFO - [2022-08-14 16:47:01,618] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:47:01,629] {logging_mixin.py:115} INFO - [2022-08-14 16:47:01,629] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:47:01,635] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.477 seconds
+[2022-08-14 16:47:31,859] {processor.py:153} INFO - Started process (PID=368) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:47:31,863] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:47:31,864] {logging_mixin.py:115} INFO - [2022-08-14 16:47:31,864] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:47:31,998] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:47:32,322] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:47:32,339] {logging_mixin.py:115} INFO - [2022-08-14 16:47:32,339] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:47:32,350] {logging_mixin.py:115} INFO - [2022-08-14 16:47:32,350] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:47:32,356] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.502 seconds
+[2022-08-14 16:48:02,584] {processor.py:153} INFO - Started process (PID=402) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:48:02,587] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:48:02,589] {logging_mixin.py:115} INFO - [2022-08-14 16:48:02,589] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:48:02,719] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:48:03,051] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:48:03,069] {logging_mixin.py:115} INFO - [2022-08-14 16:48:03,068] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:48:03,081] {logging_mixin.py:115} INFO - [2022-08-14 16:48:03,081] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:48:03,088] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.508 seconds
+[2022-08-14 16:48:33,310] {processor.py:153} INFO - Started process (PID=476) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:48:33,314] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:48:33,316] {logging_mixin.py:115} INFO - [2022-08-14 16:48:33,316] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:48:33,567] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:48:33,947] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:48:33,965] {logging_mixin.py:115} INFO - [2022-08-14 16:48:33,965] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:48:33,978] {logging_mixin.py:115} INFO - [2022-08-14 16:48:33,978] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:48:33,984] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.684 seconds
+[2022-08-14 16:49:04,105] {processor.py:153} INFO - Started process (PID=510) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:49:04,107] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:49:04,108] {logging_mixin.py:115} INFO - [2022-08-14 16:49:04,108] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:49:04,254] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:49:04,576] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:49:04,593] {logging_mixin.py:115} INFO - [2022-08-14 16:49:04,593] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:49:04,605] {logging_mixin.py:115} INFO - [2022-08-14 16:49:04,605] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:49:04,613] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.510 seconds
+[2022-08-14 16:49:34,816] {processor.py:153} INFO - Started process (PID=542) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:49:34,817] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:49:34,819] {logging_mixin.py:115} INFO - [2022-08-14 16:49:34,819] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:49:34,941] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:49:35,254] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:49:35,270] {logging_mixin.py:115} INFO - [2022-08-14 16:49:35,270] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:49:35,281] {logging_mixin.py:115} INFO - [2022-08-14 16:49:35,281] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:49:35,288] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.475 seconds
+[2022-08-14 16:50:05,836] {processor.py:153} INFO - Started process (PID=575) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:50:05,838] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:50:05,840] {logging_mixin.py:115} INFO - [2022-08-14 16:50:05,840] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:50:05,979] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:50:06,284] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:50:06,300] {logging_mixin.py:115} INFO - [2022-08-14 16:50:06,300] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:50:06,311] {logging_mixin.py:115} INFO - [2022-08-14 16:50:06,311] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:50:06,317] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.486 seconds
+[2022-08-14 16:50:36,487] {processor.py:153} INFO - Started process (PID=617) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:50:36,488] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:50:36,489] {logging_mixin.py:115} INFO - [2022-08-14 16:50:36,489] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:50:36,608] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:50:36,914] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:50:36,930] {logging_mixin.py:115} INFO - [2022-08-14 16:50:36,929] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:50:36,940] {logging_mixin.py:115} INFO - [2022-08-14 16:50:36,940] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:50:36,947] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.461 seconds
+[2022-08-14 16:51:07,151] {processor.py:153} INFO - Started process (PID=674) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:51:07,154] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:51:07,156] {logging_mixin.py:115} INFO - [2022-08-14 16:51:07,156] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:51:07,299] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:51:07,631] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:51:07,649] {logging_mixin.py:115} INFO - [2022-08-14 16:51:07,649] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:51:07,661] {logging_mixin.py:115} INFO - [2022-08-14 16:51:07,661] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:51:07,669] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.523 seconds
+[2022-08-14 16:51:37,789] {processor.py:153} INFO - Started process (PID=708) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:51:37,792] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:51:37,794] {logging_mixin.py:115} INFO - [2022-08-14 16:51:37,794] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:51:37,927] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:51:38,274] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:51:38,290] {logging_mixin.py:115} INFO - [2022-08-14 16:51:38,289] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:51:38,301] {logging_mixin.py:115} INFO - [2022-08-14 16:51:38,301] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:51:38,309] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.525 seconds
+[2022-08-14 16:52:08,472] {processor.py:153} INFO - Started process (PID=778) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:52:08,474] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:52:08,476] {logging_mixin.py:115} INFO - [2022-08-14 16:52:08,476] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:52:08,609] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:52:08,933] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:52:08,950] {logging_mixin.py:115} INFO - [2022-08-14 16:52:08,950] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:52:08,963] {logging_mixin.py:115} INFO - [2022-08-14 16:52:08,963] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:52:08,969] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.501 seconds
+[2022-08-14 16:52:39,056] {processor.py:153} INFO - Started process (PID=844) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:52:39,058] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:52:39,059] {logging_mixin.py:115} INFO - [2022-08-14 16:52:39,059] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:52:39,190] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:52:39,510] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:52:39,527] {logging_mixin.py:115} INFO - [2022-08-14 16:52:39,526] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:52:39,537] {logging_mixin.py:115} INFO - [2022-08-14 16:52:39,537] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:52:39,544] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.492 seconds
+[2022-08-14 16:53:09,773] {processor.py:153} INFO - Started process (PID=902) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:53:09,775] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:53:09,776] {logging_mixin.py:115} INFO - [2022-08-14 16:53:09,776] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:53:10,205] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:53:10,738] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:53:10,755] {logging_mixin.py:115} INFO - [2022-08-14 16:53:10,754] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:53:10,768] {logging_mixin.py:115} INFO - [2022-08-14 16:53:10,768] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:53:10,776] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 1.006 seconds
+[2022-08-14 16:53:40,924] {processor.py:153} INFO - Started process (PID=946) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:53:40,926] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:53:40,928] {logging_mixin.py:115} INFO - [2022-08-14 16:53:40,928] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:53:41,068] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:53:41,383] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:53:41,399] {logging_mixin.py:115} INFO - [2022-08-14 16:53:41,399] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:53:41,411] {logging_mixin.py:115} INFO - [2022-08-14 16:53:41,411] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:53:41,417] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.498 seconds
+[2022-08-14 16:54:11,583] {processor.py:153} INFO - Started process (PID=980) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:54:11,585] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:54:11,586] {logging_mixin.py:115} INFO - [2022-08-14 16:54:11,586] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:54:11,714] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:54:12,035] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:54:12,051] {logging_mixin.py:115} INFO - [2022-08-14 16:54:12,051] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:54:12,062] {logging_mixin.py:115} INFO - [2022-08-14 16:54:12,062] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:54:12,068] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.487 seconds
+[2022-08-14 16:54:42,286] {processor.py:153} INFO - Started process (PID=1014) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:54:42,287] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:54:42,288] {logging_mixin.py:115} INFO - [2022-08-14 16:54:42,288] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:54:42,423] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:54:42,751] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:54:42,768] {logging_mixin.py:115} INFO - [2022-08-14 16:54:42,768] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:54:42,781] {logging_mixin.py:115} INFO - [2022-08-14 16:54:42,781] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:54:42,788] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.506 seconds
+[2022-08-14 16:55:13,208] {processor.py:153} INFO - Started process (PID=1111) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:55:13,211] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:55:13,212] {logging_mixin.py:115} INFO - [2022-08-14 16:55:13,212] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:55:13,350] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:55:13,672] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:55:13,689] {logging_mixin.py:115} INFO - [2022-08-14 16:55:13,689] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:55:13,700] {logging_mixin.py:115} INFO - [2022-08-14 16:55:13,700] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:55:13,706] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.502 seconds
+[2022-08-14 16:55:44,005] {processor.py:153} INFO - Started process (PID=1145) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:55:44,007] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:55:44,009] {logging_mixin.py:115} INFO - [2022-08-14 16:55:44,009] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:55:44,143] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:55:44,453] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:55:44,469] {logging_mixin.py:115} INFO - [2022-08-14 16:55:44,469] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:55:44,480] {logging_mixin.py:115} INFO - [2022-08-14 16:55:44,480] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:55:44,487] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.488 seconds
+[2022-08-14 16:56:14,630] {processor.py:153} INFO - Started process (PID=1179) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:56:14,632] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:56:14,634] {logging_mixin.py:115} INFO - [2022-08-14 16:56:14,634] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:56:14,763] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:56:15,077] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:56:15,093] {logging_mixin.py:115} INFO - [2022-08-14 16:56:15,092] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:56:15,103] {logging_mixin.py:115} INFO - [2022-08-14 16:56:15,103] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:56:15,111] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.485 seconds
+[2022-08-14 16:56:45,406] {processor.py:153} INFO - Started process (PID=1284) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:56:45,409] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:56:45,411] {logging_mixin.py:115} INFO - [2022-08-14 16:56:45,411] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:56:45,544] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:56:45,859] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:56:45,875] {logging_mixin.py:115} INFO - [2022-08-14 16:56:45,875] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:56:45,886] {logging_mixin.py:115} INFO - [2022-08-14 16:56:45,886] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:56:45,892] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.491 seconds
+[2022-08-14 16:57:16,144] {processor.py:153} INFO - Started process (PID=1318) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:57:16,146] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:57:16,147] {logging_mixin.py:115} INFO - [2022-08-14 16:57:16,147] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:57:16,276] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:57:16,584] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:57:16,599] {logging_mixin.py:115} INFO - [2022-08-14 16:57:16,599] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:57:16,610] {logging_mixin.py:115} INFO - [2022-08-14 16:57:16,610] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:57:16,617] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.476 seconds
+[2022-08-14 16:57:46,892] {processor.py:153} INFO - Started process (PID=1352) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:57:46,895] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:57:46,896] {logging_mixin.py:115} INFO - [2022-08-14 16:57:46,896] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:57:47,025] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:57:47,340] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:57:47,357] {logging_mixin.py:115} INFO - [2022-08-14 16:57:47,357] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:57:47,368] {logging_mixin.py:115} INFO - [2022-08-14 16:57:47,368] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:57:47,374] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.485 seconds
+[2022-08-14 16:58:17,750] {processor.py:153} INFO - Started process (PID=1386) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:58:17,754] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:58:17,758] {logging_mixin.py:115} INFO - [2022-08-14 16:58:17,758] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:58:17,889] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:58:18,204] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:58:18,227] {logging_mixin.py:115} INFO - [2022-08-14 16:58:18,227] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:58:18,248] {logging_mixin.py:115} INFO - [2022-08-14 16:58:18,248] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:58:18,257] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.511 seconds
+[2022-08-14 16:58:48,503] {processor.py:153} INFO - Started process (PID=1420) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:58:48,505] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:58:48,506] {logging_mixin.py:115} INFO - [2022-08-14 16:58:48,506] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:58:48,643] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:58:48,990] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:58:49,006] {logging_mixin.py:115} INFO - [2022-08-14 16:58:49,006] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:58:49,017] {logging_mixin.py:115} INFO - [2022-08-14 16:58:49,017] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:58:49,023] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.522 seconds
+[2022-08-14 16:59:19,282] {processor.py:153} INFO - Started process (PID=1445) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:59:19,285] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:59:19,287] {logging_mixin.py:115} INFO - [2022-08-14 16:59:19,287] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:59:19,437] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:59:19,761] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:59:19,778] {logging_mixin.py:115} INFO - [2022-08-14 16:59:19,778] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:59:19,789] {logging_mixin.py:115} INFO - [2022-08-14 16:59:19,789] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:59:19,795] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.517 seconds
+[2022-08-14 16:59:50,060] {processor.py:153} INFO - Started process (PID=1479) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:59:50,062] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 16:59:50,063] {logging_mixin.py:115} INFO - [2022-08-14 16:59:50,063] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:59:50,187] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 16:59:50,503] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 16:59:50,520] {logging_mixin.py:115} INFO - [2022-08-14 16:59:50,519] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 16:59:50,530] {logging_mixin.py:115} INFO - [2022-08-14 16:59:50,530] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 16:59:50,537] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.479 seconds
+[2022-08-14 17:00:21,077] {processor.py:153} INFO - Started process (PID=1513) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:00:21,080] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:00:21,082] {logging_mixin.py:115} INFO - [2022-08-14 17:00:21,082] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:00:21,214] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:00:21,527] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:00:21,544] {logging_mixin.py:115} INFO - [2022-08-14 17:00:21,543] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:00:21,554] {logging_mixin.py:115} INFO - [2022-08-14 17:00:21,554] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:00:21,560] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.488 seconds
+[2022-08-14 17:00:51,846] {processor.py:153} INFO - Started process (PID=1546) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:00:51,848] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:00:51,851] {logging_mixin.py:115} INFO - [2022-08-14 17:00:51,851] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:00:51,980] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:00:52,299] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:00:52,315] {logging_mixin.py:115} INFO - [2022-08-14 17:00:52,315] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:00:52,326] {logging_mixin.py:115} INFO - [2022-08-14 17:00:52,326] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:00:52,333] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.491 seconds
+[2022-08-14 17:01:22,601] {processor.py:153} INFO - Started process (PID=1580) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:01:22,604] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:01:22,607] {logging_mixin.py:115} INFO - [2022-08-14 17:01:22,607] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:01:22,741] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:01:23,051] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:01:23,066] {logging_mixin.py:115} INFO - [2022-08-14 17:01:23,066] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:01:23,079] {logging_mixin.py:115} INFO - [2022-08-14 17:01:23,079] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:01:23,085] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.489 seconds
+[2022-08-14 17:01:53,400] {processor.py:153} INFO - Started process (PID=1614) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:01:53,402] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:01:53,404] {logging_mixin.py:115} INFO - [2022-08-14 17:01:53,404] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:01:53,532] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:01:53,839] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:01:53,854] {logging_mixin.py:115} INFO - [2022-08-14 17:01:53,854] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:01:53,864] {logging_mixin.py:115} INFO - [2022-08-14 17:01:53,864] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:01:53,870] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.475 seconds
+[2022-08-14 17:02:24,112] {processor.py:153} INFO - Started process (PID=1648) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:02:24,115] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:02:24,118] {logging_mixin.py:115} INFO - [2022-08-14 17:02:24,118] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:02:24,246] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:02:24,556] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:02:24,572] {logging_mixin.py:115} INFO - [2022-08-14 17:02:24,572] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:02:24,582] {logging_mixin.py:115} INFO - [2022-08-14 17:02:24,582] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:02:24,589] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.482 seconds
+[2022-08-14 17:02:54,854] {processor.py:153} INFO - Started process (PID=1684) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:02:54,857] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:02:54,858] {logging_mixin.py:115} INFO - [2022-08-14 17:02:54,858] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:02:54,994] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:02:55,371] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:02:55,387] {logging_mixin.py:115} INFO - [2022-08-14 17:02:55,387] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:02:55,399] {logging_mixin.py:115} INFO - [2022-08-14 17:02:55,398] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:02:55,406] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.554 seconds
+[2022-08-14 17:03:25,633] {processor.py:153} INFO - Started process (PID=1709) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:03:25,636] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:03:25,638] {logging_mixin.py:115} INFO - [2022-08-14 17:03:25,638] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:03:25,777] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:03:26,093] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:03:26,110] {logging_mixin.py:115} INFO - [2022-08-14 17:03:26,110] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:03:26,123] {logging_mixin.py:115} INFO - [2022-08-14 17:03:26,123] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:03:26,130] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.500 seconds
+[2022-08-14 17:06:17,731] {processor.py:153} INFO - Started process (PID=1745) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:06:17,733] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:06:17,734] {logging_mixin.py:115} INFO - [2022-08-14 17:06:17,734] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:06:17,940] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:06:18,554] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:06:18,573] {logging_mixin.py:115} INFO - [2022-08-14 17:06:18,572] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:06:18,587] {logging_mixin.py:115} INFO - [2022-08-14 17:06:18,587] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:06:18,596] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.869 seconds
+[2022-08-14 17:07:04,239] {processor.py:153} INFO - Started process (PID=1783) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:07:04,240] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 17:07:04,241] {logging_mixin.py:115} INFO - [2022-08-14 17:07:04,241] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:07:04,358] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 17:07:04,663] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 17:07:04,680] {logging_mixin.py:115} INFO - [2022-08-14 17:07:04,680] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 17:07:04,691] {logging_mixin.py:115} INFO - [2022-08-14 17:07:04,691] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 17:07:04,697] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.460 seconds
+[2022-08-14 19:40:10,700] {processor.py:153} INFO - Started process (PID=1816) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 19:40:10,701] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 19:40:10,702] {logging_mixin.py:115} INFO - [2022-08-14 19:40:10,702] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 19:40:10,845] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 19:40:11,210] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 19:40:11,233] {logging_mixin.py:115} INFO - [2022-08-14 19:40:11,233] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 19:40:11,251] {logging_mixin.py:115} INFO - [2022-08-14 19:40:11,251] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 19:40:11,261] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.564 seconds
+[2022-08-14 23:53:57,213] {processor.py:153} INFO - Started process (PID=1843) to work on /opt/airflow/dags/etl_dag.py
+[2022-08-14 23:53:57,216] {processor.py:641} INFO - Processing file /opt/airflow/dags/etl_dag.py for tasks to queue
+[2022-08-14 23:53:57,217] {logging_mixin.py:115} INFO - [2022-08-14 23:53:57,217] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag.py
+[2022-08-14 23:53:57,407] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:99 UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<8.1.0,>=8.0.0; extra == "pandas"'
+[2022-08-14 23:53:57,852] {processor.py:651} INFO - DAG(s) dict_keys(['ETL_DAG']) retrieved from /opt/airflow/dags/etl_dag.py
+[2022-08-14 23:53:57,869] {logging_mixin.py:115} INFO - [2022-08-14 23:53:57,869] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-08-14 23:53:57,882] {logging_mixin.py:115} INFO - [2022-08-14 23:53:57,882] {dag.py:2972} INFO - Setting next_dagrun for ETL_DAG to 2022-08-14T00:00:00+00:00, run_after=2022-08-21T00:00:00+00:00
+[2022-08-14 23:53:57,889] {processor.py:161} INFO - Processing /opt/airflow/dags/etl_dag.py took 0.682 seconds

@@ -1,0 +1,37 @@
+[2022-08-12 01:25:36,861] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Transform_nutrient-intake-estimates manual__2022-08-12T01:21:26.402383+00:00 [queued]>
+[2022-08-12 01:25:36,885] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Transform_nutrient-intake-estimates manual__2022-08-12T01:21:26.402383+00:00 [queued]>
+[2022-08-12 01:25:36,886] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 01:25:36,889] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-12 01:25:36,890] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 01:25:36,903] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Transform_nutrient-intake-estimates> on 2022-08-12 01:21:26.402383+00:00
+[2022-08-12 01:25:36,913] {standard_task_runner.py:52} INFO - Started process 556 to run task
+[2022-08-12 01:25:36,937] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG_US_FOOD_NUTRITION', 'Transform_nutrient-intake-estimates', 'manual__2022-08-12T01:21:26.402383+00:00', '--job-id', '763', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpix0oktgw', '--error-file', '/tmp/tmpk955_5dz']
+[2022-08-12 01:25:36,953] {standard_task_runner.py:80} INFO - Job 763: Subtask Transform_nutrient-intake-estimates
+[2022-08-12 01:25:37,077] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG_US_FOOD_NUTRITION.Transform_nutrient-intake-estimates manual__2022-08-12T01:21:26.402383+00:00 [running]> on host ae5c2449a624
+[2022-08-12 01:25:37,177] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG_US_FOOD_NUTRITION
+AIRFLOW_CTX_TASK_ID=Transform_nutrient-intake-estimates
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-12T01:21:26.402383+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-12T01:21:26.402383+00:00
+[2022-08-12 01:25:54,814] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Total population-2015-2016.csv to S3
+[2022-08-12 01:25:55,147] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Total population-2017-2018.csv to S3
+[2022-08-12 01:25:55,449] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Children age 2–19-2015-2016.csv to S3
+[2022-08-12 01:25:55,740] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Children age 2–19-2017-2018.csv to S3
+[2022-08-12 01:25:56,033] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Adults age 20-64-2015-2016.csv to S3
+[2022-08-12 01:25:56,331] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Adults age 20-64-2017-2018.csv to S3
+[2022-08-12 01:25:56,649] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Seniors age 65 and above-2015-2016.csv to S3
+[2022-08-12 01:25:56,942] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Seniors age 65 and above-2017-2018.csv to S3
+[2022-08-12 01:25:57,259] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income < 185% poverty line-2015-2016.csv to S3
+[2022-08-12 01:25:57,550] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income < 185% poverty line-2017-2018.csv to S3
+[2022-08-12 01:25:57,837] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income 185–300% poverty line-2015-2016.csv to S3
+[2022-08-12 01:25:58,150] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income 185–300% poverty line-2017-2018.csv to S3
+[2022-08-12 01:25:58,468] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income > 300% poverty line-2015-2016.csv to S3
+[2022-08-12 01:25:58,787] {logging_mixin.py:115} INFO - Successfully process nutrient-intake-estimates-clean/Household income > 300% poverty line-2017-2018.csv to S3
+[2022-08-12 01:25:58,789] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-12 01:25:58,800] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG_US_FOOD_NUTRITION, task_id=Transform_nutrient-intake-estimates, execution_date=20220812T012126, start_date=20220812T012536, end_date=20220812T012558
+[2022-08-12 01:25:58,831] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-12 01:25:58,859] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

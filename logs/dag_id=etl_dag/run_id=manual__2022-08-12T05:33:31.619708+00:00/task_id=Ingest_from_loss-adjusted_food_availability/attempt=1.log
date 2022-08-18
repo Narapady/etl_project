@@ -1,0 +1,34 @@
+[2022-08-12 05:33:36,961] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Ingest_from_loss-adjusted_food_availability manual__2022-08-12T05:33:31.619708+00:00 [queued]>
+[2022-08-12 05:33:36,984] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Ingest_from_loss-adjusted_food_availability manual__2022-08-12T05:33:31.619708+00:00 [queued]>
+[2022-08-12 05:33:36,985] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 05:33:36,986] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-12 05:33:36,987] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-12 05:33:37,017] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_loss-adjusted_food_availability> on 2022-08-12 05:33:31.619708+00:00
+[2022-08-12 05:33:37,033] {standard_task_runner.py:52} INFO - Started process 315 to run task
+[2022-08-12 05:33:37,045] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Ingest_from_loss-adjusted_food_availability', 'manual__2022-08-12T05:33:31.619708+00:00', '--job-id', '846', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmppg3vlwfh', '--error-file', '/tmp/tmpy31jgg_p']
+[2022-08-12 05:33:37,051] {standard_task_runner.py:80} INFO - Job 846: Subtask Ingest_from_loss-adjusted_food_availability
+[2022-08-12 05:33:37,231] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Ingest_from_loss-adjusted_food_availability manual__2022-08-12T05:33:31.619708+00:00 [running]> on host 959a8f00817b
+[2022-08-12 05:33:37,495] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Ingest_from_loss-adjusted_food_availability
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-12T05:33:31.619708+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-12T05:33:31.619708+00:00
+[2022-08-12 05:33:54,331] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/calories.xls to s3-bucket-raw-usda
+[2022-08-12 05:34:29,657] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Dairy.xls to s3-bucket-raw-usda
+[2022-08-12 05:34:40,542] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/fat.xls to s3-bucket-raw-usda
+[2022-08-12 05:34:50,639] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/servings.xls to s3-bucket-raw-usda
+[2022-08-12 05:35:45,721] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/Fruit.xls to s3-bucket-raw-usda
+[2022-08-12 05:35:57,982] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/grain.xls to s3-bucket-raw-usda
+[2022-08-12 05:36:21,640] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/meat.xls to s3-bucket-raw-usda
+[2022-08-12 05:36:30,026] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/sugar.xls to s3-bucket-raw-usda
+[2022-08-12 05:37:23,999] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/veg.xls to s3-bucket-raw-usda
+[2022-08-12 05:37:27,691] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/nutrients.xls to s3-bucket-raw-usda
+[2022-08-12 05:37:33,772] {logging_mixin.py:115} INFO - Successfully uploaded loss-adjusted-food-availability/ctcsp.xls to s3-bucket-raw-usda
+[2022-08-12 05:37:33,782] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-12 05:37:33,885] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=ETL_DAG, task_id=Ingest_from_loss-adjusted_food_availability, execution_date=20220812T053331, start_date=20220812T053336, end_date=20220812T053733
+[2022-08-12 05:37:33,940] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-12 05:37:33,974] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

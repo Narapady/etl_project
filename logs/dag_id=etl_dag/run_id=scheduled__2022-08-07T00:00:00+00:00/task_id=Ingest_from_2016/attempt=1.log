@@ -1,0 +1,104 @@
+[2022-08-14 16:45:02,172] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Ingest_from_2016 scheduled__2022-08-07T00:00:00+00:00 [queued]>
+[2022-08-14 16:45:02,187] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: ETL_DAG.Ingest_from_2016 scheduled__2022-08-07T00:00:00+00:00 [queued]>
+[2022-08-14 16:45:02,190] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:45:02,193] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2022-08-14 16:45:02,195] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-14 16:45:02,216] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Ingest_from_2016> on 2022-08-07 00:00:00+00:00
+[2022-08-14 16:45:02,221] {standard_task_runner.py:52} INFO - Started process 212 to run task
+[2022-08-14 16:45:02,229] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_DAG', 'Ingest_from_2016', 'scheduled__2022-08-07T00:00:00+00:00', '--job-id', '926', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpy486bndz', '--error-file', '/tmp/tmp002zdeey']
+[2022-08-14 16:45:02,234] {standard_task_runner.py:80} INFO - Job 926: Subtask Ingest_from_2016
+[2022-08-14 16:45:02,408] {task_command.py:371} INFO - Running <TaskInstance: ETL_DAG.Ingest_from_2016 scheduled__2022-08-07T00:00:00+00:00 [running]> on host 0dbf9d5e5cdb
+[2022-08-14 16:45:02,566] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=narapady
+AIRFLOW_CTX_DAG_ID=ETL_DAG
+AIRFLOW_CTX_TASK_ID=Ingest_from_2016
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-07T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-07T00:00:00+00:00
+[2022-08-14 16:45:16,132] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 424, in connect
+    tls_in_tls=tls_in_tls,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 450, in ssl_wrap_socket
+    sock, context, tls_in_tls, server_hostname=server_hostname
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/usr/local/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+OSError: [Errno 0] Error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 499, in send
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 786, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 424, in connect
+    tls_in_tls=tls_in_tls,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 450, in ssl_wrap_socket
+    sock, context, tls_in_tls, server_hostname=server_hostname
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/usr/local/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', OSError(0, 'Error'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 133, in run
+    ingestor_usda.ingest()
+  File "/opt/airflow/dags/ingest/ingestor.py", line 120, in ingest
+    ingest_usda(self.s3, self.source, self.bucket_name, self.category)
+  File "/opt/airflow/dags/ingest/ingestor.py", line 64, in ingest_usda
+    source_list = [get_links(source) for source in sources]
+  File "/opt/airflow/dags/ingest/ingestor.py", line 64, in <listcomp>
+    source_list = [get_links(source) for source in sources]
+  File "/opt/airflow/dags/ingest/ingestor.py", line 25, in get_links
+    req = requests.get(url)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', OSError(0, 'Error'))
+[2022-08-14 16:45:16,173] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_DAG, task_id=Ingest_from_2016, execution_date=20220807T000000, start_date=20220814T164502, end_date=20220814T164516
+[2022-08-14 16:45:16,190] {standard_task_runner.py:97} ERROR - Failed to execute job 926 for task Ingest_from_2016 (('Connection aborted.', OSError(0, 'Error')); 212)
+[2022-08-14 16:45:16,237] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-14 16:45:16,270] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
