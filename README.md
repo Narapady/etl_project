@@ -1,11 +1,10 @@
 # PROJECT OVERVIEW
-A data engineering project, specifically an automated data pipeline that weekly ingests US food 
-and nutrition data from source systems to data lake S3. Then transform,
-clean, stage, and load data into data warehouse, Snowflake. Finally, build dashboard in Superset.
+A data engineering project, specifically an automated data pipeline that weekly ingests US food and nutrition data from source systems to a data lake on S3. Then, it transforms, cleans, stages, and loads the data into a data warehouse, Snowflake. Finally, it builds a dashboard in Superset.
+
 
 ## Development and Framework
-Use Apache Airflow as pipeline ochestrator and run in container, Docker and Docker-compose.
-Cloud-based storage and vizualization: AWS S3, Snowflake, and Preset (Superset).
+Using Apache Airflow as the pipeline orchestrator and running in containers via Docker and Docker Compose.
+Cloud-based storage and visualization tools: AWS S3, Snowflake, and Preset.
 
 ## Data sources
 #### US Department of Agriculture, Economic Research Service
